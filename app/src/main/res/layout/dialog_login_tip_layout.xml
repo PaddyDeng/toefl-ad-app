@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/border_space_sec_max_m"
+        android:layout_marginTop="@dimen/border_space_sec_max_m"
+        android:text="@string/str_go_login_hint"
+        android:textColor="@color/color_txt_dark_black"
+        android:textSize="@dimen/text_size_ml_plus"/>
+
+    <View style="@style/line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/login_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/border_space"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="@dimen/border_space_half"
+            android:paddingTop="@dimen/border_space_sec_m"
+            android:text="@string/str_cancel"
+            android:textColor="@color/color_blue"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <View
+            style="@style/vertical_line"/>
+
+        <TextView
+            android:id="@+id/login_dialog_determine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/border_space"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="@dimen/border_space_half"
+            android:paddingTop="@dimen/border_space_sec_m"
+            android:text="@string/str_determine"
+            android:textColor="@color/color_blue"
+            android:textSize="@dimen/text_size_ml"/>
+    </LinearLayout>
+</LinearLayout>

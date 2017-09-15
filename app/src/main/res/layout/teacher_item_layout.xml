@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/teacher_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_height"
+    android:orientation="horizontal">
+
+    <io.dcloud.H58E83894.weiget.CircleImageView
+        android:id="@+id/teacher_item_img"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_default"
+        app:border_color="@color/color_white"
+        app:border_width="2dip"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/border_space"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacher_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <TextView
+            android:id="@+id/teacher_des_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/str_teacher_detail"
+                android:textColor="@color/color_sec_orange"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/teacher_item_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/about_lesson_orange_bg"
+                    android:paddingBottom="@dimen/base_half_padding"
+                    android:paddingLeft="@dimen/border_space_sec_max_m"
+                    android:paddingRight="@dimen/border_space_sec_max_m"
+                    android:paddingTop="@dimen/base_half_padding"
+                    android:text="@string/str_about_lesson"
+                    android:textColor="@color/color_white"/>
+
+                <TextView
+                    android:id="@+id/teacher_item_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/base_half_padding"
+                    android:textColor="@color/color_sec_orange"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

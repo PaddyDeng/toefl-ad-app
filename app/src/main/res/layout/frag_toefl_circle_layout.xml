@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/remark_new_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/remark_new_title_bar"
+            style="@style/custome_title_bar_style"
+            android:background="@color/color_black">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/new_reamrk_tablayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:tabIndicatorColor="@color/color_orange"
+                app:tabSelectedTextColor="@color/color_orange"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                app:tabTextColor="@color/color_white"/>
+
+            <ImageView
+                android:id="@+id/toefl_circle_write"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:paddingBottom="@dimen/base_padding"
+                android:paddingLeft="@dimen/base_padding"
+                android:paddingRight="@dimen/base_padding"
+                android:paddingTop="@dimen/base_padding"
+                android:src="@drawable/icon_toefl_write"/>
+
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/new_remark_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_editview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

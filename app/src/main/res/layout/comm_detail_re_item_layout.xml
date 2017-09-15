@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="?android:attr/selectableItemBackground"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/border_space_max_max"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max">
+
+        <io.dcloud.H58E83894.weiget.CircleImageView
+            android:id="@+id/re_item_head_img"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_default"/>
+
+        <LinearLayout
+            android:id="@+id/re_item_person_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:layout_toRightOf="@id/re_item_head_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/remark_new_detail_item_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello1"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_size_ms"/>
+
+            <TextView
+                android:id="@+id/remark_new_detail_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello1"
+                android:textSize="@dimen/text_size_small"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/remark_new_detail_re_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/re_item_person_info_container"
+        android:layout_marginBottom="@dimen/border_space_half"
+        android:layout_marginLeft="70dip"
+        android:layout_toRightOf="@id/re_item_head_img"
+        android:paddingRight="@dimen/border_space_sec_max"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/text_size_ms"/>
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grammar_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/listen_start_title"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/border_space_sec_max">
+
+                <TextView
+                    android:id="@+id/listen_start_practice_tv"
+                    style="@style/com_btn_style"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/border_space_sec_max_m"
+                    android:text="@string/str_listen_start_practice"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/border_space_max_min"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/str_listen_start_practice_hint"
+                        android:textColor="@color/color_txt_dark_black"
+                        android:textSize="@dimen/text_size_bl"/>
+
+                    <ImageView
+                        android:id="@+id/down_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/border_space_sec_max_b"
+                        android:padding="@dimen/border_space"
+                        android:src="@drawable/icon_listen_practice_down"/>
+
+                    <TextView
+                        android:id="@+id/fine_listen_tv"
+                        style="@style/listen_sec_tv_style"
+                        android:text="@string/str_listen_start_practice_top_hint"/>
+
+                    <TextView
+                        android:id="@+id/make_listen_tv"
+                        style="@style/listen_sec_tv_style"
+                        android:layout_margin="@dimen/border_space_sec_max_b"
+                        android:text="@string/str_listen_start_practice_make_hint"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+</LinearLayout>

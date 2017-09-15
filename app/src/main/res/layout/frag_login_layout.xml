@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/icon_login_bg">
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/exit_no_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginTop="@dimen/border_space_sec_max_b"
+                android:padding="@dimen/border_space"
+                android:src="@drawable/icon_login_close"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/border_space_max_min"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/str_login_hint_info"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/text_size_ml_plus"/>
+
+                <EditText
+                    android:id="@+id/login_account"
+                    style="@style/login_edit_style"
+                    android:layout_marginTop="@dimen/border_space_sec_max_b"
+                    android:drawableLeft="@drawable/login_head"
+                    android:drawablePadding="@dimen/border_space_sec"
+                    android:hint="@string/str_login_account"/>
+
+                <View style="@style/line"/>
+
+                <EditText
+                    android:id="@+id/login_pwd"
+                    style="@style/login_edit_style"
+                    android:layout_marginTop="@dimen/border_space"
+                    android:drawableLeft="@drawable/login_pw"
+                    android:drawablePadding="@dimen/border_space_sec"
+                    android:hint="@string/str_login_pwd"
+                    android:inputType="textPassword"/>
+
+                <View style="@style/line"/>
+
+                <TextView
+                    android:id="@+id/login"
+                    style="@style/btn_login_style"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/border_space_normal">
+
+                    <TextView
+                        android:id="@+id/immediately_regist"
+                        style="@style/login_type_style"
+                        android:text="@string/str_immde_register"/>
+
+                    <TextView
+                        style="@style/login_type_style"
+                        android:text=" | "/>
+
+                    <TextView
+                        android:id="@+id/forgive_pwd"
+                        style="@style/login_type_style"
+                        android:text="@string/str_forget_ps"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+</RelativeLayout>

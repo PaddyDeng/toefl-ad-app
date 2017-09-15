@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/transparent"
+              android:orientation="vertical">
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/border_space_sec_max_m"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:layout_marginTop="@dimen/border_space_sec_max_m"
+                android:background="@drawable/classification_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/str_classifcation_course_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_course_study"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_course_study"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classifcation_course_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                        <View
+                            style="@style/classification_line"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/str_classification_school_life_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_school_life"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_school_life"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classification_school_life_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                        <View
+                            style="@style/classification_line"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/str_classification_natural_science_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_natural_science"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_natural_science"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classification_natural_science_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                        <View
+                            style="@style/classification_line"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/str_classification_social_science_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_social_science"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_social_science"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classification_social_science_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                        <View
+                            style="@style/classification_line"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/str_classification_life_science_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_life_science"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_life_science"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classification_life_science_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                        <View
+                            style="@style/classification_line"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/str_classification_cultural_science_container"
+                    style="@style/class_ification_item_container_style">
+
+                    <ImageView
+                        style="@style/class_ification_item_type_style"
+                        android:src="@drawable/icon_cultural_science"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/border_space_sec_m">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/class_ification_item_type_top_tv_style"
+                                android:text="@string/str_classification_cultural_science"/>
+
+                            <TextView
+                                style="@style/class_ification_item_type_bottom_tv_style"
+                                android:text="@string/str_classification_cultural_science_des"/>
+                        </LinearLayout>
+
+                        <ImageView style="@style/class_ification_item_next_tv_style"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+</LinearLayout>

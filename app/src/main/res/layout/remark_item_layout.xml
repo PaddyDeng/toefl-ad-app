@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/color_white"
+              android:orientation="vertical">
+
+
+    <include layout="@layout/remark_common_layout"/>
+
+    <View
+        android:id="@+id/remark_conn_line"
+        style="@style/line"/>
+
+    <io.dcloud.H58E83894.weiget.commentview.CommentListView
+        android:id="@+id/remark_comment_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/border_space"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/border_space_half"
+        android:orientation="vertical"/>
+
+    <View
+        android:layout_height="@dimen/border_space_sec"
+        style="@style/line"/>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_sec_gray">
+
+    <View
+        android:id="@+id/place_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/read_divider"
+        android:background="@color/color_sec_gray"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/place_line"
+        android:layout_marginLeft="@dimen/read_divider"
+        android:layout_marginRight="@dimen/read_divider"
+        android:background="@color/color_white"
+        android:orientation="horizontal"
+        android:padding="@dimen/border_space_sec">
+
+        <ImageView
+            android:id="@+id/read_tpo_item_iv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="@dimen/border_space_sec"
+            android:layout_weight="1.7"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/read_tpo_item_title_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/color_txt_dark_black"
+                android:textSize="@dimen/text_size_ml"/>
+
+            <TextView
+                android:id="@+id/read_item_tpo_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/border_space_half"
+                android:textColor="@color/color_txt_dark_gray"
+                android:textSize="@dimen/text_size_small"/>
+
+            <TextView
+                style="@style/practice_go_style"
+                android:background="@drawable/read_tpo_go_shape"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

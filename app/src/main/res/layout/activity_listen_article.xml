@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/icon_listen_practice"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style"
+        android:background="@android:color/transparent">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_istening_exercises"/>
+
+        <TextView
+            android:id="@+id/next_question_fine_listen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/str_next_istening_exercises"
+            android:textColor="@color/color_white"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:textSize="@dimen/text_size_medium"/>
+
+        <ImageView
+            android:id="@+id/question_feed_back"
+            style="@style/feed_back_white_style"
+            android:layout_toLeftOf="@+id/next_question_fine_listen"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <io.dcloud.H58E83894.weiget.LyricView
+            android:id="@+id/lyric_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:txtSize="@dimen/text_size_small"/>
+
+        <ImageView
+            android:id="@+id/chinese_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_marginTop="@dimen/border_space_max_max"
+            android:src="@drawable/icon_listen_switch_drawable"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/listen_article_btn"
+        android:layout_width="@dimen/border_space_six_max"
+        android:layout_height="@dimen/border_space_six_max"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/border_space_sec_max"
+        android:src="@drawable/icon_practice_btn_shape"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_seek_bar_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/music_play_control"
+        android:layout_marginBottom="@dimen/border_space_sec_max">
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_micro"/>
+
+        <SeekBar
+            android:id="@+id/music_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:thumb="@drawable/seekbar_circle"
+            android:layout_toLeftOf="@+id/end_time"
+            android:layout_toRightOf="@+id/start_time"/>
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_micro"/>
+    </RelativeLayout>
+</LinearLayout>

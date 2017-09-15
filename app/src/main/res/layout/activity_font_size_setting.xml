@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_set_font_size"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.ui.center.font.ControlTextView
+        android:id="@+id/simple_word"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="@dimen/border_space_sec_max"
+        android:text="@string/str_font_size_tip_info"
+        android:textColor="@color/color_orange"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <io.dcloud.H58E83894.ui.center.font.FontControlContainer
+            android:id="@+id/change_font_size_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/border_space_thr"
+            android:layout_marginRight="@dimen/border_space_thr">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:src="@drawable/icon_font_size_bg"/>
+
+            <View
+                android:layout_width="@dimen/border_space_thr"
+                android:layout_height="@dimen/border_space_thr"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_guide_bg_defaut"/>
+        </io.dcloud.H58E83894.ui.center.font.FontControlContainer>
+
+    </RelativeLayout>
+</LinearLayout>

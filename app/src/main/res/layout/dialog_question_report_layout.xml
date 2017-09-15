@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_simple_title_shape">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space"
+            android:text="@string/str_error_feedback"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_ml"/>
+
+
+        <ImageView
+            android:id="@+id/close_dialog_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingRight="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space"
+            android:src="@drawable/icon_login_close"/>
+
+
+        <ImageView
+            android:id="@+id/commit_feed_back"
+            android:layout_width="@dimen/border_space_thr_max"
+            android:layout_height="@dimen/border_space_thr_max"
+            android:layout_toLeftOf="@id/close_dialog_iv"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space"
+            android:src="@drawable/icon_request_commit"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grammar_dialog_defalut_height"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <EditText
+            android:id="@+id/simple_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:gravity="left|top"
+            android:padding="@dimen/border_space_sec_max"
+            android:textSize="@dimen/text_size_ms"/>
+    </ScrollView>
+</LinearLayout>

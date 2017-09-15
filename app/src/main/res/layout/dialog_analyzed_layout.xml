@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <TextView
+            android:id="@+id/title_centertxt"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_grammar_analyze"/>
+
+
+        <ImageView
+            android:id="@+id/close_analyze_dialog_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:paddingBottom="@dimen/border_space_half"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingRight="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space_half"
+            android:src="@drawable/icon_orange_close"/>
+    </RelativeLayout>
+
+    <View style="@style/line"/>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/border_space_sec_max_m"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/analyze_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/border_space_sec_max"
+                android:textColor="@color/color_txt_dark_black"/>
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+</LinearLayout>

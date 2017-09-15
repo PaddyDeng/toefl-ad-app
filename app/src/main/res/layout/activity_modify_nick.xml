@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <TextView
+            android:id="@+id/title_centertxt"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_set_nick_title"/>
+
+        <TextView
+            android:id="@+id/act_set_nick_cancel_btn"
+            style="@style/title_tv_style"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:text="@string/str_cancel"
+            android:textSize="@dimen/text_size_ml_plus"/>
+
+        <TextView
+            android:id="@+id/act_set_nick_confirm_btn"
+            style="@style/title_tv_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:clickable="false"
+            android:text="@string/str_confirm_re"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/text_size_ml_plus"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/border_space_sec"
+        android:text="@string/str_new_set_nick_name_tip"/>
+
+    <EditText
+        android:id="@+id/act_set_nick_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/border_space"
+        android:background="@color/color_white"
+        android:hint="@string/str_set_nick_name_tip"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/border_space_sec"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingTop="@dimen/border_space_sec"
+        android:textSize="@dimen/text_size_ms"/>
+</LinearLayout>

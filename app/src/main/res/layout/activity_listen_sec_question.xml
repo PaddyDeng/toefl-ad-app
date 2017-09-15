@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_grammar_bg"
+              android:orientation="vertical">
+
+    <RelativeLayout style="@style/new_custome_title_bar_style">
+
+        <ImageView style="@style/black_bg_title_back" />
+
+        <TextView
+            android:id="@+id/list_center_txt"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/listen_start_btn"
+            style="@style/com_btn_style"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/border_space_sec_max"
+            android:text="@string/str_listen_start_make" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/listen_start_btn"
+            android:layout_below="@id/grammer_des_tv"
+            android:layout_margin="@dimen/border_space_sec_max"
+            android:background="@drawable/white_bg_shape"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/border_space_sec_max_b"
+                android:gravity="center"
+                android:text="@string/str_listen_des"
+                android:textColor="@color/color_txt_dark_black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/listen_des_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/border_space_sec_max"
+                android:gravity="center"
+                android:textColor="@color/color_txt_gray"
+                android:textSize="@dimen/text_size_ms" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <io.dcloud.H58E83894.weiget.CircleImageView
+                            android:id="@+id/circle_bg_iv"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_default"
+                            app:border_color="@color/color_white"
+                            app:border_width="1dip" />
+
+                        <io.dcloud.H58E83894.weiget.CirclePlayView
+                            android:id="@+id/circle_play_view"
+                            android:layout_width="230dp"
+                            android:layout_height="230dp"
+                            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:id="@+id/listen_play_iv"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/audio_status_switch_bg" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/listen_time_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_sec_max_m"
+                        android:gravity="center"
+                        android:textColor="@color/color_txt_gray"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

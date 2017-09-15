@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space_sec_max">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/border_space">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_glossary_heart"/>
+
+            <TextView
+                android:id="@+id/glossary_item_topic_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/base_half_padding"
+                android:textColor="@color/color_txt_dark_gray"
+                android:textSize="@dimen/text_size_micro"/>
+        </LinearLayout>
+
+        <View
+            style="@style/vertical_line"
+            android:layout_marginLeft="@dimen/border_space"
+            android:layout_marginRight="@dimen/border_space"/>
+
+        <TextView
+            android:id="@+id/item_glossary_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/border_space"
+            android:textColor="@color/color_txt_dark_black"/>
+
+        <ImageView
+            style="@style/setting_icon_next_style"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

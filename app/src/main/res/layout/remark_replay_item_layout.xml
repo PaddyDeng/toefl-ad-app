@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/border_space">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/remark_new_msg_container"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/border_space"
+        android:background="@drawable/remark_new_msg_bg"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/border_space"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        android:paddingTop="@dimen/border_space">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_remark_new_msg"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/border_space_sec_max_m"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/border_space_sec"
+            android:background="@color/color_white"/>
+
+        <TextView
+            android:id="@+id/remakr_list_item_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/border_space_sec"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_ml"/>
+    </LinearLayout>
+
+</RelativeLayout>

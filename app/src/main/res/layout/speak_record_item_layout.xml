@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:paddingBottom="@dimen/border_space_sec"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space_sec">
+
+    <ImageView
+        android:id="@+id/speak_item_status_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/audio_status_switch_bg"/>
+
+    <TextView
+        android:id="@+id/speak_item_record_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/record_shape_bg"
+        android:padding="@dimen/border_space_half"
+        android:text="@string/str_again_make_test_speak"
+        android:textColor="@color/color_sec_orange"
+        android:textSize="@dimen/text_size_micro"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/border_space_half"
+        android:layout_marginRight="@dimen/border_space"
+        android:layout_toLeftOf="@id/speak_item_record_tv"
+        android:layout_toRightOf="@id/speak_item_status_iv"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/speak_record_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space"
+            android:textColor="@color/color_txt_dark_black"
+            android:textSize="@dimen/text_size_small"/>
+
+        <TextView
+            android:id="@+id/speak_record_item_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space"
+            android:textColor="@color/color_txt_dark_black"
+            android:textSize="@dimen/text_size_micro"/>
+
+        <SeekBar
+            android:id="@+id/speak_record_item_seek_bar"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

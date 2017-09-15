@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/main_contaier"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <View
+        style="@style/line"/>
+
+    <LinearLayout
+        android:id="@+id/nav_containre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/main_nav_pre_lesson"
+            style="@style/main_nav_style"
+            android:drawableTop="@drawable/toefl_main_nav_pre_lesson_sele"
+            android:text="@string/str_pre_lesson"/>
+
+        <TextView
+            android:id="@+id/main_nav_make"
+            style="@style/main_nav_style"
+            android:drawableTop="@drawable/toefl_main_nav_make_practice_sele"
+            android:text="@string/str_make_practice"/>
+
+        <TextView
+            android:id="@+id/main_nav_circle"
+            style="@style/main_nav_style"
+            android:drawableTop="@drawable/toefl_main_nav_toefl_circle_sele"
+            android:text="@string/str_toefl_circle"/>
+
+        <TextView
+            android:id="@+id/main_nav_center"
+            style="@style/main_nav_style"
+            android:drawableTop="@drawable/toefl_main_nav_center_sele"
+            android:text="@string/str_center"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

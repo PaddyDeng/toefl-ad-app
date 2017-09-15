@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grammar_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/core_detail_centertxt"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_core_vocabulary"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/grammer_des_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:layout_marginTop="@dimen/border_space_sec_max"
+                android:text="@string/str_word_explain"
+                android:textSize="@dimen/text_size_ml"/>
+
+
+            <TextView
+                android:id="@+id/next_question"
+                style="@style/com_new_demand_style"
+                android:layout_alignParentBottom="true"
+                android:text="@string/str_grammar_next_question"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/next_question"
+                android:layout_below="@id/grammer_des_tv"
+                android:layout_margin="@dimen/border_space_sec_max"
+                android:background="@drawable/white_bg_shape"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/detail_word_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/color_black"
+                            android:textSize="@dimen/text_size_b_bl"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/core_detail_phonetic_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/core_detail_audio_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="@dimen/border_space"
+                                android:paddingLeft="@dimen/border_space"
+                                android:paddingRight="@dimen/border_space"
+                                android:paddingTop="@dimen/border_space"
+                                android:src="@drawable/icon_audio_thr"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        style="@style/line"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/core_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:paddingRight="@dimen/border_space_sec_max">
+
+                    <TextView
+                        android:id="@+id/core_detail_type_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_sec_max_m"
+                        android:textColor="@color/color_sec_orange"
+                        android:textSize="@dimen/text_size_ml"/>
+
+                    <TextView
+                        android:id="@+id/core_type_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_half"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_sec_max_m"
+                        android:text="@string/str_example"
+                        android:textColor="@color/color_sec_orange"
+                        android:textSize="@dimen/text_size_ml"/>
+
+                    <TextView
+                        android:id="@+id/core_simple_detail_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_half"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+</LinearLayout>

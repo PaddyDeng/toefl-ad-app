@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="color_black">#000000</color>
+    <color name="color_white">#ffffff</color>
+
+    <color name="color_blue">#197fed</color>
+
+    <color name="im_font_color_text_hint">#abb1b6</color>
+    <color name="praise_item_selector_default">#cccccc</color>
+    <color name="default_clickable_color">#cccccc</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="color_hint">#c8c8c8</color>
+    <color name="color_sec_white">#EFEFF4</color>
+
+    <color name="color_default_gray">#EEEEEE</color>
+    <color name="color_gray">#99ffffff</color>
+
+    <color name="color_green">#33CC66</color>
+    <color name="color_dark_green">#009688</color>
+
+    <color name="color_trans_white">#33ffffff</color>
+    <color name="color_press_white">#99ffffff</color>
+
+    <color name="color_practice_line">#847B7C</color>
+
+    <color name="color_read_practice">#FFCC00</color>
+
+    <color name="color_dot">#D2D2D2</color>
+    <color name="color_sec_gray">#F2F2F2</color>
+    <color name="color_dark_gray">#CCCCCC</color>
+    <color name="color_orange">#FF6600</color>
+    <color name="color_press_orange">#FF8636</color>
+    <color name="color_red">#ff0000</color>
+
+    <color name="color_sec_orange">#FE9400</color>
+
+    <color name="color_blur">#97000000</color>
+
+    <color name="color_grammar_bg">#F0EFF5</color>
+    <color name="color_grammar_test_bg">#E6E6E6</color>
+
+    <color name="color_txt_dark_black">#333333</color>
+    <color name="color_txt_dark_gray">#666666</color>
+    <color name="color_txt_gray">#999999</color>
+
+    <color name="color_sup_red">#F23030</color>
+    <color name="color_sup_green">#33CC66</color>
+
+    <color name="color_result_circle">#6599FF</color>
+
+    <color name="color_practice_whitle">#FEFEFE</color>
+
+    <color name="color_speak_select">#6D6D6D</color>
+    <color name="color_speak_no_select">#A4A4A4</color>
+
+    <color name="color_item_bg">#EDEDED</color>
+
+</resources>

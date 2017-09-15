@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="toefl_circle_tab_arr">
+        <item>吐槽</item>
+        <item>推荐</item>
+    </string-array>
+
+    <string-array name="toefl_listen_parctice">
+        <item>TPO练习</item>
+        <item>分类练习</item>
+    </string-array>
+
+    <string-array name="toefl_write_independent_topic_arr">
+        <item>01-20</item>
+        <item>21-40</item>
+        <item>41-60</item>
+        <item>61-80</item>
+        <item>81-100</item>
+        <item>101-120</item>
+        <item>121-140</item>
+        <item>141-160</item>
+        <item>161-180</item>
+        <item>181-185</item>
+    </string-array>
+
+    <string-array name="toefl_write_tpo_arr">
+        <item>TPO 01-06</item>
+        <item>TPO 07-12</item>
+        <item>TPO 13-18</item>
+        <item>TPO 19-24</item>
+        <item>TPO 25-30</item>
+        <item>TPO 31-34</item>
+        <item>TPO 40-44</item>
+        <item>TPO 45-49</item>
+    </string-array>
+
+    <string-array name="center_listen_record_aar">
+        <item>做题</item>
+        <item>精听</item>
+        <item>听写</item>
+    </string-array>
+
+    <string-array name="center_speak_record_arr">
+        <item>Q1</item>
+        <item>Q2</item>
+        <item>Q3</item>
+        <item>Q4</item>
+        <item>Q5</item>
+        <item>Q6</item>
+        <item>黄金口语</item>
+    </string-array>
+
+    <string-array name="center_msg_arr">
+        <item>全部</item>
+        <item>未读</item>
+        <item>已读</item>
+    </string-array>
+
+    <string-array name="center_write_record">
+        <item>全部</item>
+        <item>TPO</item>
+        <item>独立话题</item>
+    </string-array>
+    <string-array name="center_read_record">
+        <item>全部</item>
+        <item>TPO</item>
+        <item>OG</item>
+    </string-array>
+</resources>

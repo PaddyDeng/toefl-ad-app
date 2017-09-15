@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/border_space_sec_m"
+        android:paddingTop="@dimen/border_space_sec_m">
+
+        <TextView
+            android:id="@+id/write_tpo_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_txt_dark_black"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <TextView
+            android:id="@+id/write_tpo_item_view_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/border_space_half"
+            android:textColor="@color/color_txt_dark_gray"
+            android:textSize="@dimen/text_size_micro_plus"/>
+    </LinearLayout>
+
+    <ImageView style="@style/next_style"/>
+
+    <View
+        android:id="@+id/tpo_write_item_line"
+        style="@style/line"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/border_space_sec_max"/>
+
+</RelativeLayout>

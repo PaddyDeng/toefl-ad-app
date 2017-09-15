@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/teacher_detail_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_teacher_detail_bg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <io.dcloud.H58E83894.weiget.CircleImageView
+                        android:id="@+id/teacher_detail_item_img"
+                        android:layout_width="80dip"
+                        android:layout_height="80dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/border_space"
+                        android:src="@drawable/icon_default"
+                        app:border_color="@color/color_white"
+                        app:border_width="2dip"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/border_space"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/teacher_detail_title_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/border_space"
+                            android:textColor="@color/color_white"
+                            android:textSize="@dimen/text_size_ml"/>
+
+                        <TextView
+                            android:id="@+id/teacher_detail_des_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_white"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_sec_gray"
+                android:paddingBottom="@dimen/border_space"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space"
+                android:text="@string/str_person_intro"
+                android:textSize="@dimen/text_size_ms"/>
+
+            <TextView
+                android:id="@+id/teacher_detail_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:padding="@dimen/border_space_sec_max"
+                android:textColor="@color/color_black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_sec_gray"
+                android:paddingBottom="@dimen/border_space"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space"
+                android:text="@string/str_main_speak_lesson"
+                android:textSize="@dimen/text_size_ms"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/teacher_detail_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:paddingBottom="@dimen/border_space_sec"
+                android:paddingTop="@dimen/border_space_sec"/>
+        </LinearLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+
+    <TextView
+        android:id="@+id/teacher_course_reservation"
+        style="@style/complete_btn_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/border_space_sec_max"
+        android:paddingTop="@dimen/border_space_sec_max"
+        android:text="@string/str_course_reservation"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_size_medium"/>
+</LinearLayout>

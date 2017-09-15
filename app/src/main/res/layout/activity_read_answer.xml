@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grammar_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/read_question_container"
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_answer_analyze"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/read_answer_fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

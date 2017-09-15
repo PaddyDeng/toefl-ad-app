@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/white_bg_shape"
+              android:orientation="vertical"
+              android:padding="@dimen/border_space">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/border_space_sec_m"
+            android:layout_height="@dimen/border_space_sec_m"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/icon_glossary_heart"/>
+
+        <TextView
+            android:id="@+id/item_word_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/border_space_normal"
+            android:textColor="@color/color_txt_dark_black"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_word_phonetic_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_txt_dark_gray"
+        android:textSize="@dimen/text_size_micro"/>
+
+    <TextView
+        android:id="@+id/item_word_mean_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_txt_dark_gray"
+        android:textSize="@dimen/text_size_micro"/>
+
+</LinearLayout>

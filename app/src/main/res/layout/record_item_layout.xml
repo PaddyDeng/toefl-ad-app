@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/color_white"
+              android:orientation="horizontal"
+              android:padding="@dimen/border_space_sec_max">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/record_shape_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/border_space_half">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_block"/>
+
+        <TextView
+            android:id="@+id/record_item_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_sec_orange"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/record_item_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/border_space"
+        android:layout_marginRight="@dimen/border_space"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/record_item_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:textColor="@color/color_txt_dark_black"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <TextView
+            android:id="@+id/record_item_end_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_txt_dark_gray"
+            android:textSize="@dimen/text_size_small"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/record_status_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/record_shape_bg"
+        android:padding="@dimen/border_space_half"
+        android:textSize="@dimen/text_size_micro"
+        android:textColor="@color/color_sec_orange"/>
+</LinearLayout>

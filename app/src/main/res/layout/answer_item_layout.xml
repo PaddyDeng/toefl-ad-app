@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/border_space_sec_max"
+    android:paddingTop="@dimen/border_space_sec_max">
+
+    <TextView
+        android:id="@+id/answer_option_tv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/option_defalut_bg"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/color_white"/>
+
+    <TextView
+        android:id="@+id/answer_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:textColor="@color/color_answer_selector"/>
+</LinearLayout>

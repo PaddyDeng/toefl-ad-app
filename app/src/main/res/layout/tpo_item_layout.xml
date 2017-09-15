@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#66FFFFFF"
+          android:gravity="center"
+          android:id="@+id/listen_item_tv"
+          android:padding="@dimen/border_space_sec_max"
+          android:textColor="@color/color_txt_dark_gray"
+          android:textSize="@dimen/text_size_ms"/>

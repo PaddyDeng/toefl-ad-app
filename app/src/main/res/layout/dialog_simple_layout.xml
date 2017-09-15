@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_simple_title_shape">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space"
+            android:text="@string/str_grammar_knowledge_explain"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_medium"/>
+
+        <ImageView
+            android:id="@+id/close_dialog_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingRight="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space"
+            android:src="@drawable/icon_login_close"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grammar_dialog_defalut_height">
+
+        <TextView
+            android:id="@+id/simple_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/border_space_sec_max"/>
+    </ScrollView>
+</LinearLayout>

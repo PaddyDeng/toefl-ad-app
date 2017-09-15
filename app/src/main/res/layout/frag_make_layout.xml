@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/icon_make_practice_bg">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_blur"/>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/border_space_sec_max_m">
+
+                <io.dcloud.H58E83894.weiget.CircleImageView
+                    android:id="@+id/practice_head_iv"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_default"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/practice_head_iv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/practice_complete_duty_num_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_bl"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/str_all_complete_duty"
+                        android:textColor="@color/color_txt_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/practice_head_iv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/practice_learning_day_num_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_bl"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/str_all_learning_day_num"
+                        android:textColor="@color/color_txt_gray"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/border_space_sec_max"
+                android:layout_weight="1"
+                android:background="@drawable/practice_gray_shape_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:layout_weight="1.2"
+                    android:paddingLeft="@dimen/border_space_sec">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/icon_today_duty"
+                        android:drawablePadding="@dimen/border_space"
+                        android:gravity="center"
+                        android:padding="@dimen/border_space"
+                        android:text="@string/str_today_duty"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_medium"/>
+
+                    <TextView
+                        android:id="@+id/today_schedule_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/border_space_sec_max"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_ml"/>
+                </RelativeLayout>
+
+                <View style="@style/practice_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/grammer_container"
+                    style="@style/practice_duty_item_style">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/practice_duty_type_style"
+                            android:text="@string/str_grammer_learning"/>
+
+                        <TextView
+                            style="@style/practice_duty_type_des_style"
+                            android:text="Grammar learning"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/grammar_des"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:text="@string/str_start"/>
+
+                    <ImageView
+                        android:id="@+id/grammar_today_end_img"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:src="@drawable/icon_today_end"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <View style="@style/practice_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/listen_practice_container"
+                    style="@style/practice_duty_item_style">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/practice_duty_type_style"
+                            android:text="@string/str_istening_exercises"/>
+
+                        <TextView
+                            style="@style/practice_duty_type_des_style"
+                            android:text="General listening"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/fine_listen_start_tv"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:text="@string/str_start"/>
+
+                    <ImageView
+                        android:id="@+id/fine_listen_img"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:src="@drawable/icon_today_end"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <View style="@style/practice_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/listen_container"
+                    style="@style/practice_duty_item_style">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/practice_duty_type_style"
+                            android:text="@string/str_listen_to_articles"/>
+
+                        <TextView
+                            style="@style/practice_duty_type_des_style"
+                            android:text="Intensive listening"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/practice_listen_status_tv"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:text="@string/str_start"/>
+
+                    <ImageView
+                        android:id="@+id/practice_listen_end"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:src="@drawable/icon_today_end"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <View style="@style/practice_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/core_container"
+                    style="@style/practice_duty_item_style">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/practice_duty_type_style"
+                            android:text="@string/str_core_vocabulary"/>
+
+                        <TextView
+                            style="@style/practice_duty_type_des_style"
+                            android:text="Vocabulary"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/core_status_tv"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:text="@string/str_start"/>
+
+                    <ImageView
+                        android:id="@+id/practice_core_end"
+                        style="@style/practice_duty_item_right_tv_style"
+                        android:src="@drawable/icon_today_end"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec_max_m"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/practice_listen_container"
+                    style="@style/practice_type_style"
+                    android:drawableTop="@drawable/icon_practice_listen"
+                    android:text="@string/str_practice_listen"/>
+
+                <TextView
+                    android:id="@+id/practice_read_container"
+                    style="@style/practice_type_style"
+                    android:drawableTop="@drawable/icon_practice_read"
+                    android:text="@string/str_practice_read"/>
+
+                <TextView
+                    android:id="@+id/practice_speak_container"
+                    style="@style/practice_type_style"
+                    android:drawableTop="@drawable/icon_practice_voice"
+                    android:text="@string/str_practice_voice"/>
+
+                <TextView
+                    android:id="@+id/practice_write_container"
+                    style="@style/practice_type_style"
+                    android:drawableTop="@drawable/icon_practice_write"
+                    android:text="@string/str_practice_write"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+</RelativeLayout>

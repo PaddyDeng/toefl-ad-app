@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_speak_practice_title"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/speak_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/color_white">
+
+        <LinearLayout
+            android:id="@+id/bottom_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/speak_question_all_answer_conaainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_speak_select"
+                android:padding="@dimen/border_space_half">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="@dimen/base_padding"
+                        android:src="@drawable/icon_all_answer"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/str_speak_all_answer"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_micro"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/speak_question_answer_idea_conaainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_speak_no_select"
+                android:padding="@dimen/border_space_half">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="@dimen/base_padding"
+                        android:src="@drawable/icon_answer_idea"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/str_speak_answer_idea"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_micro"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <io.dcloud.H58E83894.weiget.ObservableScrollView
+            android:id="@+id/speak_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/bottom_type_container"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/all_answer_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/answer_idea_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space_sec_max"
+                    android:textColor="@color/color_txt_gray"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/empty_tv_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/str_nothing_tip"
+                    android:textColor="@color/color_sec_orange"
+                    android:textSize="@dimen/text_size_ml"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+        </io.dcloud.H58E83894.weiget.ObservableScrollView>
+
+        <RelativeLayout
+            android:id="@+id/container_answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/bottom_type_container">
+
+            <io.dcloud.H58E83894.weiget.RingView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_centerInParent="true"
+                app:ring_color="@color/color_dark_gray"
+                app:ring_width="3dip"/>
+
+            <TextView
+                android:id="@+id/record_answer"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/speak_circle_bg"
+                android:gravity="center"
+                android:text="@string/str_click_answer"
+                android:textColor="@color/color_white"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/new_card_height"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/hot_item_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"/>
+
+        <TextView
+            android:id="@+id/hot_item_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#99545252"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/border_space"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_ms"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:background="@drawable/icon_hot_des"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/border_space_half"
+            android:paddingRight="@dimen/border_space_half"
+            android:paddingTop="@dimen/border_space">
+
+            <TextView
+                android:id="@+id/hot_item_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_micro"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/str_hot_go_lesson"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_micro"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

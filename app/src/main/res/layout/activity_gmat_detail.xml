@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/go_advisory"
+        style="@style/complete_btn_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/border_space_sec_max"
+        android:paddingTop="@dimen/border_space_sec_max"
+        android:text="@string/str_click_advisory"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/go_advisory"
+        android:orientation="vertical">
+
+        <io.dcloud.H58E83894.weiget.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/header_height">
+
+                <io.dcloud.H58E83894.weiget.GeneralView
+                    android:id="@+id/gamt_detai_general_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </io.dcloud.H58E83894.weiget.ObservableScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height">
+
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_detail_head_bg"/>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/border_space_max_max"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gmat_detail_img_header"
+                    android:layout_width="90dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:scaleType="centerCrop"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/border_space">
+
+                    <TextView
+                        android:id="@+id/gmat_detail_content_title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_medium"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true">
+
+                        <TextView
+                            android:id="@+id/gmat_detail_num_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/border_space"
+                            android:textColor="@color/color_white"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gmat_detail_num_tv"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="评分"
+                                android:textColor="@color/color_white"/>
+
+                            <io.dcloud.H58E83894.weiget.LinearRatingBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/border_space"
+                                app:rating="5"
+                                app:ratingSpacing="@dimen/base_padding"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/gmat_detail_trial_course_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/border_space_sec_max"
+                            android:background="@drawable/gmat_detail_play_bg"
+                            android:drawableLeft="@drawable/icon_course_play"
+                            android:drawablePadding="@dimen/border_space_half"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/border_space_half"
+                            android:paddingLeft="@dimen/border_space_sec_max"
+                            android:paddingRight="@dimen/border_space_sec_max"
+                            android:paddingTop="@dimen/border_space_half"
+                            android:text="@string/str_trial_course"
+                            android:textColor="@color/color_sec_orange"
+                            android:textSize="@dimen/text_size_ms"/>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gmat_detail_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_behavior="com.jzsy.gmat.weiget.behavior.AlphaBehavior">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

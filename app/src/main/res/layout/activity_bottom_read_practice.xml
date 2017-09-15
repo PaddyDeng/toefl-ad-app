@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_bottom_read_parctice"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/icon_read_practice_bg">
+
+        <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/border_space_thr"
+                    android:layout_marginRight="@dimen/border_space_thr"
+                    android:orientation="vertical">
+
+                    <View style="@style/place_style"/>
+
+                    <RelativeLayout
+                        android:id="@+id/read_practice_tpo_container"
+                        style="@style/practice_container_style">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_title_tv_style"
+                                android:text="@string/str_read_practice_tpo_title"/>
+
+                            <TextView
+                                style="@style/practice_des_tv_style"
+                                android:text="@string/str_read_practice_tpo_des"/>
+
+                            <TextView
+                                style="@style/practice_go_style"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View style="@style/place_style"/>
+
+                    <RelativeLayout
+                        android:id="@+id/read_practice_og_container"
+                        style="@style/practice_container_style">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_title_tv_style"
+                                android:text="@string/str_read_practice_og_title"/>
+
+                            <TextView
+                                style="@style/practice_des_tv_style"
+                                android:text="@string/str_read_practice_og_des"/>
+
+                            <TextView
+                                style="@style/practice_go_style"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View style="@style/place_style"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+    </RelativeLayout>
+</LinearLayout>

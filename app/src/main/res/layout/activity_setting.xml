@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/mathWidthH"
+                android:background="@color/color_white">
+
+
+    <RelativeLayout
+        android:id="@+id/title_rl"
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/title_centertxt"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_set_title"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/exit_login"
+        style="@style/complete_btn_style"
+        android:layout_alignParentBottom="true"
+        android:text="@string/str_set_exit"/>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        style="@style/mathWidthH"
+        android:layout_above="@id/exit_login"
+        android:layout_below="@id/title_rl"
+        android:background="@color/color_white">
+
+        <LinearLayout
+            style="@style/mathWidthH"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/user_info_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/wrapHeight"
+                    android:background="@color/color_sec_white"
+                    android:paddingBottom="@dimen/border_space_sec"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:paddingTop="@dimen/border_space_sec"
+                    android:text="@string/str_user_info"/>
+
+                <RelativeLayout
+                    android:id="@+id/set_head_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_head"/>
+
+                    <io.dcloud.H58E83894.weiget.CircleImageView
+                        android:id="@+id/center_user_img"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_default"/>
+
+                </RelativeLayout>
+
+                <View style="@style/setting_line"/>
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/setting_user_name_container"-->
+                <!--style="@style/setting_item_rl_style">-->
+
+                <!--<TextView-->
+                <!--style="@style/setting_tv_style"-->
+                <!--android:text="@string/str_set_name"/>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/user_name_next"-->
+                <!--style="@style/setting_icon_next_style"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"/>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/setting_user_name_tv"-->
+                <!--style="@style/setting_content_style"-->
+                <!--android:layout_toLeftOf="@id/user_name_next"/>-->
+
+                <!--</RelativeLayout>-->
+
+                <!--<View style="@style/setting_line"/>-->
+
+                <RelativeLayout
+                    android:id="@+id/set_nick_name_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_nick_name"/>
+
+                    <ImageView
+                        android:id="@+id/nick_name_next"
+                        style="@style/setting_icon_next_style"/>
+
+                    <TextView
+                        android:id="@+id/setting_nick_name_tv"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/nick_name_next"/>
+                </RelativeLayout>
+
+                <View style="@style/setting_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/set_modify_phone_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_phone"/>
+
+                    <ImageView
+                        android:id="@+id/phone_next"
+                        style="@style/setting_icon_next_style"/>
+
+                    <TextView
+                        android:id="@+id/setting_phone_tv"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/phone_next"/>
+                </RelativeLayout>
+
+                <View style="@style/setting_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/set_modify_email_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_email"/>
+
+                    <ImageView
+                        android:id="@+id/email_next"
+                        style="@style/setting_icon_next_style"/>
+
+                    <TextView
+                        android:id="@+id/setting_email_tv"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/email_next"/>
+                </RelativeLayout>
+
+                <View style="@style/setting_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/set_modify_pwd_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_pwd"/>
+
+                    <ImageView
+                        android:id="@+id/pwd_next"
+                        style="@style/setting_icon_next_style"/>
+
+                    <TextView
+                        android:id="@+id/setting_password_tv"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/pwd_next"
+                        android:text="@string/str_set_no_see_pwd"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/wrapHeight"
+                android:background="@color/color_sec_white"
+                android:paddingBottom="@dimen/border_space_sec"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space_sec"
+                android:text="@string/str_set_about_we"/>
+
+            <RelativeLayout
+                android:id="@+id/set_gov_container"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_gov_net"/>
+
+                <ImageView
+                    android:id="@+id/setting_net_iv"
+                    style="@style/setting_icon_next_style"/>
+
+                <TextView
+                    style="@style/setting_content_style"
+                    android:layout_toLeftOf="@id/setting_net_iv"
+                    android:text="@string/str_set_gmat_net"/>
+            </RelativeLayout>
+
+            <View style="@style/setting_line"/>
+
+            <RelativeLayout
+                android:id="@+id/set_wexin_container"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_wx_num"/>
+
+                <TextView
+                    style="@style/setting_content_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="0dp"
+                    android:text="@string/str_set_wx_num_info"/>
+            </RelativeLayout>
+
+            <View style="@style/setting_line"/>
+
+            <RelativeLayout
+                android:id="@+id/set_tencent_qq_container"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_gmat_qq"/>
+
+                <TextView
+                    style="@style/setting_content_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="0dp"
+                    android:text="@string/str_set_gmat_qq_number"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_sec"
+                android:background="@color/color_sec_white"/>
+
+            <RelativeLayout
+                android:id="@+id/feed_back_container"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_feed_back"/>
+
+                <ImageView
+                    style="@style/setting_icon_next_style"/>
+
+                <TextView
+                    style="@style/setting_content_style"/>
+
+            </RelativeLayout>
+
+            <View style="@style/setting_line"/>
+
+            <RelativeLayout
+                android:id="@+id/version_check"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_version"/>
+
+                <ImageView
+                    android:id="@+id/version_right_icon"
+                    style="@style/setting_icon_next_style"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:id="@+id/current_version"
+                    style="@style/setting_content_style"
+                    android:layout_toLeftOf="@+id/version_right_icon"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_sec"
+                android:background="@color/color_sec_white"/>
+
+            <RelativeLayout
+                android:id="@+id/setting_font_size"
+                style="@style/setting_item_rl_style"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_font_size"/>
+
+                <ImageView
+                    android:id="@+id/font_size_right_icon"
+                    style="@style/setting_icon_next_style"
+                    android:visibility="invisible"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cache_data_container"
+                style="@style/setting_item_rl_style">
+
+                <TextView
+                    style="@style/setting_tv_style"
+                    android:text="@string/str_set_clear_cache"/>
+
+                <ImageView
+                    android:id="@+id/cache_right_iv"
+                    style="@style/setting_icon_next_style"/>
+
+                <TextView
+                    android:id="@+id/cache_data_size_tv"
+                    style="@style/setting_content_style"
+                    android:layout_toLeftOf="@id/cache_right_iv"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_sec"
+                android:background="@color/color_sec_white"/>
+
+        </LinearLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+
+</RelativeLayout>

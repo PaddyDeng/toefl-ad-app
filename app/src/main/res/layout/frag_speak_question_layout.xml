@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grammar_bg">
+
+    <TextView
+        android:id="@+id/page_number_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:background="@color/color_practice_whitle"
+        android:gravity="center"
+        android:padding="@dimen/border_space_half"
+        android:textColor="@color/color_txt_gray"
+        android:textSize="10dp"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/page_number_tv"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/frag_speak_question_content_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:layout_marginTop="@dimen/border_space_sec_max"
+                android:background="@drawable/speak_question_shape_bg"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/border_space_sec_max"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max">
+
+                <LinearLayout
+                    android:id="@+id/read_and_listen_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/speak_question_title_tv_style"
+                        android:text="Reading"/>
+
+                    <TextView
+                        android:id="@+id/speak_question_reading_tv"
+                        style="@style/speak_question_des_tv_style"/>
+
+                    <TextView
+                        style="@style/speak_question_title_tv_style"
+                        android:text="Listen"/>
+
+                    <io.dcloud.H58E83894.weiget.PlayAudioView
+                        android:id="@+id/speak_question_play_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/speak_question_title_tv_style"
+                    android:text="Question"/>
+
+                <TextView
+                    android:id="@+id/speak_question_tv"
+                    style="@style/speak_question_des_tv_style"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

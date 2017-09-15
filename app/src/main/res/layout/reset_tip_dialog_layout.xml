@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/simple_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_reset_tip_red_shape"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/border_space_sec_max"
+        android:text="警告"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <TextView
+        android:id="@+id/simple_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/border_space_sec_max_m"
+        android:text="重新做题之后，之前的记录会被清除"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/text_size_ml"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/border_space_sec_max"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/reset_dialog_simple_btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_weight="1"
+            android:background="@drawable/reset_tip_btn_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingTop="@dimen/border_space"
+            android:text="@string/str_determine"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_size_ms"/>
+
+        <TextView
+            android:id="@+id/reset_dialog_simple_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_weight="1"
+            android:background="@drawable/reset_tip_btn_bg_shape"
+            android:gravity="center"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingTop="@dimen/border_space"
+            android:text="@string/str_cancel"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_size_ms"/>
+    </LinearLayout>
+
+</LinearLayout>

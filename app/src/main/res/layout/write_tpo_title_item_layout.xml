@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tpo_title_item_tv"
+    style="@style/wrapHeight"
+    android:background="@color/color_sec_white"
+    android:paddingBottom="@dimen/border_space_sec_m"
+    android:textSize="@dimen/text_size_ml"
+    android:paddingLeft="@dimen/border_space_sec_max"
+    android:paddingTop="@dimen/border_space_sec_m"
+    android:textColor="@color/color_txt_dark_black"/>

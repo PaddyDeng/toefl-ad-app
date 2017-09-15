@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_grammar_test_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/grammar_title_tv"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"/>
+
+
+        <TextView
+            android:id="@+id/test_analyze_tv"
+            style="@style/new_title_tv_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:text="@string/str_grammar_analyze"
+            android:textColor="@color/color_orange"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <ImageView
+            android:id="@+id/question_feed_back"
+            style="@style/feed_back_style"
+            android:layout_toLeftOf="@+id/test_analyze_tv"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/border_space_sec_max"
+                android:background="@drawable/white_bg_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/grammar_question_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space_sec_max"/>
+
+                <View style="@style/line"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/answer_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space_sec_max"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/commit_answer_btn"
+                style="@style/com_new_demand_style"
+                android:layout_alignParentBottom="true"
+                android:text="@string/str_grammar_commit_answer"/>
+        </RelativeLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+</LinearLayout>

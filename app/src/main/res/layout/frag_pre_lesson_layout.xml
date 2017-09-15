@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_white"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style"
+        android:background="@color/color_black">
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_pre_lesson"
+            android:textColor="@color/color_white"/>
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.better.banner.BBanner
+                android:id="@+id/toefl_banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max">
+
+                <TextView
+                    android:id="@+id/free_trial_tv"
+                    style="@style/toefl_item_tv_style"
+                    android:drawableLeft="@drawable/icon_toefl_free_listen"
+                    android:text="@string/str_free_trial"/>
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/free_trial_tv"/>
+            </RelativeLayout>
+
+            <include layout="@layout/free_lesson_layout"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/card_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec"
+                android:layout_marginTop="@dimen/border_space_sec"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max">
+
+                <TextView
+                    android:id="@+id/expert_lecturer_tv"
+                    style="@style/toefl_item_tv_style"
+                    android:drawableLeft="@drawable/icon_gmat_teacher"
+                    android:text="@string/str_expert_lecturer"/>
+
+                <View
+                    android:id="@+id/expert_lecturer_line"
+                    style="@style/line"
+                    android:layout_below="@id/expert_lecturer_tv"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/teacher_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec"
+                android:layout_marginTop="@dimen/border_space_sec"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max">
+
+                <TextView
+                    android:id="@+id/hot_course_tv"
+                    style="@style/toefl_item_tv_style"
+                    android:drawableLeft="@drawable/icon_gmat_hot"
+                    android:text="@string/str_current_mon_hot_course"/>
+
+                <View
+                    android:id="@+id/hot_course_line"
+                    style="@style/line"
+                    android:layout_below="@id/hot_course_tv"/>
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hot_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec"
+                android:layout_marginTop="@dimen/border_space_sec"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/border_space_sec_max"
+                android:paddingRight="@dimen/border_space_sec_max">
+
+                <TextView
+                    android:id="@+id/gmat_live_lesson_tv"
+                    style="@style/toefl_item_tv_style"
+                    android:drawableLeft="@drawable/icon_gmat_read"
+                    android:text="@string/str_online_lesson"/>
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/gmat_live_lesson_tv"/>
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lesson_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec"
+                android:layout_marginTop="@dimen/border_space_sec"/>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+        </LinearLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+</LinearLayout>

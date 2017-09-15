@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/new_custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/write_question_title_txt"
+            style="@style/new_title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_write_answer_post"/>
+
+        <TextView
+            android:id="@+id/commit_write_answer_btn"
+            style="@style/title_tv_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:text="@string/str_write_answer_commit"
+            android:textColor="@color/color_sec_orange"
+            android:textSize="@dimen/text_size_ml_plus"/>
+    </RelativeLayout>
+
+    <View style="@style/line"/>
+
+    <EditText
+        android:id="@+id/write_answer_et"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/post_pic_container"
+        android:layout_below="@id/post_line"
+        android:background="@null"
+        android:gravity="left|top"
+        android:hint="@string/str_write_hint"
+        android:paddingBottom="@dimen/border_space"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space"
+        android:paddingTop="@dimen/border_space"
+        android:textColor="@color/color_txt_dark_black"
+        android:textSize="@dimen/text_size_ms"/>
+</LinearLayout>

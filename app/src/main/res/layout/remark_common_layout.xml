@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/border_space_sec"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/border_space_sec">
+
+        <io.dcloud.H58E83894.weiget.CircleImageView
+            android:id="@+id/remark_head_img"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/icon_default"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:layout_toRightOf="@id/remark_head_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/remark_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_size_ml"/>
+
+            <TextView
+                android:id="@+id/remark_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/base_padding"
+                android:textSize="@dimen/text_size_small"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/line"/>
+
+    <TextView
+        android:id="@+id/remark_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/base_padding"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <TextView
+        android:id="@+id/remark_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/base_padding"
+        android:textSize="@dimen/text_size_ml"/>
+
+    <io.dcloud.H58E83894.weiget.commentview.MultiImageView
+        android:id="@+id/remark_multiImagView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/border_space_normal">
+    </io.dcloud.H58E83894.weiget.commentview.MultiImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max">
+
+        <TextView
+            android:id="@+id/remark_comm_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:drawableLeft="@drawable/community_write"
+            android:drawablePadding="@dimen/base_padding"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingRight="@dimen/border_space"
+            android:paddingTop="@dimen/border_space"/>
+
+        <TextView
+            android:id="@+id/remark_comm_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/remark_comm_write"
+            android:clickable="true"
+            android:drawableLeft="@drawable/remark_praise_selector"
+            android:drawablePadding="@dimen/base_padding"
+            android:paddingBottom="@dimen/border_space"
+            android:paddingLeft="@dimen/border_space_sec_max"
+            android:paddingRight="@dimen/border_space"
+            android:paddingTop="@dimen/border_space"/>
+    </RelativeLayout>
+</merge>

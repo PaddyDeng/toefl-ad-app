@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white">
+
+    <TextView
+        android:id="@+id/write_item_serial_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/border_space_half"
+        android:background="@drawable/ring_shape"
+        android:padding="@dimen/border_space_sec_m"
+        android:text="181"
+        android:textColor="@color/color_sec_orange"/>
+
+    <ImageView
+        android:id="@+id/write_item_next"
+        style="@style/next_style"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/border_space_half"
+        android:layout_toLeftOf="@id/write_item_next"
+        android:layout_toRightOf="@id/write_item_serial_num"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/border_space_sec_m"
+        android:paddingTop="@dimen/border_space_sec_m">
+
+        <TextView
+            android:id="@+id/write_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_txt_dark_black"
+            android:textSize="@dimen/text_size_ml"/>
+
+        <TextView
+            android:id="@+id/write_item_view_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/border_space_half"
+            android:textColor="@color/color_txt_dark_gray"
+            android:textSize="@dimen/text_size_micro_plus"/>
+    </LinearLayout>
+
+    <View
+        style="@style/line"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/border_space_sec_max"/>
+</RelativeLayout>
