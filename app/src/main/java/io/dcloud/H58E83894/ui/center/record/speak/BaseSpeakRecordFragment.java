@@ -27,12 +27,8 @@ public abstract class BaseSpeakRecordFragment extends BaseRefreshFragment<SpeakS
     @Override
     protected void initRecyclerViewItemDecoration(RecyclerView mRecyclerView) {
         super.initRecyclerViewItemDecoration(mRecyclerView);
-<<<<<<< HEAD
         mRecyclerView.addItemDecoration(
                 new RecycleViewLinearDivider(getActivity(), LinearLayoutManager.VERTICAL, R.drawable.gray_divider));
-=======
-        mRecyclerView.addItemDecoration(new RecycleViewLinearDivider(getActivity(), LinearLayoutManager.VERTICAL, R.drawable.gray_divider));
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     }
 
     @Override

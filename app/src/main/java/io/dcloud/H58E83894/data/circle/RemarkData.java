@@ -3,11 +3,7 @@ package io.dcloud.H58E83894.data.circle;
 import java.util.List;
 
 /**
-<<<<<<< HEAD
  * 评论数据？
-=======
- * Created by fire on 2017/7/14  11:35.
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
  */
 
 public class RemarkData {

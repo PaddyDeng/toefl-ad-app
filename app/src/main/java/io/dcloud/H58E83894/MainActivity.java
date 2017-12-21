@@ -26,10 +26,7 @@ public class MainActivity extends BaseActivity {
         navContainer.setVisibility(visibility);
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public void showOrHideEt(int visibility, RemarkData remarkData, int position) {
         showOrHideEt(visibility, remarkData, position, true);
     }
@@ -53,11 +50,7 @@ public class MainActivity extends BaseActivity {
         mHelper = new MainNavHelper(this, R.id.main_contaier);
         setContentView(R.layout.activity_main);
 //        login(null);
-<<<<<<< HEAD
         mSimpleUpdateApk = new SimpleUpdateApk(MainActivity.this);//检查版本更新
-=======
-        mSimpleUpdateApk = new SimpleUpdateApk(MainActivity.this);
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         mSimpleUpdateApk.checkVersionUpdate();
     }
 

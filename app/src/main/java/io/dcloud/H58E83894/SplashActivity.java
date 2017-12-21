@@ -14,12 +14,9 @@ import io.dcloud.H58E83894.utils.SharedPref;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 
-<<<<<<< HEAD
 /**
  * 引导页
  */
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 public class SplashActivity extends BaseActivity {
     private static final int TIME_LOAD_MIN = 2000;
     private static final int TIME_LOAD_MAX = 10;
@@ -37,21 +34,13 @@ public class SplashActivity extends BaseActivity {
         addToCompositeDis(RxHelper.delay(time).subscribe(new Consumer<Integer>() {
             @Override
             public void accept(@NonNull Integer integer) throws Exception {
-<<<<<<< HEAD
                 if (shouldGoGuide())//判断是否是第一次登入APP
-=======
-                if (shouldGoGuide())
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                     goGuide();
                 else {
                     if (jumpMain)
                         goMain();
                     else
                         goAdv();
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                 }
             }
         }));
@@ -126,11 +115,7 @@ public class SplashActivity extends BaseActivity {
         });
     }
 
-<<<<<<< HEAD
     private boolean shouldGoGuide() {//判断是否是第一次登入APP
-=======
-    private boolean shouldGoGuide() {
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         return SharedPref.getGuideInfo(mContext) < C.CONT_GUIDE_IMG;
     }
 

@@ -52,11 +52,7 @@ import zlc.season.rxdownload2.RxDownload;
 
 public class BaseActivity extends FragmentActivity {
     protected Context mContext;
-<<<<<<< HEAD
     protected String TAG = BaseActivity.this.getClass().getSimpleName();//获取该activity名称
-=======
-    protected String TAG = BaseActivity.this.getClass().getSimpleName();
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     protected CompositeDisposable mCompositeDisposable = new CompositeDisposable();
     protected RxPermissions mRxPermissions;
 
@@ -64,10 +60,7 @@ public class BaseActivity extends FragmentActivity {
         mCompositeDisposable.add(disposable);
     }
 
-<<<<<<< HEAD
     //拨打电话
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     protected void callPhone(final String phoneNumber) {
         mRxPermissions.request(Manifest.permission.CALL_PHONE).subscribe(new Consumer<Boolean>() {
             @Override
@@ -81,10 +74,7 @@ public class BaseActivity extends FragmentActivity {
         });
     }
 
-<<<<<<< HEAD
     //上到下，下到上动画
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     protected void topDownInAnim(View topView, View bottomView) {
         Animation topIn = AnimationUtils.loadAnimation(mContext, R.anim.practice_up_in);
         topView.startAnimation(topIn);
@@ -93,10 +83,7 @@ public class BaseActivity extends FragmentActivity {
     }
 
     protected void setDownloadDefalutPath(final RxDownload mRxDownload) {
-<<<<<<< HEAD
         //检查写入权限
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         mRxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .doOnNext(new Consumer<Boolean>() {
                     @Override
@@ -352,10 +339,7 @@ public class BaseActivity extends FragmentActivity {
 
     }
 
-<<<<<<< HEAD
     //跳转activity
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     protected void forword(Class<?> c) {
         startActivity(new Intent(this, c));
     }

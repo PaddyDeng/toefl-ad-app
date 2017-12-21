@@ -68,10 +68,7 @@ public class PriaseListener implements View.OnClickListener {
                 setPriase((TextView) v);
             }
         });
-<<<<<<< HEAD
 
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     }
 
     private void setPriase(TextView v) {

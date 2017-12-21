@@ -4,10 +4,7 @@ import android.Manifest;
 import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
-<<<<<<< HEAD
 import android.util.Log;
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 
 import io.dcloud.H58E83894.R;
 import io.dcloud.H58E83894.callback.ICallBack;
@@ -39,10 +36,7 @@ public class SimpleUpdateApk implements DownloadApk.OnDownloadApkListener {
         this.initiative = initiative;
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public void checkVersionUpdate() {
         mCompositeDisposable.add(asyncVersionInfo());
     }
