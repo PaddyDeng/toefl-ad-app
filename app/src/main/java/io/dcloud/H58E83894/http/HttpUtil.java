@@ -1,5 +1,10 @@
 package io.dcloud.H58E83894.http;
 
+<<<<<<< HEAD
+import com.google.gson.JsonObject;
+
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -122,7 +127,11 @@ public class HttpUtil {
     }
 
     public static Observable<ResultBean> reply(String content, String id, String gossipUser, String uName, String image) {
+<<<<<<< HEAD
+        return getRestApi(HostType.GOSSIP_URL_HOST).reply(content, "1", id, gossipUser, uName, image, "0", "", "2").compose(new SchedulerTransformer<ResultBean>());
+=======
         return getRestApi(HostType.GOSSIP_URL_HOST).reply(content, "1", id, gossipUser, uName, image, "0", "", "2");//.compose(new SchedulerTransformer<ResultBean>());
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     }
 
     public static Observable<RemarkData> getRemarkDetail(String id) {
@@ -209,6 +218,14 @@ public class HttpUtil {
         return getRestApi(HostType.SMARTAPPLY_URL_HOST).addContent(236, name, extend).compose(new SchedulerTransformer<ResultBean>());
     }
 
+<<<<<<< HEAD
+    //注册及修改密码初始化
+    public static Observable<JsonObject> phone_request(){
+        return getRestApi(HostType.LOGIN_REGIST_HOST).phone_request().compose(new SchedulerTransformer<JsonObject>());
+    }
+
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public static Observable<AdvertisingData> getAdvertisingInfo() {
         return getRestApi(HostType.TOEFL_URL_HOST).getAdvertisingInfo().compose(new SchedulerTransformer<AdvertisingData>());
     }
@@ -361,6 +378,10 @@ public class HttpUtil {
         return getRestApi(HostType.TOEFL_URL_HOST).lessonList(page, C.PAGESIZE).compose(new SchedulerTransformer<ResultBean>());
     }
 
+<<<<<<< HEAD
+    //版本更新
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public static Observable<VersionInfo> getUpdate() {
         return getRestApi(HostType.TOEFL_URL_HOST).getUpdate().compose(new SchedulerTransformer<VersionInfo>());
     }

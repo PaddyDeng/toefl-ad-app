@@ -28,13 +28,13 @@ ext{
     appDev = 1;
     appProduct = 2;
 
-    //线上版本号 46 2.0 下一版本应更新 47
+    //线上版本号 48 2.0 下一版本应更新 49
     setup = [compileSdk: 25,
              buildTools: "25.0.3",
              minSdk    : 14,
              targetSdk : 25,
-             vcode     : 47,
-             vname     : "2.1"]
+             vcode     : 48,
+             vname     : "2.0"]
     versions = [libSupport    : "25.3.1",
                 libButterKnife: "8.5.1",
                 libRxJava     : "2.0.7",

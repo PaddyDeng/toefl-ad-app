@@ -26,13 +26,16 @@
         <TextView
             android:id="@+id/act_set_nick_confirm_btn"
             style="@style/title_tv_style"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_marginRight="19dp"
             android:clickable="false"
             android:text="@string/str_confirm_re"
             android:textColor="@color/color_gray"
-            android:textSize="@dimen/text_size_ml_plus"/>
+            android:textSize="@dimen/text_size_ml_plus"
+            android:layout_alignBaseline="@+id/act_set_nick_cancel_btn"
+            android:layout_alignBottom="@+id/act_set_nick_cancel_btn"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp"/>
     </RelativeLayout>
 
     <TextView

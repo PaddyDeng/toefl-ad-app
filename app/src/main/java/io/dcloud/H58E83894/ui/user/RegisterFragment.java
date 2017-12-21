@@ -9,6 +9,11 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+<<<<<<< HEAD
+import com.google.gson.JsonObject;
+
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.dcloud.H58E83894.R;
@@ -17,6 +22,11 @@ import io.dcloud.H58E83894.http.HttpUtil;
 import io.dcloud.H58E83894.http.ResultObserver;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.Utils;
+<<<<<<< HEAD
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 
 /**
  * Created by fire on 2017/7/13.
@@ -50,6 +60,19 @@ public class RegisterFragment extends BaseUserFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mAuthCode = new AuthCode(60 * 1000, 1000, getActivity(), authTv);
+<<<<<<< HEAD
+        //初始化短信
+        addToCompositeDis(HttpUtil.phone_request().subscribe(new Consumer<JsonObject>() {
+            @Override
+            public void accept(@NonNull JsonObject jsonObject) throws Exception {
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(@NonNull Throwable throwable) throws Exception {
+            }
+        }));
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     }
 
     @Override

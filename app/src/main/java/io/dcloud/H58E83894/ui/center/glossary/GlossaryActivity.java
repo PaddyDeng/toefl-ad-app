@@ -30,7 +30,11 @@ public class GlossaryActivity extends BaseListActivity<GlossaryData> {
                         List<GlossaryData> data = bean.getData();
                         if (data == null || data.isEmpty()) {
                             if (refresh) {
+<<<<<<< HEAD
+                                updateRecycleView(null,  getString(R.string.str_glossary_tip), InitDataType.TYPE_REFRESH_FAIL);
+=======
                                 updateRecycleView(null, getString(R.string.str_glossary_tip), InitDataType.TYPE_REFRESH_FAIL);
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                             } else {
                                 updateRecycleView(null, "", InitDataType.TYPE_LOAD_MORE_SUCCESS);
                             }

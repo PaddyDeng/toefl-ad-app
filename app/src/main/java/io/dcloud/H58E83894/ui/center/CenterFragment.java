@@ -41,7 +41,11 @@ import io.reactivex.functions.Consumer;
  */
 
 public class CenterFragment extends BaseFragment {
+<<<<<<< HEAD
+    private int i;
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private Observable<Boolean> loginInfo;
     @BindView(R.id.center_go_login)
     TextView nameTv;
@@ -115,6 +119,10 @@ public class CenterFragment extends BaseFragment {
             R.id.wrong_record_container, R.id.center_buy_record_container, R.id.center_msg_container,
             R.id.center_glossary_container, R.id.center_listen_record_container, R.id.center_make_record_container,
             R.id.set_collection_container})
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.center_go_login:
@@ -127,6 +135,10 @@ public class CenterFragment extends BaseFragment {
                 loginTip(MyLessonActivity.class);
                 break;
             case R.id.center_person_info_container:
+<<<<<<< HEAD
+                break;
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
             case R.id.more_setting_container:
                 forword(SettingActivity.class);
                 break;

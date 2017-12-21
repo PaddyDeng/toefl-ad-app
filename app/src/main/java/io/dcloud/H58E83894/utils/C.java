@@ -2,9 +2,12 @@ package io.dcloud.H58E83894.utils;
 
 public interface C {
 
+<<<<<<< HEAD
+=======
     int APP_TYPE_DEV = 1;
     int APP_TYPE_PRO = APP_TYPE_DEV + 1;
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     String PAGESIZE = "15";
     String MULT_CHOOSE = "mult_choose";
 

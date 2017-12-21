@@ -3,7 +3,13 @@ package io.dcloud.H58E83894.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
+<<<<<<< HEAD
+/**
+ * 用户偏好本地化
+ */
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 public class SharedPref {
     private static String PREFS_NAME = "SHAREDPREF_TOEFL";
     private static final String PREFS_STR_INVALID = "";
@@ -20,13 +26,21 @@ public class SharedPref {
     private final static String PREFS_KEY_THR_ICON_URL = "prefs_key_thr_icon_url";
     private final static String PREFS_KEY_THR_ID = "prefs_key_thr_id";
     private final static String PREFS_KEY_THR_NAME = "prefs_key_thr_name";
+<<<<<<< HEAD
+//        private final static String PREFS_KEY_DB_COPY = "prefs_key_db_copy";
+=======
     //    private final static String PREFS_KEY_DB_COPY = "prefs_key_db_copy";
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private final static String PREFS_LAST_RECORD = "prefs_last_record";
     private final static String PREFS_LAST_RECORD_TYPE = "prefs_last_record_type";
     private final static String PREFS_FONT_SIZE_RECORD = "prefs_font_size_record";
     private final static String PREFS_OFFLINE_TIP_NEED = "prefs_offline_tip_need";
     private final static String PREFS_RECORD_GUIDE_SHOW_QUESTION = "prefs_record_guide_show_question";
 
+<<<<<<< HEAD
+    //设置指南
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public static void setGuideInfo(Context c, int guide) {
         setInt(PREFS_RECORD_GUIDE_SHOW_QUESTION, guide, c);
     }

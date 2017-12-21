@@ -1,7 +1,11 @@
 package io.dcloud.H58E83894.data.user;
 
 /**
+<<<<<<< HEAD
+ * 用户信息
+=======
  * Created by fire on 2017/7/14  09:56.
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
  */
 public class UserData {
 

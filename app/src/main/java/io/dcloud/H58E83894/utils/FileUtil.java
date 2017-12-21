@@ -58,6 +58,10 @@ public class FileUtil {
         return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
     }
 
+<<<<<<< HEAD
+    //创建文件夹
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public static File createFile(Context context, String fileName) {
 
         String path = getFilePathName(externalFilesDir(context), SEC_PATH);

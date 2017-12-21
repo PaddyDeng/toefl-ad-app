@@ -119,6 +119,10 @@ public class DataCleanManager {
         }
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private static boolean deleteDir(File dir) {
         if (dir != null && dir.isDirectory()) {
             String[] children = dir.list();

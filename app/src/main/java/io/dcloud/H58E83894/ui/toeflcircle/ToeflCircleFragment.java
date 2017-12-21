@@ -9,6 +9,10 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+<<<<<<< HEAD
+import android.util.Log;
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +45,45 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
+<<<<<<< HEAD
+//托福圈
+public class ToeflCircleFragment extends BaseFragment {
+    //顶部tablayout
+    @BindView(R.id.new_reamrk_tablayout)
+    TabLayout mTableLayout;
+    //viewpager
+    @BindView(R.id.new_remark_viewpager)
+    ViewPager mViewPager;
+    //title
+    @BindView(R.id.remark_new_title_bar)
+    RelativeLayout newRemarkTitleBar;
+    //输入框
+    @BindView(R.id.editTextBodyLl)
+    LinearLayout etContainer;
+    //输入框et
+    @BindView(R.id.circleEt)
+    EditText remarkEt;
+    //输入框发送
+    @BindView(R.id.sendIv)
+    ImageView sendPost;
+
+    //总容器
+    @BindView(R.id.remark_new_container)
+    RelativeLayout mContainer;
+
+    private int screenHeight;//屏幕高度
+    private int editTextBodyHeight;//输入框高度
+    private int currentKeyboardH;//当前键盘高度
+    private int selectCircleItemH;//选中的子项的高度？
+    private int selectCommentItemOffset;//选中的子项的偏移？
+
+    private List<Fragment> list;
+    public int height;//顶部title的高度
+    private RemarkData mRemarkData;//评论数据？
+    private int replyFlooIndex;//回复数？
+    private int currentPage;//当前页？
+    private boolean isReplyUser;//是不是回复人？
+=======
 public class ToeflCircleFragment extends BaseFragment {
     @BindView(R.id.new_reamrk_tablayout)
     TabLayout mTableLayout;
@@ -70,6 +113,7 @@ public class ToeflCircleFragment extends BaseFragment {
     private int replyFlooIndex;
     private int currentPage;
     private boolean isReplyUser;
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 
 
     @Override
@@ -79,7 +123,11 @@ public class ToeflCircleFragment extends BaseFragment {
         return view;
     }
 
+<<<<<<< HEAD
+    //获取输入框隐藏状态
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public int getEtStatus() {
         if (etContainer == null) {
             return View.GONE;
@@ -87,6 +135,10 @@ public class ToeflCircleFragment extends BaseFragment {
         return etContainer.getVisibility();
     }
 
+<<<<<<< HEAD
+    //发表帖子点击事件
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     @OnClick({R.id.toefl_circle_write})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -102,13 +154,34 @@ public class ToeflCircleFragment extends BaseFragment {
         }
     }
 
+<<<<<<< HEAD
+
+    //当底部view空？
     @Override
     protected void initWhenRootViewNull(Bundle savedInstanceState) {
         super.initWhenRootViewNull(savedInstanceState);
+        //获取title视图宽高
+=======
+    @Override
+    protected void initWhenRootViewNull(Bundle savedInstanceState) {
+        super.initWhenRootViewNull(savedInstanceState);
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         newRemarkTitleBar.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onGlobalLayout() {
+<<<<<<< HEAD
+                Utils.removeOnGlobleListener(newRemarkTitleBar,this);//取消监听？
+                height = newRemarkTitleBar.getHeight();//获取title的高度
+            }
+        });
+        mViewPager.setAdapter(getPagerAdapter());
+        setViewPagerListener();//设置viewpager监听
+        mTableLayout.setupWithViewPager(mViewPager);//tablayout+viewpager
+        mTableLayout.setTabMode(TabLayout.MODE_FIXED);
+        mTableLayout.setTabGravity(TabLayout.GRAVITY_FILL);//不设置gravity没有效果
+        setViewTreeObserver();//监测键盘等view的隐藏显示
+=======
                 Utils.removeOnGlobleListener(newRemarkTitleBar,this);
                 height = newRemarkTitleBar.getHeight();
             }
@@ -119,6 +192,7 @@ public class ToeflCircleFragment extends BaseFragment {
         mTableLayout.setTabMode(TabLayout.MODE_FIXED);
         mTableLayout.setTabGravity(TabLayout.GRAVITY_FILL);//不设置gravity没有效果
         setViewTreeObserver();
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         sendPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +208,10 @@ public class ToeflCircleFragment extends BaseFragment {
         });
     }
 
+<<<<<<< HEAD
+    //评论
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private void replyRemark() {
         String content = remarkEt.getText().toString();
         if (TextUtils.isEmpty(content)) {
@@ -144,7 +222,11 @@ public class ToeflCircleFragment extends BaseFragment {
             return;
         }
         UserData data = GlobalUser.getInstance().getUserData();
+<<<<<<< HEAD
+        String uName = data.getNickname();//用户名
+=======
         String uName = data.getNickname();
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 
 //        HttpUtil.reply(content, mRemarkData.getId(), mRemarkData.getUid(), uName, data.getImage())
 //                .flatMap(new Function<ResultBean, ObservableSource<Integer>>() {
@@ -185,7 +267,11 @@ public class ToeflCircleFragment extends BaseFragment {
 //                }));
 
         addToCompositeDis(HttpUtil.reply(content, mRemarkData.getId(), mRemarkData.getUid(), uName, data.getImage())
+<<<<<<< HEAD
+                .doOnSubscribe(new Consumer<Disposable>() {//开始网络请求？
+=======
                 .doOnSubscribe(new Consumer<Disposable>() {
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                     @Override
                     public void accept(@NonNull Disposable disposable) throws Exception {
                         showLoadDialog();
@@ -194,10 +280,18 @@ public class ToeflCircleFragment extends BaseFragment {
                 .doOnError(new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
+<<<<<<< HEAD
+                        throwable.printStackTrace();
+                        dismissLoadDialog();
+                    }
+                })
+                .subscribe(new Consumer<ResultBean>() {//接收数据
+=======
                         dismissLoadDialog();
                     }
                 })
                 .subscribe(new Consumer<ResultBean>() {
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                     @Override
                     public void accept(@NonNull ResultBean bean) throws Exception {
                         RemarkFragment fragment = (RemarkFragment) list.get(0);
@@ -208,17 +302,28 @@ public class ToeflCircleFragment extends BaseFragment {
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                     }
                 }));
     }
 
+<<<<<<< HEAD
+    //回复
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private void postFloor() {
         String content = getEditText(remarkEt);
         if (TextUtils.isEmpty(content)) {
             return;
         }
+<<<<<<< HEAD
+        List<RemarkData.ReplyBean> reply = mRemarkData.getReply();//获取评论数据集合
+=======
         List<RemarkData.ReplyBean> reply = mRemarkData.getReply();
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         if (reply == null || reply.isEmpty()) return;
         UserData data = GlobalUser.getInstance().getUserData();
         String name = data.getNickname();
@@ -255,6 +360,10 @@ public class ToeflCircleFragment extends BaseFragment {
                 }));
     }
 
+<<<<<<< HEAD
+    //viewpager监听
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     private void setViewPagerListener() {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -274,25 +383,46 @@ public class ToeflCircleFragment extends BaseFragment {
         });
     }
 
+<<<<<<< HEAD
+    //显示或隐藏输入框
+=======
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public void showOrHideEt(int visibility, RemarkData remarkData) {
         showOrHideEt(visibility, remarkData, 0, isReplyUser);
     }
 
+<<<<<<< HEAD
+    //设置视图观察器
+    private void setViewTreeObserver() {
+        final ViewTreeObserver swipeRefreshLayoutVTO = mContainer.getViewTreeObserver();//获取总容器视图观察器
+        //获取总容器宽高
+=======
     private void setViewTreeObserver() {
         final ViewTreeObserver swipeRefreshLayoutVTO = mContainer.getViewTreeObserver();
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
         swipeRefreshLayoutVTO.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
 
                 Rect r = new Rect();
+<<<<<<< HEAD
+                mContainer.getWindowVisibleDisplayFrame(r);//将当前窗口可视区域大小赋值给r
+                int statusBarH = MeasureUtil.getStatusBarHeight(getActivity());//状态栏高度
+                int screenH = mContainer.getRootView().getHeight();//获取根view的高度
+=======
                 mContainer.getWindowVisibleDisplayFrame(r);
                 int statusBarH = MeasureUtil.getStatusBarHeight(getActivity());//状态栏高度
                 int screenH = mContainer.getRootView().getHeight();
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
                 if (r.top != statusBarH) {
                     //在这个demo中r.top代表的是状态栏高度，在沉浸式状态栏时r.top＝0，通过getStatusBarHeight获取状态栏高度
                     r.top = statusBarH;
                 }
+<<<<<<< HEAD
+                int keyboardH = screenH - (r.bottom - r.top);//键盘高度
+=======
                 int keyboardH = screenH - (r.bottom - r.top);
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 //                Log.d(TAG, "screenH＝ " + screenH + " &keyboardH = " + keyboardH + " &r.bottom=" + r.bottom + " &top=" + r.top + " &statusBarH=" + statusBarH);
 
                 if (keyboardH == currentKeyboardH) {//有变化时才处理，否则会陷入死循环
@@ -380,7 +510,11 @@ public class ToeflCircleFragment extends BaseFragment {
         }
     }
 
+<<<<<<< HEAD
+    //设置顶部tab值及fragment
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
     public PagerAdapter getPagerAdapter() {
         list = new ArrayList<>();
         list.add(new RemarkFragment());

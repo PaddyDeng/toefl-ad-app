@@ -11,7 +11,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import io.dcloud.H58E83894.R;
+<<<<<<< HEAD
+//dialog
+=======
 
+>>>>>>> 9d5a20271315c2e10e02f62b7d2b686b86e92ffb
 public class WaitDialog extends Dialog{
     private static Map<String, WaitDialog> listWaitDialog = new HashMap();
 

@@ -39,185 +39,244 @@
                 android:resource="@xml/paths"/>
         </provider>
 
+        <!--欢迎-->
         <activity
             android:name=".ui.guide.GuideActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AdvNoTitleFullTheme"/>
+        <!--广告-->
         <activity
             android:name=".AdvertisingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AdvNoTitleFullTheme"/>
+        <!--主-->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+        <!--用户代理-->
         <activity
             android:name=".ui.user.UserProxyActivity"
             android:screenOrientation="portrait"/>
+        <!--修改昵称-->
         <activity
             android:name=".ui.user.modify.ModifyNickActivity"
             android:screenOrientation="portrait"/>
+        <!--图片页-->
         <activity
             android:name=".ui.toeflcircle.ImagePagerActivity"
             android:screenOrientation="portrait"/>
+        <!--文章详情-->
         <activity
             android:name=".ui.toeflcircle.RemarkDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--社区详情-->
         <activity
             android:name=".ui.toeflcircle.CommunityDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--发表帖子-->
         <activity
             android:name=".ui.toeflcircle.PostRemarkActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
+        <!--设置-->
         <activity
             android:name=".ui.center.setting.SettingActivity"
             android:screenOrientation="portrait"/>
+        <!--裁剪图片-->
         <activity
             android:name=".ui.center.setting.ClipImageActivity"
             android:screenOrientation="portrait"/>
+        <!--反馈-->
         <activity
             android:name=".ui.center.setting.FeedBackActivity"
             android:screenOrientation="portrait"/>
+        <!--字体设置-->
         <activity
             android:name=".ui.center.setting.FontSizeSettingActivity"
             android:screenOrientation="portrait"/>
+        <!--语法学习-->
         <activity
             android:name=".ui.make.grammar.GrammarGuideActivity"
             android:screenOrientation="portrait"/>
+        <!--语法测试-->
         <activity
             android:name=".ui.make.grammar.GrammarTestActivity"
             android:screenOrientation="portrait"/>
+        <!--核心词汇-->
         <activity
             android:name=".ui.make.core.CoreTestActivity"
             android:screenOrientation="portrait"/>
+        <!--核心词汇详情-->
         <activity
             android:name=".ui.make.core.CoreDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--精听文章-->
         <activity
             android:name=".ui.make.listen.ListenActivity"
             android:screenOrientation="portrait"/>
+        <!--精听文章文字-->
         <activity
             android:name=".ui.make.listen.ListenTestActivity"
             android:screenOrientation="portrait"/>
+        <!--应对？-->
         <activity
             android:name=".ui.common.DealActivity"
             android:screenOrientation="portrait"/>
+        <!--联系方式-->
         <activity
             android:name=".ui.prelesson.PreProGramLessonActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AlphaDialogAct"/>
+        <!--gmat详情-->
         <activity
             android:name=".ui.prelesson.ToeflDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--讲师详情-->
         <activity
             android:name=".ui.prelesson.TeacherDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--试听课-->
         <activity
             android:name=".ui.prelesson.TrialCourseTypeActivity"
             android:screenOrientation="portrait"/>
+        <!--泛听练习-->
         <activity
             android:name=".ui.make.practice.ListenPracticeActivity"
             android:screenOrientation="portrait"/>
+        <!--听力练习-->
         <activity
             android:name=".ui.make.bottom.lp.BottomListenPracticeActivity"
             android:screenOrientation="portrait"/>
+        <!--阅读练习-->
         <activity
             android:name=".ui.make.bottom.rp.BottomReadPracticeActivity"
             android:screenOrientation="portrait"/>
+        <!--口语练习-->
         <activity
             android:name=".ui.make.bottom.sp.BottomSpeakPracticeActivity"
             android:screenOrientation="portrait"/>
+        <!--写作练习-->
         <activity
             android:name=".ui.make.bottom.wp.BottomWritePracticeActivity"
             android:screenOrientation="portrait"/>
+        <!--独立话题练习-->
         <activity
             android:name=".ui.make.bottom.wp.WriteListActivity"
             android:screenOrientation="portrait"/>
+        <!--写作问题？-->
         <activity
             android:name=".ui.make.bottom.wp.WriteQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--发表文字-->
         <activity
             android:name=".ui.make.bottom.wp.WriteAnswerActivity"
             android:screenOrientation="portrait"/>
+        <!--拼写结果？-->
         <activity
             android:name=".ui.make.bottom.wp.WriteResultActivity"
             android:screenOrientation="portrait"/>
+        <!--TPO写作练习-->
         <activity
             android:name=".ui.make.bottom.wp.WriteTpoActivity"
             android:screenOrientation="portrait"/>
+        <!--写作记录-->
         <activity
             android:name=".ui.center.record.write.WriteRecordActivity"
             android:screenOrientation="portrait"/>
+        <!--TPO写作问题？-->
         <activity
             android:name=".ui.make.bottom.wp.WriteTpoQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--黄金口语练习-->
         <activity
             android:name=".ui.make.bottom.sp.SpeakGlodListActivity"
             android:screenOrientation="portrait"/>
+        <!--口语问题？-->
         <activity
             android:name=".ui.make.bottom.sp.SpeakQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--TPO练习-->
         <activity
             android:name=".ui.make.bottom.sp.SpeakTpoListActivity"
             android:screenOrientation="portrait"/>
+        <!--TPO阅读练习-->
         <activity
             android:name=".ui.make.bottom.rp.ReadTpoListActivity"
             android:screenOrientation="portrait"/>
+        <!--OG真题练习-->
         <activity
             android:name=".ui.make.bottom.rp.ReadOgListActivity"
             android:screenOrientation="portrait"/>
+        <!--阅读问题？-->
         <activity
             android:name=".ui.make.bottom.rp.ReadQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--答案解析-->
         <activity
             android:name=".ui.make.bottom.rp.ReadAnswerAnalyzeActivity"
             android:screenOrientation="portrait"/>
+        <!--查看结果-->
         <activity
             android:name=".ui.make.bottom.rp.ReadResultActivity"
             android:screenOrientation="portrait"/>
+        <!--查看详情-->
         <activity
             android:name=".ui.make.bottom.rp.ReadResultDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--阅读记录-->
         <activity
             android:name=".ui.center.record.read.ReadRecordActivity"
             android:screenOrientation="portrait"/>
+        <!--听写列表？-->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecListActivity"
             android:screenOrientation="portrait"/>
+        <!--精听或做题练习选择-->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecStartMakeActivity"
             android:screenOrientation="portrait"/>
+        <!--听后答-->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--听后写-->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecTestActivity"
             android:screenOrientation="portrait"/>
+        <!--答案解析-->
         <activity
             android:name=".ui.make.bottom.lp.ListenMakeResultActivity"
             android:screenOrientation="portrait"/>
+        <!--细听答题-->
         <activity
             android:name=".ui.make.bottom.lp.FineListenQuestionActivity"
             android:screenOrientation="portrait"/>
+        <!--听写-->
         <activity
             android:name=".ui.make.bottom.lp.ListenFineWriteActivity"
             android:screenOrientation="portrait"/>
+        <!--消息中心-->
         <activity
             android:name=".ui.center.message.MsgActivity"
             android:screenOrientation="portrait"/>
+        <!--生词本-->
         <activity
             android:name=".ui.center.glossary.GlossaryActivity"
             android:screenOrientation="portrait"/>
+        <!--生词-->
         <activity
             android:name=".ui.center.glossary.GlossaryDetailActivity"
             android:screenOrientation="portrait"/>
+        <!--听力记录-->
         <activity
             android:name=".ui.center.record.listen.ListenRecordActivity"
             android:screenOrientation="portrait"/>
+        <!--口语记录-->
         <activity
             android:name=".ui.center.record.speak.SpeakRecordActivity"
             android:screenOrientation="portrait"/>
+        <!--我的课程-->
         <activity
             android:name=".ui.center.lesson.MyLessonActivity"
             android:screenOrientation="portrait"/>

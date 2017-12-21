@@ -1,5 +1,7 @@
 package io.dcloud.H58E83894.http;
 
+import com.google.gson.JsonObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -334,6 +336,13 @@ public interface RestApi {
 
     @GET("cn/heard/careful-listening?data-type=json")
     Observable<PracticeQuestionData> fineListen(@Query("id") String id);
+
+
+    /**
+     * 注册及修改密码初始化
+     */
+    @GET("cn/app-api/phone-request")
+    Observable<JsonObject> phone_request();
 
     @GET("cn/person/news?data-type=json")
     Observable<ResultBean<List<MsgData>>> getMsg(@Query("type") String type, @Query("page") String page, @Query("pageSize") String pageSize);
