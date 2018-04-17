@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -45,7 +46,6 @@ public class ImagePagerActivity extends BaseActivity {
     public static void startImagePagerActivity(Context context, List<String> imgUrls, int position, ImageSize imageSize) {
         Intent intent = new Intent(context, ImagePagerActivity.class);
         intent.putStringArrayListExtra(INTENT_IMGURLS, new ArrayList<String>(imgUrls));
-        intent.putExtra(INTENT_POSITION, position);
         intent.putExtra(INTENT_IMAGESIZE, imageSize);
         context.startActivity(intent);
 
@@ -64,6 +64,59 @@ public class ImagePagerActivity extends BaseActivity {
         mAdapter.setDatas(imgUrls);
         mAdapter.setImageSize(imageSize);
         viewPager.setAdapter(mAdapter);
+        viewPager.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
+            }
+//            @Override
+//            public boolean onLongClick(View v) {
+//                // 长按事件监听（注意：需要实现LongClickCallBack接口并传入对象）
+//                final HitTestResult htr = getHitTestResult();//获取所点击的内容
+//                if (htr.getType() == HitTestResult.IMAGE_TYPE
+//                        || htr.getType() == HitTestResult.IMAGE_ANCHOR_TYPE
+//                        || htr.getType() == HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
+//                    //判断被点击的类型为图片
+//                    if (mCallBack!=null) {
+//                        mCallBack.onLongClickCallBack(htr.getExtra());
+//                    }
+//                }
+//                return false;
+//            }
+
+        });
+
+
+//           public boolean onLongClick(View v) {
+//    WebView.HitTestResult result = getHitTestResult();
+//    if (null == result)
+//     return false;
+//    int type = result.getType();
+//    switch (type) {
+//     case WebView.HitTestResult.EDIT_TEXT_TYPE: // 选中的文字类型
+//      break;
+//     case WebView.HitTestResult.PHONE_TYPE: // 处理拨号
+//      break;
+//     case WebView.HitTestResult.EMAIL_TYPE: // 处理Email
+//      break;
+//     case WebView.HitTestResult.GEO_TYPE: // 　地图类型
+//      break;
+//     case WebView.HitTestResult.SRC_ANCHOR_TYPE: // 超链接
+//      break;
+//     case WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE: // 带有链接的图片类型
+//     case WebView.HitTestResult.IMAGE_TYPE: // 处理长按图片的菜单项
+//      String url = result.getExtra();
+//      if (mOnSelectItemListener != null && url != null && URLUtil.isValidUrl(url))       mOnSelectItemListener.onSelected(touchX, touchY, result.getType(), url);
+//      }
+//      return true;
+//     case WebView.HitTestResult.UNKNOWN_TYPE: //未知
+//      break;
+//    }
+//    return false;
+//   }
+
+
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
@@ -210,7 +263,6 @@ public class ImagePagerActivity extends BaseActivity {
                                 }*/
                             }
                         });
-
                 container.addView(view, 0);
             }
             return view;

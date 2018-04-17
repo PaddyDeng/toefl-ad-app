@@ -25,7 +25,7 @@
             android:paddingLeft="@dimen/border_space_sec_max"
             android:paddingRight="@dimen/border_space_sec_max"
             android:paddingTop="@dimen/border_space_half"
-            android:src="@drawable/icon_orange_close"/>
+            android:src="@drawable/icon_close"/>
     </RelativeLayout>
 
     <View style="@style/line"/>

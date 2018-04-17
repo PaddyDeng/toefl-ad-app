@@ -1,6 +1,8 @@
 package io.dcloud.H58E83894.ui.make.listen;
 
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,6 +35,7 @@ import io.dcloud.H58E83894.http.RetrofitProvider;
 import io.dcloud.H58E83894.http.SchedulerTransformer;
 import io.dcloud.H58E83894.http.callback.RequestImp;
 import io.dcloud.H58E83894.ui.common.TaskEndDialog;
+import io.dcloud.H58E83894.ui.make.grammar.GrammarTestActivity;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.DownloadUtil;
 import io.dcloud.H58E83894.utils.RxBus;
@@ -55,10 +58,18 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 public class ListenTestActivity extends BaseActivity {
 
+    public static void startListenTestActivity(Context mContext) {
+        Intent intent = new Intent(mContext, ListenTestActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, true);
+        mContext.startActivity(intent);
+    }
+
     @BindView(R.id.listen_en_tv)
     TextView enTxt;
     @BindView(R.id.listen_ch_tv)
     TextView chTxt;
+    @BindView(R.id.listen_next_btn)
+    TextView bthTxt;
     @BindView(R.id.ch_container)
     RelativeLayout chContainer;
     @BindView(R.id.ch_blur)
@@ -82,6 +93,15 @@ public class ListenTestActivity extends BaseActivity {
     private String recoreUrl;
     private MusicPlayer mPlayer;
     private String id;
+    private boolean seeResult;
+
+    @Override
+    protected void getArgs() {
+        super.getArgs();
+        Intent intent = getIntent();
+        if (intent == null) return;
+        seeResult = intent.getBooleanExtra(Intent.EXTRA_TEXT, false);
+    }
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -111,6 +131,10 @@ public class ListenTestActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         mRxDownload = RxDownload.getInstance(mContext);
         setContentView(R.layout.activity_listen_test);
+        if (seeResult) {
+            bthTxt.setBackgroundResource(R.drawable.com_btn_selector);
+            bthTxt.setClickable(true);
+        }
         mPlayer = new MusicPlayer();
         mHandler.sendEmptyMessageDelayed(1, 100);
     }

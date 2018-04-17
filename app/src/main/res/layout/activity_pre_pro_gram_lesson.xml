@@ -106,6 +106,7 @@
             android:layout_marginTop="@dimen/border_space"
             android:background="@drawable/prepro_et_bg"
             android:hint="@string/str_please_write"
+            android:phoneNumber="true"
             android:paddingBottom="@dimen/border_space_half"
             android:paddingLeft="@dimen/border_space"
             android:paddingTop="@dimen/border_space_half"

@@ -1,5 +1,6 @@
 package io.dcloud.H58E83894.base;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 
 import com.squareup.leakcanary.RefWatcher;
@@ -27,25 +30,33 @@ import io.dcloud.H58E83894.data.user.GlobalUser;
 import io.dcloud.H58E83894.data.user.UserData;
 import io.dcloud.H58E83894.data.user.UserInfo;
 import io.dcloud.H58E83894.http.HttpUtil;
+import io.dcloud.H58E83894.permission.RxPermissions;
 import io.dcloud.H58E83894.ui.common.SimpleLoginTipDialog;
 import io.dcloud.H58E83894.ui.helper.FeedBackHelper;
 import io.dcloud.H58E83894.ui.user.UserProxyActivity;
 import io.dcloud.H58E83894.utils.C;
+import io.dcloud.H58E83894.utils.FileUtil;
 import io.dcloud.H58E83894.utils.SharedPref;
 import io.dcloud.H58E83894.utils.Utils;
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import retrofit2.Response;
+import zlc.season.rxdownload2.RxDownload;
 
 
 public abstract class BaseFragment extends Fragment {
     protected View mRootView;
     private String TAG = BaseFragment.this.getClass().getSimpleName();
     protected CompositeDisposable mCompositeDisposable = new CompositeDisposable();
+    protected RxPermissions mRxPermissions;
 
     protected void addToCompositeDis(Disposable disposable) {
         mCompositeDisposable.add(disposable);
@@ -65,6 +76,59 @@ public abstract class BaseFragment extends Fragment {
 
     protected void dismissLoadDialog() {
         WaitDialog.getInstance(getActivity()).dismissWaitDialog();
+    }
+
+    //拨打电话
+    protected void callPhone(final String phoneNumber) {
+        mRxPermissions.request(Manifest.permission.CALL_PHONE).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(@NonNull Boolean aBoolean) throws Exception {
+                if (aBoolean) {
+                    Utils.callPhone(getActivity(), phoneNumber);
+                } else {
+                    toastShort(R.string.str_call_phone_no_permisson);
+                }
+            }
+        });
+    }
+
+    //上到下，下到上动画
+    protected void topDownInAnim(View topView, View bottomView) {
+        Animation topIn = AnimationUtils.loadAnimation(getContext(), R.anim.practice_up_in);
+        topView.startAnimation(topIn);
+        Animation downIn = AnimationUtils.loadAnimation(getContext(), R.anim.practice_down_in);
+        bottomView.startAnimation(downIn);
+    }
+
+    protected void setDownloadDefalutPath(final RxDownload mRxDownload) {
+        //检查写入权限
+        mRxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .doOnNext(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(@NonNull Boolean aBoolean) throws Exception {
+                        if (!aBoolean) {
+                            throw new RuntimeException("no permission");
+                        }
+                    }
+                })
+                .compose(new ObservableTransformer<Boolean, Boolean>() {
+                    @Override
+                    public ObservableSource<Boolean> apply(Observable<Boolean> upstream) {
+                        return upstream.flatMap(new Function<Boolean, ObservableSource<Boolean>>() {
+                            @Override
+                            public ObservableSource<Boolean> apply(@NonNull Boolean aBoolean) throws Exception {
+                                return Observable.create(new ObservableOnSubscribe<Boolean>() {
+                                    @Override
+                                    public void subscribe(ObservableEmitter<Boolean> e) throws Exception {
+                                        mRxDownload.defaultSavePath(FileUtil.getDownloadPath(getContext()));
+                                        e.onNext(true);
+                                        e.onComplete();
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }).subscribe();
     }
 
     @Override
@@ -325,7 +389,7 @@ public abstract class BaseFragment extends Fragment {
         forword(target);
     }
 
-    protected boolean needLogin() {
+    protected boolean needLogin() {//判断是否需要登录
         if (GlobalUser.getInstance().isAccountDataInvalid()) {
             new SimpleLoginTipDialog().showDialog(getChildFragmentManager());
             return true;

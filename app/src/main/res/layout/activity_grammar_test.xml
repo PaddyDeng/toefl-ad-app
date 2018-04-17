@@ -25,7 +25,7 @@
             android:layout_centerInParent="true"
             android:layout_marginRight="@dimen/border_space_sec_max"
             android:text="@string/str_grammar_analyze"
-            android:textColor="@color/color_orange"
+            android:textColor="@color/color_white"
             android:textSize="@dimen/text_size_ml"/>
 
         <ImageView

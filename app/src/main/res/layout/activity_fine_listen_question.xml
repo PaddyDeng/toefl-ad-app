@@ -120,6 +120,54 @@
         android:background="@color/color_orange"
         android:orientation="vertical"
         android:padding="@dimen/border_space_sec_m">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/border_space_sec_max"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/base_padding"
+            >
+
+            <TextView
+                android:id="@+id/media_start_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="00:00"
+                android:textColor="@color/color_white"/>
+
+            <SeekBar
+                android:id="@+id/media_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:progressDrawable="@drawable/seekbar_bg"
+                android:thumb="@drawable/seekbar_circle"/>
+
+            <TextView
+                android:id="@+id/media_all_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="00:00"
+                android:textColor="@color/color_white"/>
+
+
+                <TextView
+                    android:id="@+id/show_type_tvs"
+                    style="@style/fine_bottom_txt_styles"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:layout_marginRight="@dimen/border_space_sec_m"
+                    android:visibility="gone"
+                    android:text="x1.0"/>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -179,39 +227,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/border_space_sec_max"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/media_start_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="00:00"
-                android:textColor="@color/color_white"/>
-
-            <SeekBar
-                android:id="@+id/media_seek_bar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:maxHeight="3dp"
-                android:minHeight="3dp"
-                android:progressDrawable="@drawable/seekbar_bg"
-                android:thumb="@drawable/seekbar_circle"/>
-
-            <TextView
-                android:id="@+id/media_all_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="00:00"
-                android:textColor="@color/color_white"/>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

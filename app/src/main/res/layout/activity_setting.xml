@@ -172,154 +172,165 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <TextView
-                style="@style/wrapHeight"
-                android:background="@color/color_sec_white"
-                android:paddingBottom="@dimen/border_space_sec"
-                android:paddingLeft="@dimen/border_space_sec_max"
-                android:paddingTop="@dimen/border_space_sec"
-                android:text="@string/str_set_about_we"/>
-
-            <RelativeLayout
-                android:id="@+id/set_gov_container"
-                style="@style/setting_item_rl_style">
-
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_gov_net"/>
-
-                <ImageView
-                    android:id="@+id/setting_net_iv"
-                    style="@style/setting_icon_next_style"/>
-
-                <TextView
-                    style="@style/setting_content_style"
-                    android:layout_toLeftOf="@id/setting_net_iv"
-                    android:text="@string/str_set_gmat_net"/>
-            </RelativeLayout>
-
-            <View style="@style/setting_line"/>
-
-            <RelativeLayout
-                android:id="@+id/set_wexin_container"
-                style="@style/setting_item_rl_style">
-
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_wx_num"/>
-
-                <TextView
-                    style="@style/setting_content_style"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="0dp"
-                    android:text="@string/str_set_wx_num_info"/>
-            </RelativeLayout>
-
-            <View style="@style/setting_line"/>
-
-            <RelativeLayout
-                android:id="@+id/set_tencent_qq_container"
-                style="@style/setting_item_rl_style">
-
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_gmat_qq"/>
-
-                <TextView
-                    style="@style/setting_content_style"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="0dp"
-                    android:text="@string/str_set_gmat_qq_number"/>
-            </RelativeLayout>
-
-            <View
+            <LinearLayout
+                android:id="@+id/user_more_container"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/border_space_sec"
-                android:background="@color/color_sec_white"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/feed_back_container"
-                style="@style/setting_item_rl_style">
 
                 <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_feed_back"/>
+                    style="@style/wrapHeight"
+                    android:background="@color/color_sec_white"
+                    android:paddingBottom="@dimen/border_space_sec"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:paddingTop="@dimen/border_space_sec"
+                    android:text="@string/str_set_about_we"/>
 
-                <ImageView
-                    style="@style/setting_icon_next_style"/>
+                <RelativeLayout
+                    android:id="@+id/set_gov_container"
+                    style="@style/setting_item_rl_style">
 
-                <TextView
-                    style="@style/setting_content_style"/>
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_gov_net"/>
 
-            </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/setting_net_iv"
+                        style="@style/setting_icon_next_style"/>
 
-            <View style="@style/setting_line"/>
+                    <TextView
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/setting_net_iv"
+                        android:text="@string/str_set_gmat_net"/>
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/version_check"
-                style="@style/setting_item_rl_style">
+                <View style="@style/setting_line"/>
 
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_version"/>
+                <RelativeLayout
+                    android:id="@+id/set_wexin_container"
+                    style="@style/setting_item_rl_style">
 
-                <ImageView
-                    android:id="@+id/version_right_icon"
-                    style="@style/setting_icon_next_style"
-                    android:visibility="invisible"/>
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_wx_num"/>
 
-                <TextView
-                    android:id="@+id/current_version"
-                    style="@style/setting_content_style"
-                    android:layout_toLeftOf="@+id/version_right_icon"/>
+                    <TextView
+                        style="@style/setting_content_style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/str_set_wx_num_info"/>
+                </RelativeLayout>
 
-            </RelativeLayout>
+                <View style="@style/setting_line"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/border_space_sec"
-                android:background="@color/color_sec_white"/>
+                <RelativeLayout
+                    android:id="@+id/set_tencent_qq_container"
+                    style="@style/setting_item_rl_style">
 
-            <RelativeLayout
-                android:id="@+id/setting_font_size"
-                style="@style/setting_item_rl_style"
-                android:visibility="gone">
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_gmat_qq"/>
 
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_font_size"/>
+                    <TextView
+                        style="@style/setting_content_style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="0dp"
+                        android:text="@string/str_set_gmat_qq_number"/>
+                </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/font_size_right_icon"
-                    style="@style/setting_icon_next_style"
-                    android:visibility="invisible"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_sec"
+                    android:background="@color/color_sec_white"/>
+
+                <RelativeLayout
+                    android:id="@+id/feed_back_container"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_feed_back"/>
+
+                    <ImageView
+                        style="@style/setting_icon_next_style"/>
+
+                    <TextView
+                        style="@style/setting_content_style"/>
+
+                </RelativeLayout>
+
+                <View style="@style/setting_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/version_check"
+                    style="@style/setting_item_rl_style">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_version"/>
+
+                    <ImageView
+                        android:id="@+id/version_right_icon"
+                        style="@style/setting_icon_next_style"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:id="@+id/current_version"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@+id/version_right_icon"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_sec"
+                    android:background="@color/color_sec_white"/>
+
+                <RelativeLayout
+                    android:id="@+id/setting_font_size"
+                    style="@style/setting_item_rl_style"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_font_size"/>
+
+                    <ImageView
+                        android:id="@+id/font_size_right_icon"
+                        style="@style/setting_icon_next_style"
+                        android:visibility="invisible"/>
 
 
-            </RelativeLayout>
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/cache_data_container"
-                style="@style/setting_item_rl_style">
+                <RelativeLayout
+                    android:id="@+id/cache_data_container"
+                    style="@style/setting_item_rl_style">
 
-                <TextView
-                    style="@style/setting_tv_style"
-                    android:text="@string/str_set_clear_cache"/>
+                    <TextView
+                        style="@style/setting_tv_style"
+                        android:text="@string/str_set_clear_cache"/>
 
-                <ImageView
-                    android:id="@+id/cache_right_iv"
-                    style="@style/setting_icon_next_style"/>
+                    <ImageView
+                        android:id="@+id/cache_right_iv"
+                        style="@style/setting_icon_next_style"/>
 
-                <TextView
-                    android:id="@+id/cache_data_size_tv"
-                    style="@style/setting_content_style"
-                    android:layout_toLeftOf="@id/cache_right_iv"/>
+                    <TextView
+                        android:id="@+id/cache_data_size_tv"
+                        style="@style/setting_content_style"
+                        android:layout_toLeftOf="@id/cache_right_iv"/>
 
-            </RelativeLayout>
+                </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/border_space_sec"
-                android:background="@color/color_sec_white"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_sec"
+                    android:background="@color/color_sec_white"/>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
     </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>

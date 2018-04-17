@@ -10,55 +10,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/color_white"
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_orange"
+            android:background="@color/color_sec_gray"
             android:orientation="vertical">
 
-            <RelativeLayout
-                style="@style/custome_title_bar_style"
-                android:background="@android:color/transparent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_mine_back"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/title_back_style"
-                    android:visibility="gone"/>
-
-                <TextView
-                    style="@style/title_tv_style"
-                    android:layout_centerInParent="true"
-                    android:text="@string/str_center"
-                    android:visibility="gone"/>
-            </RelativeLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/center_person_info_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-75dip"
                 android:layout_gravity="center">
 
-                <io.dcloud.H58E83894.weiget.RingView
-                    android:layout_width="135dp"
-                    android:layout_height="135dp"
-                    android:layout_centerInParent="true"
-                    app:ring_color="#33CCCCCC"
-                    app:ring_width="1dip"/>
 
-                <io.dcloud.H58E83894.weiget.RingView
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
-                    android:layout_centerInParent="true"
-                    app:ring_color="#33E5E5E5"
-                    app:ring_width="2dip"/>
+                <!--<io.dcloud.H58E83894.weiget.RingView-->
+                    <!--android:layout_width="110dp"-->
+                    <!--android:layout_height="110dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--app:ring_color="#33E5E5E5"-->
+                    <!--app:ring_width="2dip"/>-->
 
                 <io.dcloud.H58E83894.weiget.CircleImageView
                     android:id="@+id/center_header_iv"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/icon_default"
+                    android:src="@drawable/ic_mine_head"
                     app:border_color="@color/color_white"
                     app:border_width="2dip"/>
             </RelativeLayout>
@@ -67,15 +57,21 @@
                 android:id="@+id/center_go_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space_sec_m"
                 android:layout_gravity="center"
-                android:paddingBottom="@dimen/border_space_sec_max_m"
+                android:paddingBottom="@dimen/border_space_half"
                 android:paddingLeft="@dimen/border_space"
                 android:paddingRight="@dimen/border_space"
-                android:paddingTop="@dimen/border_space_sec_max"
+                android:paddingTop="@dimen/border_space_half"
                 android:text="@string/str_no_login"
+                android:layout_marginTop="@dimen/label_bottom_padding"
                 android:textColor="@color/color_white"
+                android:background="@color/color_text_green"
                 android:textSize="@dimen/text_size_ml_plus"/>
+
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,257 +79,281 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="1"
-                android:background="@color/color_white">
 
-                <View
-                    android:id="@+id/center_one_item_line"
-                    style="@style/vertical_line"
-                    android:layout_centerInParent="true"/>
-
-                <RelativeLayout
-                    android:id="@+id/center_listen_record_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toLeftOf="@id/center_one_item_line">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_listener"/>
-
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_listening_record"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/center_make_record_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/center_one_item_line">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_speak"/>
-
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_oral_record"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <View
-                    style="@style/line"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/color_sec_gray"/>
-            </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/center_my_leidou"
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="1"
-                android:background="@color/color_white">
+                android:layout_height="@dimen/border_space_max_max"
+                >
 
-                <View
-                    android:id="@+id/center_two_item_line"
-                    style="@style/vertical_line"
-                    android:layout_centerInParent="true"/>
-
-                <RelativeLayout
-                    android:id="@+id/wrong_record_container"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/iv_07"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toLeftOf="@id/center_two_item_line">
+                    android:src="@drawable/ic_money_administration"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_my_leidou"
+                    android:layout_toRightOf="@+id/iv_07"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_read"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
 
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_read_record"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/center_buy_record_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/center_two_item_line">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_write"/>
-
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_write_record"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <View
-                    style="@style/line"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/color_sec_gray"/>
             </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_height="10dip"
+                />
 
             <RelativeLayout
+                android:id="@+id/set_collection_container"
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="1"
-                android:background="@color/color_white">
+                android:layout_height="@dimen/border_space_max_max"
+                >
 
-                <View
-                    android:id="@+id/center_thr_item_line"
-                    style="@style/vertical_line"
-                    android:layout_centerInParent="true"/>
-
-                <RelativeLayout
-                    android:id="@+id/set_collection_container"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/iv_01"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toLeftOf="@id/center_thr_item_line">
+                    android:src="@drawable/ic_my_lesson"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_my_courses"
+                    android:layout_toRightOf="@+id/iv_01"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_my_courses"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
 
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_my_courses"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/center_glossary_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/center_thr_item_line">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_glossary"/>
-
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_glossary"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <View
-                    style="@style/line"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/color_sec_gray"/>
             </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                />
 
             <RelativeLayout
+                android:id="@+id/center_my_price"
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="1"
-                android:background="@color/color_white">
+                android:layout_height="@dimen/border_space_max_max"
+                >
 
-                <View
-                    android:id="@+id/center_four_item_line"
-                    style="@style/vertical_line"
-                    android:layout_centerInParent="true"/>
-
-                <RelativeLayout
-                    android:id="@+id/center_msg_container"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/iv_02"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toLeftOf="@id/center_four_item_line">
+                    android:src="@drawable/ic_my_pricase"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_my_price_record"
+                    android:layout_toRightOf="@+id/iv_02"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_msg"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
 
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_msg"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/more_setting_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/center_four_item_line">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon_center_set"/>
-
-                        <TextView
-                            style="@style/main_center_item_tv_style"
-                            android:text="@string/str_center_setting"/>
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <View
-                    style="@style/line"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/color_sec_gray"/>
             </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                />
+
+            <RelativeLayout
+                android:id="@+id/center_my_know"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_max_max"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_my_know"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_my_know"
+                    android:layout_toRightOf="@+id/iv_06"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <View style="@style/line"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                />
+
+            <RelativeLayout
+                android:id="@+id/center_glossary_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_max_max"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_note"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_glossary"
+                    android:layout_toRightOf="@+id/iv_03"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_height="10dip"
+                />
+
+            <RelativeLayout
+                android:id="@+id/center_msg_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_max_max"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_message"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_msg"
+                    android:layout_toRightOf="@+id/iv_04"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                />
+
+            <RelativeLayout
+                android:id="@+id/more_setting_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_space_max_max"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_more_setting"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    style="@style/toefl_item_tv_style"
+                    android:text="@string/str_center_setting"
+                    android:layout_toRightOf="@+id/iv_05"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="@dimen/border_space_sec_max"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/line"
+                android:layout_height="30dip"
+                />
+
 
         </LinearLayout>
 

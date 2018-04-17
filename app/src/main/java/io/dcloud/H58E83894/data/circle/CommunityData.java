@@ -8,26 +8,29 @@ import java.util.List;
 
 public class CommunityData {
 
+
     private String id;
     private String title;
     private String content;
+    private String cnContent;
     private String uid;
     private String createTime;
     private String dateTime;
+    private String hot;
+    private String catId;
     private String viewCount;
     private String radioTitle;
     private String username;
-    private String nickname;
-    private String image;
-    private List<ReplyData> Reply;
 
-    public List<ReplyData> getReply() {
-        return Reply;
+    public String getDescription() {
+        return description;
     }
 
-    public void setReply(List<ReplyData> reply) {
-        Reply = reply;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    private String description;
 
     public String getId() {
         return id;
@@ -53,6 +56,14 @@ public class CommunityData {
         this.content = content;
     }
 
+    public String getCnContent() {
+        return cnContent;
+    }
+
+    public void setCnContent(String cnContent) {
+        this.cnContent = cnContent;
+    }
+
     public String getUid() {
         return uid;
     }
@@ -75,6 +86,22 @@ public class CommunityData {
 
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
+    }
+
+    public String getHot() {
+        return hot;
+    }
+
+    public void setHot(String hot) {
+        this.hot = hot;
+    }
+
+    public String getCatId() {
+        return catId;
+    }
+
+    public void setCatId(String catId) {
+        this.catId = catId;
     }
 
     public String getViewCount() {
@@ -109,11 +136,61 @@ public class CommunityData {
         this.nickname = nickname;
     }
 
-    public String getImage() {
+    public Object getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Object image) {
         this.image = image;
     }
+
+    public String getArticle() {
+        return article;
+    }
+
+    public void setArticle(String article) {
+        this.article = article;
+    }
+
+    public int getIsReply() {
+        return isReply;
+    }
+
+    public void setIsReply(int isReply) {
+        this.isReply = isReply;
+    }
+
+    public List<String> getDatum() {
+        return datum;
+    }
+
+    public void setDatum(List<String> datum) {
+        this.datum = datum;
+    }
+
+    public List<String> getDatumTitle() {
+        return datumTitle;
+    }
+
+    public void setDatumTitle(List<String> datumTitle) {
+        this.datumTitle = datumTitle;
+    }
+
+    public List<ReplyData> getReply() {
+        return Reply;
+    }
+
+    public void setReply(List<ReplyData> reply) {
+        Reply = reply;
+    }
+
+    private String nickname;
+    private Object image;
+    private String article;
+    private int isReply;//1可以去下载
+    private List<String> datum;
+    private List<String> datumTitle;
+    private List<ReplyData> Reply;
+
+
 }

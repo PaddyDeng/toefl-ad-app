@@ -55,7 +55,7 @@ public class ReadTpoListActivity extends BaseTabActivity {
     protected PagerAdapter getPagerAdapter() {
         final List<Fragment> fragList = new ArrayList<>();
         final List<String> titles = new ArrayList<>();
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             int newValue = cacl(i);
             if (i == newValue) {
                 continue;
@@ -85,6 +85,8 @@ public class ReadTpoListActivity extends BaseTabActivity {
             tpoNumber += 223;
         } else if (tpoNumber < 50) {
             tpoNumber += 265;
+        }else if (tpoNumber  < 51) {
+            tpoNumber += 332;
         }
         return tpoNumber;
     }

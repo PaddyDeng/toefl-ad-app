@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="io.dcloud.H58E83894.ui.prelesson.ToeflLessonActivity">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/diff_detail_title_tv"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/share_know"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_result_share"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:paddingRight="@dimen/border_space_sec_max"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--/>-->
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_min_gray"
+        app:tabIndicatorColor="@color/color_text_green"
+        app:tabSelectedTextColor="@color/color_text_green"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance_01"
+        app:tabTextColor="@color/color_text_black"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>

@@ -1,285 +1,699 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="io.dcloud.H58E83894">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.dcloud.H58E83894">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 添加必要的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Required -->
+    <permission
+        android:name="io.dcloud.H58E83894.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="io.dcloud.H58E83894.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
 
     <application
         android:name=".ToeflApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon_lanuer"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:name"
+        android:largeHeap="true">
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleFullTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+          <!---->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/paths" />-->
+        <!--</provider>-->
+
+        <!-- ============================推送================================== -->
+
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="io.dcloud.H58E83894" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能-->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":mult"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <!-- since 3.0.9 Required SDK 核心功能-->
+        <provider
+            android:authorities="io.dcloud.H58E83894.DataProvider"
+            android:name="cn.jpush.android.service.DataProvider"
+            android:exported="false"
+            />
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="io.dcloud.H58E83894" />
+            </intent-filter>
+
+        </service>
+        <!-- since 3.1.0 Required SDK 核心功能-->
+        <provider
+            android:authorities="io.dcloud.H58E83894.DownloadProvider"
+            android:name="cn.jpush.android.service.DownloadProvider"
+            android:exported="true"
+            />
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
+                <category android:name="io.dcloud.H58E83894" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name="io.dcloud.H58E83894.receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="io.dcloud.H58E83894.intent.AlarmReceiver" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/>
+
+        <!-- User defined.  For test only  用户自定义的广播接收器-->
+        <receiver
+            android:name=".push.CustomerReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!--Required  用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!--Required  用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!--Required  用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!--Required  用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /><!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="io.dcloud.H58E83894" />
+            </intent-filter>
+        </receiver>
+
+        <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调-->
+        <receiver android:name=".push.MyJPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="io.dcloud.H58E83894"></category>
+            </intent-filter>
+        </receiver>
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="4a56a56de474512c349dc88a" /> <!--  </>值来自开发者平台取得的AppKey-->
+
+
+        <!--解决android7.0拍照问题，uri不能直接暴露-->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="io.dcloud.H58E83894.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            android:exported="false">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
-        <!--欢迎-->
+
+        <!-- ============================分享================================== -->
+
+
+        <!-- qq登录 -->
+
+
+        <!-- ShareSDK相关start -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="1a62699572f02" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="268503fe94ab047ba5b7136738a13154" />
+
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1106044754" />
+                <!-- tencent+你的在腾讯申请的AppId,不改的话分享可以成功但是回调一直是onCancel哦 -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- ShareSDK相关end -->
+
+
+        <!-- ============================分享================================== -->
+
+
+        <!-- 欢迎 -->
         <activity
             android:name=".ui.guide.GuideActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AdvNoTitleFullTheme"/>
-        <!--广告-->
+            android:theme="@style/AdvNoTitleFullTheme" />
+        <!-- 广告 -->
         <activity
             android:name=".AdvertisingActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AdvNoTitleFullTheme"/>
-        <!--主-->
+            android:theme="@style/AdvNoTitleFullTheme" />
+        <!-- 主 -->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <!--用户代理-->
+            android:screenOrientation="portrait" />
+        <!-- 用户代理 -->
         <activity
             android:name=".ui.user.UserProxyActivity"
-            android:screenOrientation="portrait"/>
-        <!--修改昵称-->
+            android:screenOrientation="portrait" />
+        <!-- 修改昵称 -->
         <activity
             android:name=".ui.user.modify.ModifyNickActivity"
-            android:screenOrientation="portrait"/>
-        <!--图片页-->
+            android:screenOrientation="portrait" />
+        <!-- 图片页 -->
         <activity
             android:name=".ui.toeflcircle.ImagePagerActivity"
-            android:screenOrientation="portrait"/>
-        <!--文章详情-->
+            android:screenOrientation="portrait" />
+        <!-- 文章详情 -->
         <activity
             android:name=".ui.toeflcircle.RemarkDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--社区详情-->
+            android:screenOrientation="portrait" />
+        <!-- 社区详情 -->
         <activity
             android:name=".ui.toeflcircle.CommunityDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--发表帖子-->
+            android:screenOrientation="portrait" />
+        <!-- 发表帖子 -->
         <activity
             android:name=".ui.toeflcircle.PostRemarkActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <!--设置-->
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 设置 -->
         <activity
             android:name=".ui.center.setting.SettingActivity"
-            android:screenOrientation="portrait"/>
-        <!--裁剪图片-->
+            android:screenOrientation="portrait" />
+        <!-- 裁剪图片 -->
         <activity
             android:name=".ui.center.setting.ClipImageActivity"
-            android:screenOrientation="portrait"/>
-        <!--反馈-->
+            android:screenOrientation="portrait" />
+        <!-- 反馈 -->
         <activity
             android:name=".ui.center.setting.FeedBackActivity"
-            android:screenOrientation="portrait"/>
-        <!--字体设置-->
+            android:screenOrientation="portrait" />
+        <!-- 字体设置 -->
         <activity
             android:name=".ui.center.setting.FontSizeSettingActivity"
-            android:screenOrientation="portrait"/>
-        <!--语法学习-->
+            android:screenOrientation="portrait" />
+        <!-- 语法学习 -->
         <activity
             android:name=".ui.make.grammar.GrammarGuideActivity"
-            android:screenOrientation="portrait"/>
-        <!--语法测试-->
+            android:screenOrientation="portrait" />
+        <!-- 语法测试 -->
         <activity
             android:name=".ui.make.grammar.GrammarTestActivity"
-            android:screenOrientation="portrait"/>
-        <!--核心词汇-->
+            android:screenOrientation="portrait" />
+        <!-- 核心词汇 -->
         <activity
             android:name=".ui.make.core.CoreTestActivity"
-            android:screenOrientation="portrait"/>
-        <!--核心词汇详情-->
+            android:screenOrientation="portrait" />
+        <!-- 核心词汇详情 -->
         <activity
             android:name=".ui.make.core.CoreDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--精听文章-->
+            android:screenOrientation="portrait" />
+        <!-- 精听文章 -->
         <activity
             android:name=".ui.make.listen.ListenActivity"
-            android:screenOrientation="portrait"/>
-        <!--精听文章文字-->
+            android:screenOrientation="portrait" />
+        <!-- 精听文章文字 -->
         <activity
             android:name=".ui.make.listen.ListenTestActivity"
-            android:screenOrientation="portrait"/>
-        <!--应对？-->
+            android:screenOrientation="portrait" />
+        <!-- 应对？ -->
         <activity
             android:name=".ui.common.DealActivity"
-            android:screenOrientation="portrait"/>
-        <!--联系方式-->
+            android:screenOrientation="portrait" />
+        <!-- 联系方式 -->
         <activity
             android:name=".ui.prelesson.PreProGramLessonActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AlphaDialogAct"/>
-        <!--gmat详情-->
+            android:theme="@style/AlphaDialogAct" />
+        <!-- gmat详情 -->
         <activity
             android:name=".ui.prelesson.ToeflDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--讲师详情-->
+            android:screenOrientation="portrait" />
+        <!-- 讲师详情 -->
         <activity
             android:name=".ui.prelesson.TeacherDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--试听课-->
+            android:screenOrientation="portrait" />
+        <!-- 试听课 -->
         <activity
             android:name=".ui.prelesson.TrialCourseTypeActivity"
-            android:screenOrientation="portrait"/>
-        <!--泛听练习-->
+            android:screenOrientation="portrait" />
+        <!-- 泛听练习 -->
         <activity
             android:name=".ui.make.practice.ListenPracticeActivity"
-            android:screenOrientation="portrait"/>
-        <!--听力练习-->
+            android:screenOrientation="portrait" />
+        <!-- 听力练习 -->
         <activity
             android:name=".ui.make.bottom.lp.BottomListenPracticeActivity"
-            android:screenOrientation="portrait"/>
-        <!--阅读练习-->
+            android:screenOrientation="portrait" />
+        <!-- 阅读练习 -->
         <activity
             android:name=".ui.make.bottom.rp.BottomReadPracticeActivity"
-            android:screenOrientation="portrait"/>
-        <!--口语练习-->
+            android:screenOrientation="portrait" />
+        <!-- 口语练习 -->
         <activity
             android:name=".ui.make.bottom.sp.BottomSpeakPracticeActivity"
-            android:screenOrientation="portrait"/>
-        <!--写作练习-->
+            android:screenOrientation="portrait" />
+        <!-- 写作练习 -->
         <activity
             android:name=".ui.make.bottom.wp.BottomWritePracticeActivity"
-            android:screenOrientation="portrait"/>
-        <!--独立话题练习-->
+            android:screenOrientation="portrait" />
+        <!-- 独立话题练习 -->
         <activity
             android:name=".ui.make.bottom.wp.WriteListActivity"
-            android:screenOrientation="portrait"/>
-        <!--写作问题？-->
+            android:screenOrientation="portrait" />
+        <!-- 写作问题？ -->
         <activity
             android:name=".ui.make.bottom.wp.WriteQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--发表文字-->
+            android:screenOrientation="portrait" />
+        <!-- 发表文字 -->
         <activity
             android:name=".ui.make.bottom.wp.WriteAnswerActivity"
-            android:screenOrientation="portrait"/>
-        <!--拼写结果？-->
+            android:screenOrientation="portrait" />
+        <!-- 拼写结果？ -->
         <activity
             android:name=".ui.make.bottom.wp.WriteResultActivity"
-            android:screenOrientation="portrait"/>
-        <!--TPO写作练习-->
+            android:screenOrientation="portrait" />
+        <!-- TPO写作练习 -->
         <activity
             android:name=".ui.make.bottom.wp.WriteTpoActivity"
-            android:screenOrientation="portrait"/>
-        <!--写作记录-->
+            android:screenOrientation="portrait" />
+        <!-- 写作记录 -->
         <activity
             android:name=".ui.center.record.write.WriteRecordActivity"
-            android:screenOrientation="portrait"/>
-        <!--TPO写作问题？-->
+            android:screenOrientation="portrait" />
+        <!-- TPO写作问题？ -->
         <activity
             android:name=".ui.make.bottom.wp.WriteTpoQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--黄金口语练习-->
+            android:screenOrientation="portrait" />
+        <!-- 黄金口语练习 -->
         <activity
             android:name=".ui.make.bottom.sp.SpeakGlodListActivity"
-            android:screenOrientation="portrait"/>
-        <!--口语问题？-->
+            android:screenOrientation="portrait" />
+        <!-- 口语问题？ -->
         <activity
             android:name=".ui.make.bottom.sp.SpeakQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--TPO练习-->
+            android:screenOrientation="portrait" />
+        <!-- TPO练习 -->
         <activity
             android:name=".ui.make.bottom.sp.SpeakTpoListActivity"
-            android:screenOrientation="portrait"/>
-        <!--TPO阅读练习-->
+            android:screenOrientation="portrait" />
+        <!-- TPO阅读练习 -->
         <activity
             android:name=".ui.make.bottom.rp.ReadTpoListActivity"
-            android:screenOrientation="portrait"/>
-        <!--OG真题练习-->
+            android:screenOrientation="portrait" />
+        <!-- OG真题练习 -->
         <activity
             android:name=".ui.make.bottom.rp.ReadOgListActivity"
-            android:screenOrientation="portrait"/>
-        <!--阅读问题？-->
+            android:screenOrientation="portrait" />
+        <!-- 阅读问题？ -->
         <activity
             android:name=".ui.make.bottom.rp.ReadQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--答案解析-->
+            android:screenOrientation="portrait" />
+        <!-- 答案解析 -->
         <activity
             android:name=".ui.make.bottom.rp.ReadAnswerAnalyzeActivity"
-            android:screenOrientation="portrait"/>
-        <!--查看结果-->
+            android:screenOrientation="portrait" />
+        <!-- 查看结果 -->
         <activity
             android:name=".ui.make.bottom.rp.ReadResultActivity"
-            android:screenOrientation="portrait"/>
-        <!--查看详情-->
+            android:screenOrientation="portrait" />
+        <!-- 查看详情 -->
         <activity
             android:name=".ui.make.bottom.rp.ReadResultDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--阅读记录-->
+            android:screenOrientation="portrait" />
+        <!-- 阅读记录 -->
         <activity
             android:name=".ui.center.record.read.ReadRecordActivity"
-            android:screenOrientation="portrait"/>
-        <!--听写列表？-->
+            android:screenOrientation="portrait" />
+        <!-- 听写列表？ -->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecListActivity"
-            android:screenOrientation="portrait"/>
-        <!--精听或做题练习选择-->
+            android:screenOrientation="portrait" />
+        <!-- 精听或做题练习选择 -->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecStartMakeActivity"
-            android:screenOrientation="portrait"/>
-        <!--听后答-->
+            android:screenOrientation="portrait" />
+        <!-- 听后答 -->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--听后写-->
+            android:screenOrientation="portrait" />
+        <!-- 听后写 -->
         <activity
             android:name=".ui.make.bottom.lp.ListenSecTestActivity"
-            android:screenOrientation="portrait"/>
-        <!--答案解析-->
+            android:screenOrientation="portrait" />
+        <!-- 答案解析 -->
         <activity
             android:name=".ui.make.bottom.lp.ListenMakeResultActivity"
-            android:screenOrientation="portrait"/>
-        <!--细听答题-->
+            android:screenOrientation="portrait" />
+        <!-- 细听答题 -->
         <activity
             android:name=".ui.make.bottom.lp.FineListenQuestionActivity"
-            android:screenOrientation="portrait"/>
-        <!--听写-->
+            android:screenOrientation="portrait" />
+        <!-- 听写 -->
         <activity
             android:name=".ui.make.bottom.lp.ListenFineWriteActivity"
-            android:screenOrientation="portrait"/>
-        <!--消息中心-->
+            android:screenOrientation="portrait" />
+        <!-- 消息中心 -->
         <activity
             android:name=".ui.center.message.MsgActivity"
-            android:screenOrientation="portrait"/>
-        <!--生词本-->
+            android:screenOrientation="portrait" />
+        <!-- 生词本 -->
         <activity
             android:name=".ui.center.glossary.GlossaryActivity"
-            android:screenOrientation="portrait"/>
-        <!--生词-->
+            android:screenOrientation="portrait" />
+        <!-- 生词 -->
         <activity
             android:name=".ui.center.glossary.GlossaryDetailActivity"
-            android:screenOrientation="portrait"/>
-        <!--听力记录-->
+            android:screenOrientation="portrait" />
+
+        <!-- 我的练习记录 -->
+        <activity
+            android:name=".ui.center.record.MyPriseRecordActivity"
+            android:screenOrientation="portrait" />
+        <!-- 听力记录 -->
         <activity
             android:name=".ui.center.record.listen.ListenRecordActivity"
-            android:screenOrientation="portrait"/>
-        <!--口语记录-->
+            android:screenOrientation="portrait" />
+        <!-- 口语记录 -->
         <activity
             android:name=".ui.center.record.speak.SpeakRecordActivity"
-            android:screenOrientation="portrait"/>
-        <!--我的课程-->
+            android:screenOrientation="portrait" />
+        <!-- 我的课程 -->
         <activity
             android:name=".ui.center.lesson.MyLessonActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <!-- 专家讲师 -->
+        <activity
+            android:name=".ui.prelesson.ExpertLecuterActivity"
+            android:screenOrientation="portrait" />
+        <!-- 机经下载 -->
+        <activity
+            android:name=".ui.prelesson.MaryListActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 采集信息：成绩 -->
+        <activity
+            android:name=".ui.information.GradeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采集信息：测试时间 -->
+        <activity
+            android:name=".ui.information.TestTimeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采集信息：是否考过 -->
+        <activity
+            android:name=".ui.information.IfToeflActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采集信息：目标分数 -->
+        <activity
+            android:name=".ui.information.TargetScoreActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采集信息：考过 -->
+        <activity
+            android:name=".ui.information.YesToeflActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.information.LoadToeflActivity"
+            android:screenOrientation="portrait" />
+        <!-- 高分故事 -->
+        <activity
+            android:name=".ui.prelesson.HighScoreStoryActivity"
+            android:screenOrientation="portrait" />
+        <!-- 新消息 -->
+        <activity
+            android:name=".ui.toeflcircle.RemarkNewMsgActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.toeflcircle.CommunitysDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 托福课程 -->
+        <activity
+            android:name=".ui.prelesson.ToeflLessonActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 至少库详情页 -->
+        <activity
+            android:name=".ui.knowledge.KnowDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 口语评分 -->
+        <activity android:name=".ui.make.lexicalResource.LexxicalResourceActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.toeflcircle.DownloadRichTextActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.toeflcircle.load.DownloadListActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.center.setting.MIneSettingActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 知识库类型 -->
+        <activity android:name=".ui.knowledge.KnowTypesActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 知识库专区 -->
+        <activity android:name=".ui.knowledge.KnowPrefectureActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 雷豆管理 -->
+        <activity android:name=".ui.center.leidou.MyLeidouActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 课程详情 -->
+        <activity android:name=".ui.center.lesson.MyLessonDetaiActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 播放器 -->
+        <activity android:name=".ui.center.lesson.voddemo.VodActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.center.lesson.voddemo.PlaysActivity"
+            android:configChanges="orientation|screenLayout|screenSize"
+            android:screenOrientation="landscape" />
+        <!-- 我的知识库 -->
+        <activity android:name=".ui.center.know.MyKnowActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 我的zhifu  -->
+        <activity android:name=".ui.knowledge.PricePayLessonActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlphaDialogAct"></activity>
+
+        <!-- 支付宝App支付页面用的 -->
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+        <!-- 支付宝H5页面支付用的 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+
+        <activity android:name=".pay.zfb.PayDemoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlphaDialogAct"></activity>
+
+        <activity android:name=".pay.zfb.H5PayDemoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlphaDialogAct"></activity>
+
+        <!-- 我充值页面 -->
+        <activity android:name=".ui.center.leidou.recharge.RechargeActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 我充值完成 -->
+        <activity android:name=".ui.center.leidou.recharge.RechargeCompleteActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 每日听力 -->
+        <activity android:name=".ui.make.everyDayListen.EveryListenPracticeActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.make.everyDayListen.MyEveListenLessonActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 全部配音 -->
+        <activity android:name=".ui.make.dub.AllDubCourseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 配音模块 -->
+        <activity android:name=".ui.make.dub.ModelDubCourseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 配音模块详情 -->
+        <activity android:name=".ui.make.dub.DubDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- 所有的口语详情 -->
+        <activity android:name=".ui.make.lexicalResource.AllDetailActivity"
+            android:screenOrientation="portrait"></activity>PricePayCorretActivity
+
+        <!-- 所有的口语支付 -->
+        <activity android:name=".ui.make.lexicalResource.PricePayCorretActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlphaDialogAct"></activity>
+
+        <!-- 所有的作文批改详情 -->
+        <activity android:name=".ui.make.easyResource.EaAllDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.make.easyResource.EaLexxicalResourceActivity"
+            android:screenOrientation="portrait"></activity>
+
+        //zhifu
+        <activity android:name=".ui.make.easyResource.EaPricePayCorretActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AlphaDialogAct"></activity>
+
+
+
+
     </application>
 
 </manifest>

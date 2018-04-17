@@ -97,7 +97,7 @@ public class CommentListView extends LinearLayout {
             final int index = i;
             View view = getView(index);
             if (view == null) {
-                throw new NullPointerException("listview item layout is null, please check getView()...");
+                throw new NullPointerException("listview item popup_window_ranking_classify is null, please check getView()...");
             }
 
             addView(view, index, layoutParams);

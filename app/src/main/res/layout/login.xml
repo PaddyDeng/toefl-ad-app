@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/text_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="跳转"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        android:clickable="true"
+        />
+
+        <!--android:onClick="iconClickListener"-->
+    <!--<ScrollView-->
+        <!--android:id="@+id/scroll_login"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" >-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical" >-->
+
+            <!--<Spinner-->
+                <!--android:id="@+id/SpinnerPlayType"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content" />-->
+            <!--<Spinner-->
+                <!--android:id="@+id/Spinner01"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/gs_domin"-->
+                <!--android:singleLine="true"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="domain"-->
+                <!--android:textSize="12sp"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/gs_numble"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="number"-->
+                <!--android:textSize="12sp"-->
+                <!--android:singleLine="true"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<EditText-->
+                <!--android:singleLine="true"-->
+                <!--android:id="@+id/gs_account"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="account"-->
+                <!--android:textSize="12sp"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<EditText-->
+                <!--android:singleLine="true"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:id="@+id/gs_account_psw"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="password"-->
+                <!--android:textSize="12sp"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<EditText-->
+                <!--android:singleLine="true"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:id="@+id/gs_nickroom"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:hint="nickname"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<EditText-->
+                <!--android:singleLine="true"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:id="@+id/gs_nickname_psw"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:hint="roompassword"-->
+                <!--android:shadowColor="#000000" />-->
+            <!--<EditText-->
+                <!--android:singleLine="true"-->
+                <!--android:imeOptions="actionDone"-->
+                <!--android:id="@+id/editK"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:hint="第三方认证K值"-->
+                <!--android:shadowColor="#000000" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/gs_bnt_room_join"-->
+                <!--android:layout_width="160dip"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="参数输入完成" />-->
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+</LinearLayout>

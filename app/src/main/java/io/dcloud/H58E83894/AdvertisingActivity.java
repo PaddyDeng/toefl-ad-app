@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,13 +14,14 @@ import butterknife.OnClick;
 import io.dcloud.H58E83894.base.BaseActivity;
 import io.dcloud.H58E83894.http.RetrofitProvider;
 import io.dcloud.H58E83894.ui.common.DealActivity;
+import io.dcloud.H58E83894.ui.information.GradeActivity;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.GlideUtil;
 import io.dcloud.H58E83894.utils.RxHelper;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 
-public class AdvertisingActivity extends BaseActivity {
+public class  AdvertisingActivity extends BaseActivity {
     private static final String IMG_URL = "img_url";
     private static final String TIMES = "time";
     private static final String JUMP_URL = "jump_url";
@@ -33,6 +35,7 @@ public class AdvertisingActivity extends BaseActivity {
         intent.putExtra(IMG_URL, imgUrl);
         intent.putExtra(TIMES, time);
         intent.putExtra(JUMP_URL, jumpUrl);
+        Log.i("yyy", jumpUrl);
         context.startActivity(intent);
     }
 
@@ -102,7 +105,7 @@ public class AdvertisingActivity extends BaseActivity {
     }
 
     private void goMain() {
-        forword(MainActivity.class);
+        forword(MainActivity.class);//
         finishWithAnim();
     }
 

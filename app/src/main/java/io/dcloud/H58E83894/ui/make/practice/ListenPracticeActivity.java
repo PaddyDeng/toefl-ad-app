@@ -1,10 +1,13 @@
 package io.dcloud.H58E83894.ui.make.practice;
 
+import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -31,6 +34,7 @@ import io.dcloud.H58E83894.http.RetrofitProvider;
 import io.dcloud.H58E83894.http.SchedulerTransformer;
 import io.dcloud.H58E83894.http.callback.RequestImp;
 import io.dcloud.H58E83894.ui.common.TaskEndDialog;
+import io.dcloud.H58E83894.ui.make.listen.ListenTestActivity;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.DownloadUtil;
 import io.dcloud.H58E83894.utils.RxBus;
@@ -53,6 +57,12 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 public class ListenPracticeActivity extends BaseActivity {
 
+    public static void startListenPraTestActivity(Context mContext) {
+        Intent intent = new Intent(mContext, ListenPracticeActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, true);
+        mContext.startActivity(intent);
+    }
+
     @BindView(R.id.lyric_view)
     LyricView mLyricView;
     @BindView(R.id.end_time)
@@ -63,6 +73,8 @@ public class ListenPracticeActivity extends BaseActivity {
     SeekBar seekBar;
     @BindView(R.id.listen_article_btn)
     ImageView fineListnBtn;
+    @BindView(R.id.next_question_fine_listen)
+    TextView nextQuestionFineListen;
     private String url;
     private RxDownload mRxDownload;
     private MusicPlayer mPlayer;
@@ -70,6 +82,15 @@ public class ListenPracticeActivity extends BaseActivity {
     private List<SentenceData> mList;
     private TaskEndDialog mDialog;
     private String id;
+    private boolean seeResult;
+
+    @Override
+    protected void getArgs() {
+        super.getArgs();
+        Intent intent = getIntent();
+        if (intent == null) return;
+        seeResult = intent.getBooleanExtra(Intent.EXTRA_TEXT, false);
+    }
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -91,6 +112,11 @@ public class ListenPracticeActivity extends BaseActivity {
         mRxDownload = RxDownload.getInstance(mContext);
         mPlayer = new MusicPlayer();
         setContentView(R.layout.activity_listen_article);
+
+        if (seeResult) {
+            nextQuestionFineListen.setBackgroundResource(R.drawable.com_btn_selector);
+            nextQuestionFineListen.setClickable(true);
+        }
     }
 
     @Override
@@ -127,7 +153,7 @@ public class ListenPracticeActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.question_feed_back:
                 showFeedBackDialog(id);
-            case R.id.next_question_fine_listen:
+            case R.id.next_question_fine_listen://下一篇
                 nextQuestion();
                 break;
             case R.id.listen_article_btn:
@@ -316,6 +342,7 @@ public class ListenPracticeActivity extends BaseActivity {
         if (questionData == null) return;
         mList = questionData.getSentence();
         mLyricView.setLyricInfo(mList);
+        Log.i("mLyricView", mLyricView +" =" +mList.toString());
         mLyricView.setOnPlayerClickListener(new LyricView.OnPlayerClickListener() {
             @Override
             public void onPlayerClicked(long progress, String content) {

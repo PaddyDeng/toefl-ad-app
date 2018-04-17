@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/mine_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_make_back"
+        android:scaleType="fitXY"
+        />
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_below="@+id/mine_iv"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/border_space_sec_max"
+                >
+
+                <io.dcloud.H58E83894.weiget.CircleImageView
+                    android:id="@+id/mine_head"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:src="@drawable/ic_mine_head"/>
+
+                <LinearLayout
+                    android:layout_toRightOf="@+id/mine_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/border_space_sec_m"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size_ml"
+                        android:text="小托君"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_micro"
+                        android:text="2018.2.6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_micro"
+                        android:text="58635次播放"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_sure_zan"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                style="@style/line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/border_space_sec_max"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_micro"
+                    android:text="ta还完成了这些作品"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_micro"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/icon_next"
+                    android:drawablePadding="@dimen/border_space_m"
+                    android:text="查看更多"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/hot_item_bg"
+                        android:layout_width="150dip"
+                        android:layout_height="80dip"
+                        android:scaleType="fitXY"
+                        app:riv_corner_radius="10dp"
+                        app:riv_mutate_background="true"
+                        android:src="@drawable/ic_make_back"
+                        app:riv_oval="false"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="聊李艾"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/border_space_m"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/hot_item_bgs"
+                        android:layout_width="150dip"
+                        android:layout_height="80dip"
+                        android:scaleType="fitXY"
+                        app:riv_corner_radius="10dp"
+                        app:riv_mutate_background="true"
+                        android:src="@drawable/ic_make_back"
+                        app:riv_oval="false"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="聊李艾"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/border_space_m"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                style="@style/line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space_sec_max"
+                    android:text="课程来源：申申审"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_next"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/border_space_sec_max"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+    <TextView
+        android:id="@+id/add_dub_course"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="我要练习"
+        android:textColor="@color/color_white"
+        android:gravity="center"
+        android:padding="@dimen/border_space_sec_m"
+        android:background="@color/color_text_green"
+        android:layout_alignParentBottom="true"
+        ></TextView>
+
+</RelativeLayout>

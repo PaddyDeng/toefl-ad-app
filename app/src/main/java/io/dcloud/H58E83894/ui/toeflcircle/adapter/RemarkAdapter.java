@@ -2,13 +2,11 @@ package io.dcloud.H58E83894.ui.toeflcircle.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-
-import com.bumptech.glide.load.DecodeFormat;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 
 import java.util.ArrayList;
@@ -24,6 +22,7 @@ import io.dcloud.H58E83894.data.user.GlobalUser;
 import io.dcloud.H58E83894.data.user.UserData;
 import io.dcloud.H58E83894.http.RetrofitProvider;
 import io.dcloud.H58E83894.ui.toeflcircle.ImagePagerActivity;
+import io.dcloud.H58E83894.ui.toeflcircle.RemarkNewMsgActivity;
 import io.dcloud.H58E83894.ui.toeflcircle.listener.PriaseListener;
 import io.dcloud.H58E83894.utils.GlideUtil;
 import io.dcloud.H58E83894.utils.TimeUtils;
@@ -70,7 +69,7 @@ public class RemarkAdapter extends BaseRecyclerViewAdapter<RemarkData> {
                 @Override
                 public void onClick(View v) {
                     //去新消息页
-//                    context.startActivity(new Intent(context, RemarkNewMsgActivity.class));
+                    context.startActivity(new Intent(context, RemarkNewMsgActivity.class));
                 }
             });
         } else if (type == 100) {

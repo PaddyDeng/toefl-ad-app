@@ -24,6 +24,16 @@ public class LessonData implements Parcelable {
     private String listeningFile;
     private String cnName;
     private String sentenceNumber;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    private String description;
     //奇葩
     private String originalPrice;
     private String duration;
@@ -208,6 +218,7 @@ public class LessonData implements Parcelable {
         dest.writeString(this.duration);
         dest.writeString(this.price);
         dest.writeString(this.numbering);
+        dest.writeString(this.description);
     }
 
     public LessonData() {
@@ -233,6 +244,7 @@ public class LessonData implements Parcelable {
         this.duration = in.readString();
         this.price = in.readString();
         this.numbering = in.readString();
+        this.description = in.readString();
     }
 
     public static final Parcelable.Creator<LessonData> CREATOR = new Parcelable.Creator<LessonData>() {

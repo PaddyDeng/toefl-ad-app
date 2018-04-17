@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_buy_iv"
+            android:layout_marginTop="@dimen/border_space"
+            />
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="@dimen/border_space"
+                android:id="@+id/title_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="wwewqeqweqe"
+                android:textColor="@color/color_lei_text"
+                android:textSize="@dimen/text_size_ml" />
+
+            <TextView
+                android:layout_marginTop="@dimen/radius"
+                android:id="@+id/title_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wwewqeqweqe"
+                android:textColor="@color/color_lei_date"
+                android:textSize="@dimen/text_size_micro" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/border_space_sec_m"
+            android:text="1"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/border_space"
+        android:layout_marginBottom="@dimen/border_space_sec"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/border_space_sec_m"
+        android:layout_marginRight="@dimen/border_space_sec_m"
+        android:background="@color/color_lei_view"/>
+
+</LinearLayout>

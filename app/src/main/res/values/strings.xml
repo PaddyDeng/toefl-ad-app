@@ -11,13 +11,15 @@
 
     <string name="str_pre_lesson">抢先学课</string>
     <string name="str_make_practice">做题练习</string>
+    <string name="str_make_knowledge">知识库</string>
     <string name="str_toefl_circle">托福圈</string>
     <string name="str_center">个人中心</string>
 
-    <string name="str_no_login">未登录</string>
+    <string name="str_no_login">登录</string>
     <string name="str_no_login_tip">你还未登录，请先登录</string>
     <string name="str_remark_detail_et_hint">我也说一句</string>
     <string name="str_get_local_record_fail">获取记录失败</string>
+    <string name="str_again_new_load">点击空白区域重新加载！</string>
 
     <string name="str_no_login_one">登录</string>
     <string name="str_no_login_two">登陆</string>
@@ -31,6 +33,7 @@
     <string name="str_post_remark">发表帖子</string>
     <string name="str_post">发表</string>
     <string name="str_post_remark_enter_title">请输入标题</string>
+    <string name="str_post_infor_enter_time">请选择考试时间</string>
     <string name="str_post_remark_enter_content">请输入内容</string>
 
     <string name="str_dialog_apk_downloding_msg">正在下载客户端(%1$d %2$s)</string>
@@ -40,8 +43,16 @@
     <string name="str_update_apk_imme">立即更新</string>
     <string name="str_update_apk_wait">稍后更新</string>
     <string name="str_need_sdcard_permission">本功能需要读写SDCARD权限</string>
+    <string name="str_open_fail">打开失败。请下载相应软件打开</string>
+    <string name="str_file_no_exists">文件不存在或已损坏</string>
+    <string name="str_post_after_download">评论后才能下载</string>
+    <string name="str_downloading_des">正在下载（%1$d）</string>
+    <string name="str_download_end_des">已下载（%1$d）</string>
+    <string name="str_download_list">下载列表</string>
+    <string name="str_dele">删除</string>
 
-    <string name="str_grammar_test_title">语法学习(%1$d/5)</string>
+    <string name="str_grammar_test_title">语法学习(%1$d/30)</string>
+    <string name="str_grammars_test_title">语法学习(%1$d/5)</string>
     <string name="str_grammar_des">语法：%1$s</string>
     <string name="str_grammar_knowledge_explain">知识讲解</string>
     <string name="str_error_feedback">题目错误反馈</string>
@@ -51,14 +62,15 @@
     <string name="str_grammar_commit_answer">提交答案</string>
     <string name="str_grammar_analyze">解析</string>
     <string name="str_grammar_next_question">下一题</string>
-    <string name="str_start">开始</string>
+    <string name="str_start">继续</string>
     <string name="str_go_on">继续</string>
+    <string name="str_delete">删除</string>
     <string name="str_schedule">%1$d/4</string>
     <string name="str_listen_and_choose">听单词，选择正确的翻译</string>
     <string name="str_word_explain">单词意译</string>
     <string name="str_example">例句</string>
     <string name="str_core_phonetic">[%1$s]</string>
-    <string name="str_core_vocabulary_test_title">核心词汇(%1$d/5)</string>
+    <string name="str_core_vocabulary_test_title">核心词汇(%1$d/30)</string>
     <string name="str_listen_time">%1$s/%2$s</string>
     <string name="str_see_en">点击查看英文</string>
     <string name="str_see_ch">点击查看中文</string>
@@ -70,7 +82,9 @@
     <string name="str_listen_start_practice_top_hint">精听练习</string>
     <string name="str_listen_start_practice_make_hint">做题练习</string>
     <string name="str_please_choose">请选择</string>
+    <string name="str_please_already_first">已经是第一题</string>
     <string name="str_please_choose_answer">请选择答案</string>
+    <string name="str_please_choose_data">请选择日期</string>
     <string name="str_guide_des">立即使用</string>
 
     <string name="str_classification_course_study">课程学业</string>
@@ -109,6 +123,7 @@
     <string name="str_see_result">查看结果</string>
     <string name="str_sec_listen_item_des">正确率：%1$s&#160;耗时：%2$s</string>
     <string name="str_download">下载</string>
+    <string name="str_see">查看</string>
     <string name="str_single">单句</string>
     <string name="str_full_text">全文</string>
     <string name="str_listen_write">听写</string>
@@ -120,12 +135,13 @@
     <string name="str_word_phonetic">英[%1$s]&#160;美[%2$s]</string>
 
     <string name="str_answer_analyze">答案解析</string>
+    <string name="str_last_question">上一题</string>
     <string name="str_show_answer">显示答案</string>
     <string name="str_next_question">下一题</string>
     <string name="str_passage">Passage%1$d</string>
     <string name="str_read_practice_tpo_tab_title">TPO阅读练习</string>
     <string name="str_read_practice_tpo_title">TPO练习</string>
-    <string name="str_read_practice_tpo_des">49套TPO全方位满足你的需求</string>
+    <string name="str_read_practice_tpo_des">50套TPO全方位满足你的需求</string>
     <string name="str_read_practice_og_title">OG真题练习</string>
     <string name="str_read_practice_og_question_title">OG-%1$s</string>
     <string name="str_read_practice_tpo_question_title">TPO-Passage%1$d</string>
@@ -158,6 +174,7 @@
     <string name="str_use_time">总耗时：%1$s</string>
     <string name="str_result_use_time">耗时</string>
     <string name="str_correct_avg">正确率</string>
+    <string name="str_remark_new_msg_title">新消息</string>
     <string name="str_see_result_title">查看结果</string>
     <string name="str_see_result_detail_title">查看详情</string>
     <string name="str_wave_center_des">%1$d/%2$d</string>
@@ -167,6 +184,7 @@
     <string name="str_header_photo">从相册选择</string>
     <string name="str_set_title">更多设置</string>
     <string name="str_user_info">个人信息</string>
+    <string name="str_user_setting">个人设置</string>
     <string name="str_set_head">头像</string>
     <string name="str_set_name">用户名</string>
     <string name="str_set_nick_name">昵称</string>
@@ -208,26 +226,53 @@
     <string name="str_feed_hint_content">请输入反馈，我们将为你不断改进</string>
     <string name="str_feed_hint_phone">请输入你的联系方式（可选）</string>
     <string name="str_feed_commit">提交</string>
+    <string name="str_post_name">发布人: 雷哥托福</string>
 
     <string name="str_play_times">播放次数：%1$d</string>
     <string name="str_counter_down">跳过（%1$d秒）</string>
+    <string name="str_counter_downs">跳过（%1$d秒）后进入雷豆管理界面</string>
 
     <string name="str_teacher_detail">查看老师详情>></string>
-    <string name="str_about_lesson">约课</string>
+    <string name="str_about_lesson">文件列表</string>
+    <string name="str_about_lessons">约课</string>
     <string name="str_teacher_lesson_number">已约：%1$s人</string>
     <string name="str_pub_lesson_num">报名人数:%1$s人</string>
-    <string name="str_current_mon_hot_course">本月热门课程</string>
-    <string name="str_online_lesson">在线课程</string>
+    <string name="str_pub_lesson_nums">播放次数:%1$s次</string>
+    <string name="str_current_mon_hot_course">热门课程</string>
+    <string name="str_online_lesson">托福课程</string>
     <string name="str_hot_go_lesson">上课</string>
     <string name="str_lesson_every_open">开课时间：随时</string>
     <string name="str_lesson_open_time">开课时间：%1$s</string>
     <string name="str_lesson_course_time">课时:%1$s</string>
-    <string name="str_lesson_price">¥：%1$s</string>
+    <string name="str_know_time">发布时间:%1$s</string>
+    <string name="str_lesson_price">%1$s</string>
+    <string name="str_leidou_price">%1$s雷豆购买</string>
     <string name="str_lesson_search_num">浏览数：%1$s</string>
-    <string name="str_hot_times"><![CDATA[共<font color="#eb9515">%1$s</font>人]]></string>
+    <string name="str_hot_times"><![CDATA[已加入<font color="#2fa5d3">%1$s</font>人]]></string>
 
     <string name="str_unread_msg"><![CDATA[<font color="#F23030">【未读信息】</font>%1$s]]></string>
     <string name="str_has_read_msg"><![CDATA[<font color="#33CC66">【已读信息】</font>%1$s]]></string>
+    <string name="str_post_person"><![CDATA[发布人: <font color="#197fed">%1$s</font>]]></string>
+    <string name="str_pub_lesson_teacher"><![CDATA[授课老师: <font color="#197fed">%1$s</font>]]></string>
+    <string name="str_post_time"><![CDATA[时间: <font color="#197fed">%1$s</font>]]></string>
+    <string name="str_post_see"><![CDATA[查看: <font color="#197fed">%1$s</font>]]></string>
+    <string name="str_lesson_end_date"><![CDATA[有效期至: <font color="#197fed">%1$s</font>]]></string>
+    <string name="str_leidou_num"><![CDATA[雷豆总数: <font color="#197fed" size = "18">%1$s</font>]]></string>
+    <string name="str_leidou_nums"><![CDATA[雷豆总数: <font color="#F0E68C" size = "18">%1$s</font>]]></string>
+    <string name="str_item_download_person_num"><![CDATA[已有<font color="#eb9515">%1$s人</font>下载]]></string>
+    <string name="str_item_download_type"><![CDATA[【机经专区】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_type_01"><![CDATA[【考试资讯】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_type_02"><![CDATA[【高分故事】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_type_03"><![CDATA[【资料下载】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_type_04"><![CDATA[【口语评分】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_type_05"><![CDATA[【作文批改】 <font color="#000000">%1$s</font>]]></string>
+    <string name="str_item_download_types"><![CDATA[【机经专区】]]></string>
+    <string name="str_item_download_types_01"><![CDATA[【考试资讯】]]></string>
+    <string name="str_item_download_types_02"><![CDATA[【高分故事】]]></string>
+    <string name="str_item_download_types_03"><![CDATA[【资料下载】]]></string>
+    <string name="str_item_download_types_04"><![CDATA[【口语评分】]]></string>
+    <string name="str_item_download_types_05"><![CDATA[【作文批改】]]></string>
+
 
     <string name="str_confirm_commit">确认提交</string>
     <string name="str_trial_course_title">试听课</string>
@@ -245,8 +290,11 @@
     <string name="str_phone_error_tip">您输入的电话格式不正确</string>
     <string name="str_enter_you_phone_tip">请输入您的电话</string>
     <string name="str_about_lesson_tip">我们将在一个工作日内与你取得联系哦!</string>
+    <string name="str_about_lesson_post">已过期</string>
 
     <string name="str_expert_lecturer">专家讲师</string>
+
+    <string name="str_new_activity">最新活动</string>
 
     <string name="trial_sc_teacher_des">授课老师：zora老师</string>
     <string name="trial_rc_teacher_des">授课老师：Bella老师</string>
@@ -266,14 +314,25 @@
     <string name="str_free_go_try">去试听</string>
 
     <string name="str_free_trial">免费试听课程</string>
+    <string name="str_data_download">资料下载</string>
+    <string name="str_test_infor">考试资讯</string>
+    <string name="str_for_zone">机经专区</string>
+    <string name="str_high_story">高分故事</string>
+    <string name="str_eassay_make">作文批改</string>
+    <string name="str_speak_commit">口语评分</string>
+    <string name="str_writing_corroent">作文批改</string>
 
     <string name="str_practice_listen">听力</string>
+    <string name="strs_practice_listen">趣味听力</string>
     <string name="str_practice_read">阅读</string>
     <string name="str_practice_voice">口语</string>
     <string name="str_practice_write">写作</string>
     <string name="str_today_duty">今日任务</string>
+    <string name="str_know_people_num_des"><![CDATA[共<font color="#eb9515">%1$d</font>知识点，<font color="#eb9515">%2$d</font>人已学习]]></string>
     <string name="str_all_complete_duty">总完成任务</string>
     <string name="str_all_learning_day_num">总学习天数</string>
+    <string name="str_model_parctice">模块练习</string>
+    <string name="str_model_parctices">Module to practice</string>
     <string name="str_bottom_listen_parctice">听力练习</string>
     <string name="str_listen_parctice_title">听力练习(%1$d/%2$d）</string>
     <string name="str_bottom_read_parctice">阅读练习</string>
@@ -283,12 +342,15 @@
     <string name="str_istening_exercises">泛听练习</string>
     <string name="str_next_istening_exercises">下一篇</string>
     <string name="str_listen_to_articles">精听文章</string>
+    <string name="str_hot_to_articles">热点文章</string>
     <string name="str_listen_to_text">精听文本</string>
     <string name="str_listen_new_make">再做一次</string>
     <string name="str_core_vocabulary">核心词汇</string>
     <string name="str_des_num">%1$d个</string>
     <string name="str_des_day_num">%1$d天</string>
     <string name="str_make_result_num">本次做题结果：%1$d/%2$d</string>
+    <string name="str_leidou_num_des"><![CDATA[<font color="#2fa5d3">雷豆说明</font>/d<font color="#2fa5d3">1、雷豆规则</font>，<font color="#2fa5d3">%2$d</font>人已学习]]></string>
+
 
     <string name="str_determine">确定</string>
     <string name="str_confirm_re">确认</string>
@@ -313,15 +375,73 @@
     <string name="str_has_account_go_login">已有账号，立即登录</string>
     <string name="str_go_login_hint">需要登录才能继续哦</string>
 
+
     <string name="str_center_listening_record">听力记录</string>
     <string name="str_center_oral_record">口语记录</string>
     <string name="str_center_read_record">阅读记录</string>
     <string name="str_center_write_record">写作记录</string>
+    <string name="str_center_my_price_record">我的练习记录</string>
+    <string name="str_center_my_know">我的知识库</string>
+    <string name="str_center_my_leidou">雷豆管理</string>
     <string name="str_center_my_courses">我的课程</string>
     <string name="str_center_glossary">生词本&#160;&#160;&#160;&#160;</string>
     <string name="str_glossary_title">生词本</string>
     <string name="str_glossary_detail_title">生词</string>
     <string name="str_center_msg">消息中心</string>
     <string name="str_center_setting">更多设置</string>
+
+    <string name="str_infor_junior">初中</string>
+    <string name="str_infor_senior">高中</string>
+    <string name="str_infor_college">大学</string>
+    <string name="str_infor_graduate">毕业</string>
+    <string name="str_infor_other">其他</string>
+    <string name="str_infor_others">请输入目标分数（1-120）</string>
+    <string name="str_infor_otherss">请输入你考过的分数（1-120）</string>
+    <string name="str_infor_next">下一步</string>
+    <string name="str_infor_test_yes">考过</string>
+    <string name="str_infor_test_no">没考过</string>
+    <string name="str_infor_load">开启我的托福</string>
+    <string name="str_infor_loads">托福课程</string>
+
+
+    <!--分享-->
+    <string name="ssdk_sinaweibo">新浪微博</string>
+    <string name="ssdk_tencentweibo">腾讯微博</string>
+    <string name="ssdk_qq">QQ好友</string>
+    <string name="ssdk_qzone">QQ空间</string>
+    <string name="ssdk_wechat">微信好友</string>
+    <string name="ssdk_down">保存本地</string>
+    <string name="ssdk_wechatmoments">微信朋友圈</string>
+    <string name="ssdk_wechatmomentss">分享做题结果获取红包</string>
+
+    <!--知识库-->
+    <string name="str_know_for_re">备考</string>
+    <string name="str_know_baic">基础</string>
+    <string name="str_know_improve">提升</string>
+    <string name="str_know_techin">技巧</string>
+
+    <!--雷豆充值-->
+    <string name="str_leidou_recharge">充值中心</string>
+    <string name="str_leidou_recharge_complete">充值完成</string>
+    <string name="str_leidou_complete">完成</string>
+
+    <!--口语评分-->
+    <string name="str_corret_see_all">查看全部</string>
+    <string name="str_corret_see_mine">只看我的</string>
+    <string name="str_corret_free_c">今日口语免费批改5篇</string>
+    <string name="str_corret_spe_al_comple">今日免费名额已抢完，请用雷豆批改</string>
+    <string name="str_corret_spe_al_no">快来抢口语免费劵</string>
+    <string name="str_correts_spe_al_no">快来抢作文免费劵</string>
+    <string name="str_corret_times"><![CDATA[已有<font color="#2fa5d3">%1$s</font>人参与]]></string>
+    <string name="str_corret_date_num">%1$s口语免费批改5篇</string>
+    <string name="str_corretss_date_num">%1$s作文免费批改3篇</string>
+
+
+    <!--配音课推荐-->
+    <string name="str_dub_recommend">配音课推荐</string>
+    <string name="str_dub_all">查看全部配音课</string>
+
+    <!--每日听力-->
+    <string name="str_eve_listen">每日听力</string>
 
 </resources>

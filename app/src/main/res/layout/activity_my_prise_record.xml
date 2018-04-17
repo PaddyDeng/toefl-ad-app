@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/custome_title_bar_style"
+            android:background="@color/color_text_green">
+
+            <ImageView
+                style="@style/black_bg_title_back"
+                />
+            <TextView
+                style="@style/title_tv_style"
+                android:layout_centerInParent="true"
+                android:text="@string/str_center_my_price_record"
+                android:textColor="@color/color_white"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/color_default_gray"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/center_listen_record_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_max_max"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_mine_listen"
+                        android:paddingLeft="@dimen/border_space_sec_max_s"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        style="@style/toefl_item_tv_style"
+                        android:text="@string/str_center_listening_record"
+                        android:layout_toRightOf="@+id/iv_01"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/border_space_sec_max"
+                        />
+
+                </RelativeLayout>
+
+                <View style="@style/lines"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:layout_marginRight="@dimen/border_space_sec_max"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/center_make_record_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_max_max"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_mine_speak"
+                        android:paddingLeft="@dimen/border_space_sec_max"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        style="@style/toefl_item_tv_style"
+                        android:text="@string/str_center_oral_record"
+                        android:layout_toRightOf="@+id/iv_02"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/border_space_sec_max"
+                        />
+
+                </RelativeLayout>
+
+                <View style="@style/lines"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:layout_marginRight="@dimen/border_space_sec_max"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/wrong_record_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_max_max"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_mine_read"
+                        android:paddingLeft="@dimen/border_space_sec_max"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        style="@style/toefl_item_tv_style"
+                        android:text="@string/str_center_read_record"
+                        android:layout_toRightOf="@+id/iv_03"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/border_space_sec_max"
+                        />
+
+                </RelativeLayout>
+
+                <View style="@style/lines"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:layout_marginRight="@dimen/border_space_sec_max"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/center_buy_record_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/border_space_max_max"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_mine_wrote"
+                        android:paddingLeft="@dimen/border_space_sec_max_s"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        style="@style/toefl_item_tv_style"
+                        android:text="@string/str_center_write_record"
+                        android:layout_toRightOf="@+id/iv_04"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/border_space_sec_max"
+                        />
+
+                </RelativeLayout>
+
+                <View style="@style/lines"
+                    android:layout_marginLeft="@dimen/border_space_sec_max"
+                    android:layout_marginRight="@dimen/border_space_sec_max"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>

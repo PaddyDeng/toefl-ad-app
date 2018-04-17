@@ -49,8 +49,8 @@ public class MainNavHelper {
 
     public void switchFragment(FragmentManager fm,View view) {
         int viewId = view.getId();
-        if (naviMapFragment.indexOfKey(viewId) < 0) return;
-        if (!view.isSelected()) {
+        if (naviMapFragment.indexOfKey(viewId) < 0) return;//indexOfKey是SparseArray中查询值所在位置的
+        if (!view.isSelected()) {//view.isSelected()为获得文本框的状态，默认为false
             replaceFragment(fm, viewId);
         }
     }

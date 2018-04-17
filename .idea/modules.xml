@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/toefl.iml" filepath="$PROJECT_DIR$/toefl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toefl-ad-app-master.iml" filepath="$PROJECT_DIR$/toefl-ad-app-master.iml" />
     </modules>
   </component>
 </project>

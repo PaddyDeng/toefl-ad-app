@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:id="@+id/frames"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/border_space_six_max_w"
+        android:background="@drawable/ic_corret_back"
+       >
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_img_size"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_corret_sanhua"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_corret_sure"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/detail_img_size"
+            android:id="@+id/update_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="抢到口语免费批改名额"
+            android:textColor="@color/color_black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/linear"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/update_tvs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(仅限当天使用)"
+            android:layout_marginTop="@dimen/radius"
+            android:textColor="@color/color_black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/update_tv"
+            android:gravity="center_horizontal" />
+
+
+        <TextView
+            android:id="@+id/update_tvss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即使用"
+            android:background="@drawable/ic_corret_bt"
+            android:layout_marginTop="@dimen/border_space_sec_max_b"
+            android:textColor="@color/color_white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/update_tvs"
+            android:gravity="center" />
+
+
+
+    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:src="@drawable/ic_uptate_03" />-->
+
+    <ImageView
+        android:id="@+id/dialog_simple_btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:padding="@dimen/border_space_sec_m"
+        android:src="@drawable/ic_to_update_error"/>
+
+
+</FrameLayout>

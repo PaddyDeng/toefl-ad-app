@@ -124,7 +124,7 @@ public class GrammarTestActivity extends BaseActivity {
                     @Override
                     public GrammarData apply(@NonNull GrammarData data) throws Exception {
                         int num = RecordManager.getInstance().queryMakeNum();
-                        titleTv.setText(getString(R.string.str_grammar_test_title, num + 1));
+                        titleTv.setText(getString(R.string.str_grammars_test_title, num + 1));
                         return data;
                     }
                 })
@@ -193,7 +193,7 @@ public class GrammarTestActivity extends BaseActivity {
             finishWithAnim();
             return;
         }
-        titleTv.setText(getString(R.string.str_grammar_test_title, index + 1));
+        titleTv.setText(getString(R.string.str_grammars_test_title, index + 1));
         GrammarRecordData recordData = mGrammarDatas.get(index);
         GrammarData data = JsonUtil.fromJson(recordData.getJson(), new TypeToken<GrammarData>() {
         }.getType());
@@ -300,7 +300,7 @@ public class GrammarTestActivity extends BaseActivity {
                             RxBus.get().post(C.MAKE_GRAMMAR, C.MAKEING);
                         } else if (bean.getCode() == 2) {
                             RxBus.get().post(C.MAKE_GRAMMAR, C.MAKE_END);
-                            //做题完成
+                            //做题完成，弹出任务通过的弹窗
                             if (mtaskDialog == null) {
                                 mtaskDialog = new TaskEndDialog();
                             }

@@ -1,9 +1,11 @@
 package io.dcloud.H58E83894.ui.make.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,15 +71,18 @@ public class ListenSecAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerVie
         showFormResult = true;
         for (int i = 0, size = mDataList.size(); i < size; i++) {
             AnswerData data = mDataList.get(i);
+
             String c = String.valueOf(correctAnswer.charAt(i));
             String at = String.valueOf(userAnser.charAt(i));
+//            String option = data.getOption();
             data.setCorrectOption(c);
-            if (TextUtils.equals(c, at)) {
-                data.setControl(C.CORRECT);
-            } else {
-                data.setControl(C.ERROR);
-                data.setErrorOption(at);
-            }
+            data.setErrorOption(at);
+//            if (TextUtils.equals(option, c)) {
+////                data.setControl(C.CORRECT);
+////            } else if (!showFormResult && TextUtils.equals(option, at)){
+////                data.setControl(C.ERROR);
+//////                data.setErrorOption(at);
+////            }
         }
         notifyDataSetChanged();
     }
@@ -178,6 +183,8 @@ public class ListenSecAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerVie
     private void setFormOption(BaseRecyclerViewHolder holder, final AnswerData data, final Context context) {
         TextView contentTv = holder.getTextView(R.id.listen_form_answer_content);
         contentTv.setText(data.getContent());
+        Log.i("catId2", data.toString());
+
         if (data.getControl() == C.CORRECT) {
             contentTv.setTextColor(ContextCompat.getColor(context, R.color.color_sup_green));
         } else if (data.getControl() == C.ERROR) {

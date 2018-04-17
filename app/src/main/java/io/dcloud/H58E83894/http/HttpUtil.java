@@ -7,17 +7,36 @@ import java.util.List;
 import java.util.Map;
 
 import io.dcloud.H58E83894.data.AdvertisingData;
+import io.dcloud.H58E83894.data.CorretData;
+import io.dcloud.H58E83894.data.DownloadData;
 import io.dcloud.H58E83894.data.GlossaryData;
 import io.dcloud.H58E83894.data.GlossaryWordData;
+import io.dcloud.H58E83894.data.InforData;
+import io.dcloud.H58E83894.data.JsonRootBean;
+import io.dcloud.H58E83894.data.KnowMaxListData;
+import io.dcloud.H58E83894.data.LeidouReData;
 import io.dcloud.H58E83894.data.ListenRecordData;
+import io.dcloud.H58E83894.data.ListsData;
 import io.dcloud.H58E83894.data.MsgData;
+import io.dcloud.H58E83894.data.MyLessonData;
+import io.dcloud.H58E83894.data.PayData;
+import io.dcloud.H58E83894.data.PayDatas;
 import io.dcloud.H58E83894.data.ResultBean;
 import io.dcloud.H58E83894.data.circle.CommunityData;
 import io.dcloud.H58E83894.data.circle.RemarkBean;
 import io.dcloud.H58E83894.data.circle.RemarkData;
+import io.dcloud.H58E83894.data.circle.ReplyData;
+import io.dcloud.H58E83894.data.commit.TodayListData;
+import io.dcloud.H58E83894.data.instestlisten.AllInstListenData;
+import io.dcloud.H58E83894.data.know.KnowTypeData;
+import io.dcloud.H58E83894.data.know.KnowZoneData;
+import io.dcloud.H58E83894.data.make.AllTaskData;
+import io.dcloud.H58E83894.data.make.GrammarData;
+import io.dcloud.H58E83894.data.make.ListenData;
 import io.dcloud.H58E83894.data.make.ListenPracticeData;
 import io.dcloud.H58E83894.data.make.ListenQuestionData;
 import io.dcloud.H58E83894.data.make.ListenSecTpoData;
+import io.dcloud.H58E83894.data.make.OnlyMineData;
 import io.dcloud.H58E83894.data.make.PracticeData;
 import io.dcloud.H58E83894.data.make.PracticeQuestionData;
 import io.dcloud.H58E83894.data.make.ReadData;
@@ -31,8 +50,6 @@ import io.dcloud.H58E83894.data.make.TodayData;
 import io.dcloud.H58E83894.data.make.WriteQuestionData;
 import io.dcloud.H58E83894.data.make.WriteTpoData;
 import io.dcloud.H58E83894.data.make.core.CoreData;
-import io.dcloud.H58E83894.data.make.GrammarData;
-import io.dcloud.H58E83894.data.make.ListenData;
 import io.dcloud.H58E83894.data.prelesson.FreeCursorData;
 import io.dcloud.H58E83894.data.prelesson.LessonDetailBean;
 import io.dcloud.H58E83894.data.prelesson.PreLessonData;
@@ -67,6 +84,11 @@ public class HttpUtil {
 
     public static Observable<ResultBean> register(String type, String registerStr, String pass, String code) {
         return getRestApi(HostType.LOGIN_REGIST_HOST).register(type, registerStr, pass, code, "android_toefl", "2", "2")
+                .compose(new SchedulerTransformer<ResultBean>());
+    }
+
+    public static Observable<ResultBean> registerInfor(String timeTime, int ifTest, int targetScore, String status, int maxScore) {
+        return getRestApi(HostType.TOEFL_URL_HOST).register(timeTime, ifTest, targetScore, status, maxScore)
                 .compose(new SchedulerTransformer<ResultBean>());
     }
 
@@ -134,6 +156,12 @@ public class HttpUtil {
     public static Observable<CommunityData> getPostDeail(String postId) {
         return getRestApi(HostType.GOSSIP_URL_HOST).getPostDeail(postId).compose(new SchedulerTransformer<CommunityData>());
     }
+
+    public static Observable<CommunityData> getPostDownDeail(int id) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getPostDownDeail(id).compose(new SchedulerTransformer<CommunityData>());
+    }
+
+
 
     public static Observable<ResultBean> postReply(String postId, String content) {
         return getRestApi(HostType.GOSSIP_URL_HOST).postReply(postId, content).compose(new SchedulerTransformer<ResultBean>());
@@ -207,10 +235,13 @@ public class HttpUtil {
         return getRestApi(HostType.TOEFL_URL_HOST).lessonDetail(id).compose(new SchedulerTransformer<ResultBean<LessonDetailBean>>());
     }
 
-    public static Observable<ResultBean> addContent(String name, String... extend) {
-        return getRestApi(HostType.SMARTAPPLY_URL_HOST).addContent(236, name, extend).compose(new SchedulerTransformer<ResultBean>());
-    }
+//    public static Observable<ResultBean> addContent(String name, String... extend) {
+//        return getRestApi(HostType.SMARTAPPLY_URL_HOST).addContent(236, name, extend).compose(new SchedulerTransformer<ResultBean>());
+//    }
 
+    public static Observable<ResultBean> addContent(String name, String phone, String message) {
+        return getRestApi(HostType.TOEFL_URL_HOST).addContent(name, phone, "android toefl app", message,  4).compose(new SchedulerTransformer<ResultBean>());
+    }
     //注册及修改密码初始化
     public static Observable<JsonObject> phone_request(){
         return getRestApi(HostType.LOGIN_REGIST_HOST).phone_request().compose(new SchedulerTransformer<JsonObject>());
@@ -364,8 +395,8 @@ public class HttpUtil {
         return getRestApi(HostType.TOEFL_URL_HOST).questionReport(id, description, "3", "3", "1").compose(new SchedulerTransformer<ResultBean>());
     }
 
-    public static Observable<ResultBean> lessonList(int page) {
-        return getRestApi(HostType.TOEFL_URL_HOST).lessonList(page, C.PAGESIZE).compose(new SchedulerTransformer<ResultBean>());
+    public static Observable<MyLessonData> lessonList(int page) {
+        return getRestApi(HostType.TOEFL_URL_HOST).lessonList(page).compose(new SchedulerTransformer<MyLessonData>());
     }
 
     //版本更新
@@ -376,4 +407,134 @@ public class HttpUtil {
     public static Observable<List<FreeCursorData>> getFreeCursor() {
         return getRestApi(HostType.TOEFL_URL_HOST).getFreeCursor().compose(new SchedulerTransformer<List<FreeCursorData>>());
     }
+
+    //知识库
+    public static Observable<KnowMaxListData> getKnowBase() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getKnowBase().compose(new SchedulerTransformer<KnowMaxListData>());
+    }
+
+    public static Observable<KnowTypeData> getKnowType(int id) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getKnowType(id).compose(new SchedulerTransformer<KnowTypeData>());
+    }
+
+    public static Observable<JsonRootBean> getKnowInfo(int contentId) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getKnowInfo(contentId).compose(new SchedulerTransformer<JsonRootBean>());
+    }
+
+    //知识库
+    public static Observable<KnowZoneData> getKnowLists(int id, int page) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getKnowLists(id, page, 15).compose(new SchedulerTransformer<KnowZoneData>());
+    }
+
+    //我的知识库
+    public static Observable<ListsData> getMyKnowLists(int page) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getMyKnowLists(page).compose(new SchedulerTransformer<ListsData>());
+    }
+
+    public static Observable<PayData> getLeidouPay(int id, int integral) {//type 1 lei dou  2 qian
+        return getRestApi(HostType.TOEFL_URL_HOST).getLeidouPay(id, integral, 1).compose(new SchedulerTransformer<PayData>());
+    }
+
+
+    //机经下载
+    public static Observable<ResultBean<List<DownloadData>>> MaryList(int catId, int page) {
+        return getRestApi(HostType.TOEFL_URL_HOST).MaryList(catId, page).compose(new SchedulerTransformer<ResultBean<List<DownloadData>>>());
+    }
+
+    //高分作文下载
+    public static Observable<ResultBean<List<DownloadData>>> HighList(int selectId, int page) {
+        return getRestApi(HostType.GOSSIPSS_URL_HOST).HighList(selectId, page, 15).compose(new SchedulerTransformer<ResultBean<List<DownloadData>>>());
+    }
+    //消息
+    public static Observable<List<ReplyData>> replyList(int uid) {
+        return getRestApi(HostType.GOSSIP_URL_HOST).replyList(uid).compose(new SchedulerTransformer<List<ReplyData>>());
+    }
+
+    public static Observable<InforData> userInfor() {
+        return getRestApi(HostType.TOEFL_URL_HOST).userInfor().compose(new SchedulerTransformer<InforData>());
+    }
+
+    public static Observable<LeidouReData> getLeidou() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getLeidou().compose(new SchedulerTransformer<LeidouReData>());
+    }
+
+    public static Observable<PayDatas> getZfb(int uid, String money) {
+        return getRestApi(HostType.VIPLGWSS_URL_HOST).getZfbPay(uid, money).compose(new SchedulerTransformer<PayDatas>());
+    }
+
+    public static Observable<PayDatas> getOrderInfo(int orderId) {
+        return getRestApi(HostType.VIPLGWSS_URL_HOST).getOrderInfo(orderId).compose(new SchedulerTransformer<PayDatas>());
+    }
+
+
+
+
+    public static Observable<TodayListData> getTodayList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getTodayList().compose(new SchedulerTransformer<TodayListData>());
+    }
+
+    public static Observable<AllTaskData> getPastAllList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getPastAllList().compose(new SchedulerTransformer<AllTaskData>());
+    }
+
+    public static Observable<OnlyMineData> getOnlyMineList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getOnlyMineList().compose(new SchedulerTransformer<OnlyMineData>());
+    }
+
+    public static Observable<CorretData> getPlaces(int integral) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getVoiceId(integral).compose(new SchedulerTransformer<CorretData>());
+    }
+
+    public static Observable<PayDatas> getPlacess(int integral) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getPlaces(integral).compose(new SchedulerTransformer<PayDatas>());
+    }
+
+
+    public static Observable<TodayListData> getEaTodayList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getEaTodayList().compose(new SchedulerTransformer<TodayListData>());
+    }
+
+    public static Observable<AllTaskData> getEaPastAllList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getEaPastAllList().compose(new SchedulerTransformer<AllTaskData>());
+    }
+
+    public static Observable<OnlyMineData> getEaOnlyMineList() {
+        return getRestApi(HostType.TOEFL_URL_HOST).getEaOnlyMineList().compose(new SchedulerTransformer<OnlyMineData>());
+    }
+
+    public static Observable<AllInstListenData> getInstAll(int page) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getInstAll(page).compose(new SchedulerTransformer<AllInstListenData>());
+    }
+
+    public static Observable<ResultBean> spokenUpTokens(int token, MultipartBody.Part file) {
+        return getRestApi(HostType.TOEFL_URL_HOST).spokenUpTokens(token, file);
+    }
+
+    public static Observable<ResultBean> spokenSaves(int contentId, String Url) {
+        return getRestApi(HostType.TOEFL_URL_HOST).spokenSaves(contentId, Url);
+    }
+
+    public static Observable<ResultBean> spokenUpTokenss(MultipartBody.Part file) {
+        return getRestApi(HostType.TOEFL_URL_HOST).spokenUpTokenss(file);
+    }
+
+    public static Observable<ListenPracticeData> listenPractices() {
+        return getRestApi(HostType.TOEFL_URL_HOST).listenPractice().compose(new SchedulerTransformer<ListenPracticeData>());
+    }
+
+    public static Observable<PayDatas> getEaPlacess(int integral) {
+        return getRestApi(HostType.TOEFL_URL_HOST).getEaPlaces(integral).compose(new SchedulerTransformer<PayDatas>());
+    }
+
+    public static Observable<AllInstListenData> getQuListen(int integral) { //趣味详情
+        return getRestApi(HostType.TOEFL_URL_HOST).getQuListen(integral).compose(new SchedulerTransformer<AllInstListenData>());
+    }
+
+    public static Observable<AllInstListenData> getQuListenColl(int integral) { //趣味详情
+        return getRestApi(HostType.TOEFL_URL_HOST).getQuListenColl(3, 1, integral).compose(new SchedulerTransformer<AllInstListenData>());
+    }
+//    public static Observable<CorretData> getPlaces(int integral) {
+//        return getRestApi(HostType.TOEFL_URL_HOST).getPlaces(integral).compose(new SchedulerTransformer<CorretData>());
+//    }s
+
 }

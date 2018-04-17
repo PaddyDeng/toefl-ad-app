@@ -49,6 +49,8 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements V
         return findViewById(viewId);
     }
 
+
+
     public CommentListView getCommLV(int viewId) {
         return findViewById(viewId);
     }
@@ -81,4 +83,5 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements V
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
+
 }

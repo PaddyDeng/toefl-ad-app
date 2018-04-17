@@ -6,6 +6,15 @@ package io.dcloud.H58E83894.data.prelesson;
 
 public class LessonDetailBean {
     private String answer;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getAnswer() {
         return answer;

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/icon_listen_practice"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_styles"
+        android:alpha="0.5"
+        >
+
+        <ImageView style="@style/black_bg_title_backs"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_eve_listen"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/next_question_fine_listen"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="@string/str_next_istening_exercises"-->
+            <!--android:textColor="@color/color_white"-->
+            <!--android:layout_marginRight="@dimen/border_space_sec_max"-->
+            <!--android:textSize="@dimen/text_size_medium"/>-->
+
+        <ImageView
+            android:id="@+id/question_feed_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/border_space_sec_m"
+            android:src="@drawable/ic_result_share"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_weight="1">
+
+        <io.dcloud.H58E83894.weiget.LyricView
+            android:id="@+id/lyric_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:txtSize="@dimen/text_size_small"/>
+
+        <RelativeLayout
+            android:id="@+id/relavite_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/listen_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/border_space_sec_max"
+                android:text="你为大脑的钱占比多大呢？我才能给【女生节专辑】"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/color_white"
+                />
+
+            <RelativeLayout
+                android:layout_below="@+id/listen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/listen_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:text="2018年03月07日"
+                    android:textSize="@dimen/text_size_micro"
+                    android:textColor="@color/color_white"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击查看字幕"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_micro"
+                android:textColor="@color/color_white"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="@dimen/border_space_sec_mm"
+                />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/chinese_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/border_space_six_max_w"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:src="@drawable/icon_listen_switch_drawable"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:paddingTop="@dimen/border_space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_blur"
+        android:alpha="0.5"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_seek_bar_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/music_play_control">
+
+            <TextView
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_micro"/>
+
+            <SeekBar
+                android:id="@+id/music_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:progressDrawable="@drawable/seekbar_bg"
+                android:thumb="@drawable/seekbar_circle"
+                android:layout_toLeftOf="@+id/end_time"
+                android:layout_toRightOf="@+id/start_time"/>
+
+            <TextView
+                android:id="@+id/end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/border_space_sec_max"
+                android:text="00:00"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_micro"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/border_space_max_max"
+            android:layout_marginRight="@dimen/border_space_max_max"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/listen_article_collect"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_ev_practice_co_shape"/>
+
+            <ImageView
+                android:id="@+id/listen_article_btn"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/border_space_sec_max"
+                android:src="@drawable/icon_ev_practice_btn_shape"
+                />
+
+            <ImageView
+                android:id="@+id/listen_article_menu"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ev_menu"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

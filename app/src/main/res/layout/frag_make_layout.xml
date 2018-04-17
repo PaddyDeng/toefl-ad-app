@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/icon_make_practice_bg">
+    android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_blur"/>
 
     <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
         android:layout_width="match_parent"
@@ -23,20 +19,27 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/border_space_sec_max_m">
+                android:layout_height="180dip"
+                android:background="@drawable/ic_make_back">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_blur"
+                    />
 
                 <io.dcloud.H58E83894.weiget.CircleImageView
                     android:id="@+id/practice_head_iv"
                     android:layout_width="80dip"
                     android:layout_height="80dip"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/icon_default"/>
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_make_tou_03"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                   android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/practice_head_iv"
                     android:orientation="vertical">
 
@@ -45,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/color_white"
+                        android:textColor="@color/color_text_green"
                         android:textSize="@dimen/text_size_bl"/>
 
                     <TextView
@@ -53,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/str_all_complete_duty"
-                        android:textColor="@color/color_txt_gray"/>
+                        android:textColor="@color/color_white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -68,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/color_white"
+                        android:textColor="@color/color_text_green"
                         android:textSize="@dimen/text_size_bl"/>
 
                     <TextView
@@ -76,213 +79,674 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/str_all_learning_day_num"
-                        android:textColor="@color/color_txt_gray"/>
+                        android:textColor="@color/color_white"/>
                 </LinearLayout>
+
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="@dimen/border_space_sec_max"
-                android:layout_weight="1"
-                android:background="@drawable/practice_gray_shape_bg"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic__make_prise_03"
+                android:layout_marginTop="-30dip"
+                android:orientation="vertical"
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dip"
-                    android:layout_weight="1.2"
-                    android:paddingLeft="@dimen/border_space_sec">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:drawableLeft="@drawable/icon_today_duty"
-                        android:drawablePadding="@dimen/border_space"
-                        android:gravity="center"
-                        android:padding="@dimen/border_space"
-                        android:text="@string/str_today_duty"
-                        android:textColor="@color/color_white"
-                        android:textSize="@dimen/text_size_medium"/>
-
-                    <TextView
-                        android:id="@+id/today_schedule_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/border_space_sec_max"
-                        android:textColor="@color/color_white"
-                        android:textSize="@dimen/text_size_ml"/>
-                </RelativeLayout>
-
-                <View style="@style/practice_line"/>
-
-                <RelativeLayout
-                    android:id="@+id/grammer_container"
-                    style="@style/practice_duty_item_style">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/practice_duty_type_style"
-                            android:text="@string/str_grammer_learning"/>
-
-                        <TextView
-                            style="@style/practice_duty_type_des_style"
-                            android:text="Grammar learning"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/grammar_des"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:text="@string/str_start"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/border_space_sec_max_b"
+                    >
 
                     <ImageView
-                        android:id="@+id/grammar_today_end_img"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:src="@drawable/icon_today_end"
-                        android:visibility="gone"/>
-                </RelativeLayout>
-
-                <View style="@style/practice_line"/>
-
-                <RelativeLayout
-                    android:id="@+id/listen_practice_container"
-                    style="@style/practice_duty_item_style">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:src="@drawable/icon_ling_03"
+                        android:layout_toLeftOf="@+id/make_model"
                         android:layout_centerVertical="true"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/practice_duty_type_style"
-                            android:text="@string/str_istening_exercises"/>
-
-                        <TextView
-                            style="@style/practice_duty_type_des_style"
-                            android:text="General listening"/>
-                    </LinearLayout>
+                        />
 
                     <TextView
-                        android:id="@+id/fine_listen_start_tv"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:text="@string/str_start"/>
-
-                    <ImageView
-                        android:id="@+id/fine_listen_img"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:src="@drawable/icon_today_end"
-                        android:visibility="gone"/>
-                </RelativeLayout>
-
-                <View style="@style/practice_line"/>
-
-                <RelativeLayout
-                    android:id="@+id/listen_container"
-                    style="@style/practice_duty_item_style">
-
-                    <LinearLayout
+                        android:id="@+id/make_model"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/practice_duty_type_style"
-                            android:text="@string/str_listen_to_articles"/>
-
-                        <TextView
-                            style="@style/practice_duty_type_des_style"
-                            android:text="Intensive listening"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/practice_listen_status_tv"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:text="@string/str_start"/>
+                        android:text="@string/str_model_parctice"
+                        android:textColor="@color/color_text_green"
+                        android:textSize="@dimen/text_size_medium"
+                        android:layout_centerHorizontal="true"
+                        />
 
                     <ImageView
-                        android:id="@+id/practice_listen_end"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:src="@drawable/icon_today_end"
-                        android:visibility="gone"/>
-                </RelativeLayout>
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_ling_03"
+                        android:layout_toRightOf="@+id/make_model"
+                        android:layout_centerVertical="true"
+                        />
 
-                <View style="@style/practice_line"/>
+                </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/core_container"
-                    style="@style/practice_duty_item_style">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/practice_duty_type_style"
-                            android:text="@string/str_core_vocabulary"/>
-
-                        <TextView
-                            style="@style/practice_duty_type_des_style"
-                            android:text="Vocabulary"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/core_status_tv"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:text="@string/str_start"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/border_space"
+                    >
 
                     <ImageView
-                        android:id="@+id/practice_core_end"
-                        style="@style/practice_duty_item_right_tv_style"
-                        android:src="@drawable/icon_today_end"
-                        android:visibility="gone"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_make_left_14"
+                        android:layout_toLeftOf="@+id/make_models"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/make_models"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_model_parctices"
+                        android:textColor="@color/color_text_green"
+                        android:textSize="@dimen/text_size_micro"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_make_right_14"
+                        android:layout_toRightOf="@+id/make_models"
+                        android:layout_centerVertical="true"
+                        />
+
                 </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/border_space_sec_max_m"
+                    android:layout_marginLeft="@dimen/border_space_sec_max_m"
+                    android:layout_marginRight="@dimen/border_space_sec_max_m"
+                    android:layout_marginTop="@dimen/border_space_sec_max_m"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/practice_listen_container"
+                        style="@style/practice_type_style"
+                        android:drawableTop="@drawable/icon_listen_11"
+                        android:text="@string/str_practice_listen"/>
+
+                    <TextView
+                        android:id="@+id/practice_read_container"
+                        style="@style/practice_type_style"
+                        android:drawableTop="@drawable/icon_read_11"
+                        android:text="@string/str_practice_read"/>
+
+                    <TextView
+                        android:id="@+id/practice_speak_container"
+                        style="@style/practice_type_style"
+                        android:drawableTop="@drawable/icon_speak_s11"
+                        android:text="@string/str_practice_voice"/>
+
+                    <TextView
+                        android:id="@+id/practice_write_container"
+                        style="@style/practice_type_style"
+                        android:drawableTop="@drawable/icon_write_11"
+                        android:text="@string/str_practice_write"/>
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:layout_marginTop="@dimen/border_space"
+                android:layout_marginBottom="@dimen/border_space"
+                android:layout_marginLeft="@dimen/border_space_sec_m"
+                android:layout_marginRight="@dimen/border_space_sec_m"
+                android:padding="@dimen/border_space_sec"
+                android:background="@color/color_white"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/make_speak_commit"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_speak_commit"
+                            android:textSize="@dimen/text_size_small"
+                            android:drawablePadding="@dimen/base_padding"
+                            android:drawableLeft="@drawable/icon_speak_commit_03"
+                            android:layout_centerInParent="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_sec_gray"
+                        android:layout_marginTop="@dimen/base_padding"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/make_eassay_update"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_writing_corroent"
+                            android:textSize="@dimen/text_size_small"
+                            android:drawablePadding="@dimen/base_padding"
+                            android:drawableLeft="@drawable/icon_wtiring_corror_03"
+                            android:layout_centerInParent="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_sec_gray"
+                        android:layout_marginTop="@dimen/base_padding"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/make_down_load"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_data_download"
+                            android:textSize="@dimen/text_size_small"
+                            android:drawablePadding="@dimen/base_padding"
+                            android:drawableLeft="@drawable/icon_data__03"
+                            android:layout_centerInParent="true"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/border_space"
+                android:layout_marginBottom="@dimen/border_space"
+                android:layout_marginLeft="@dimen/border_space_sec_m"
+                android:layout_marginRight="@dimen/border_space_sec_m"
+                android:visibility="gone"
+                android:padding="@dimen/border_space_sec"
+                android:background="@color/color_white">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space"
+
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_sec_max"
+                        >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_ling_03"
+                            android:layout_toLeftOf="@+id/make_model_taskw"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <TextView
+                            android:id="@+id/make_model_taskw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_dub_recommend"
+                            android:textColor="@color/color_text_green"
+                            android:textSize="@dimen/text_size_medium"
+                            android:layout_centerHorizontal="true"
+                            />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_ling_03"
+                            android:layout_toRightOf="@+id/make_model_taskw"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space_half"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_make_left_14"
+                            android:layout_toLeftOf="@+id/today_schedule_tvss"
+                            android:layout_centerVertical="true"
+                            />
+
+                        <TextView
+                            android:id="@+id/today_schedule_tvss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Dubbing course"
+                            android:textColor="@color/color_text_green"
+                            android:textSize="@dimen/text_size_micro"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_make_right_14"
+                            android:layout_toRightOf="@id/today_schedule_tvss"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </RelativeLayout>
+
+                    <io.dcloud.H58E83894.weiget.StrongRecycler
+                        android:id="@+id/hot_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/border_space_sec"
+                        android:layout_marginTop="@dimen/border_space_sec"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:id="@+id/make_all_dub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_dub_all"
+                            android:textColor="@color/color_text_green"
+                            android:textSize="@dimen/text_size_micro"
+                            android:drawableRight="@drawable/next"
+                            android:drawablePadding="@dimen/border_space"
+                            android:layout_alignParentRight="true"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+            </android.support.v7.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/border_space_sec_max_m"
-                android:orientation="horizontal">
+                android:background="@drawable/ic__make_prise_03"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/border_space"
+                android:layout_marginBottom="@dimen/border_space_sec_m"
+                >
 
-                <TextView
-                    android:id="@+id/practice_listen_container"
-                    style="@style/practice_type_style"
-                    android:drawableTop="@drawable/icon_practice_listen"
-                    android:text="@string/str_practice_listen"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/border_space_sec_max"
+                    >
 
-                <TextView
-                    android:id="@+id/practice_read_container"
-                    style="@style/practice_type_style"
-                    android:drawableTop="@drawable/icon_practice_read"
-                    android:text="@string/str_practice_read"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_ling_03"
+                        android:layout_toLeftOf="@+id/make_model_task"
+                        android:layout_centerVertical="true"
+                        />
 
-                <TextView
-                    android:id="@+id/practice_speak_container"
-                    style="@style/practice_type_style"
-                    android:drawableTop="@drawable/icon_practice_voice"
-                    android:text="@string/str_practice_voice"/>
+                    <TextView
+                        android:id="@+id/make_model_task"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_today_duty"
+                        android:textColor="@color/color_text_green"
+                        android:textSize="@dimen/text_size_medium"
+                        android:layout_centerHorizontal="true"
+                        />
 
-                <TextView
-                    android:id="@+id/practice_write_container"
-                    style="@style/practice_type_style"
-                    android:drawableTop="@drawable/icon_practice_write"
-                    android:text="@string/str_practice_write"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_ling_03"
+                        android:layout_toRightOf="@+id/make_model_task"
+                        android:layout_centerVertical="true"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/border_space_half"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_make_left_14"
+                        android:layout_toLeftOf="@+id/today_schedule_tvs"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/today_schedule_tvs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/color_text_green"
+                        android:textSize="@dimen/text_size_micro"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_make_right_14"
+                        android:layout_toRightOf="@id/today_schedule_tvs"
+                        android:layout_centerVertical="true"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/grammer_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/border_space"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/grammar_today_end_img"
+                                android:layout_width="25dip"
+                                android:layout_height="25dip"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/icon_go_03"
+                                android:layout_marginRight="@dimen/base_padding"
+                                />
+
+                            <TextView
+                                android:id="@+id/grammar_des"
+                                style="@style/practice_duty_item_right_tv_style"
+                                android:text="@string/str_start"
+                                android:visibility="gone"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_duty_type_style"
+                                android:text="@string/str_grammer_learning"/>
+
+                            <TextView
+                                style="@style/practice_duty_type_des_style"
+                                android:text="Grammar learning"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_height="match_parent"
+                        android:layout_width="1dp"
+                        android:background="@color/color_sec_gray"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/listen_practice_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/border_space"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/fine_listen_img"
+                                android:layout_width="25dip"
+                                android:layout_height="25dip"
+                                android:src="@drawable/icon_go_03"
+                                android:layout_marginRight="@dimen/base_padding"
+                                />
+
+                            <TextView
+                                android:id="@+id/fine_listen_start_tv"
+                                style="@style/practice_duty_item_right_tv_style"
+                                android:text="@string/str_start"
+                                android:visibility="gone"/>
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_duty_type_style"
+                                android:text="@string/str_istening_exercises"/>
+
+                            <TextView
+                                style="@style/practice_duty_type_des_style"
+                                android:text="General listening"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/border_space_sec"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/listen_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/border_space"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/practice_listen_end"
+                                android:layout_width="25dip"
+                                android:layout_height="25dip"
+                                android:src="@drawable/icon_go_03"
+                                android:layout_marginRight="@dimen/base_padding"
+                                />
+
+                            <TextView
+                                android:id="@+id/practice_listen_status_tv"
+                                style="@style/practice_duty_item_right_tv_style"
+                                android:text="@string/str_go_on"
+                                android:visibility="gone"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_duty_type_style"
+                                android:text="@string/str_listen_to_articles"/>
+
+                            <TextView
+                                style="@style/practice_duty_type_des_style"
+                                android:text="Intensive listening"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_height="match_parent"
+                         android:layout_width="1dp"
+                        android:background="@color/color_sec_gray"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/core_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/border_space"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/practice_core_end"
+                                android:layout_width="25dip"
+                                android:layout_height="25dip"
+                                android:src="@drawable/icon_go_03"
+                                android:layout_marginRight="@dimen/base_padding"
+                                />
+
+                            <TextView
+                                android:id="@+id/core_status_tv"
+                                style="@style/practice_duty_item_right_tv_style"
+                                android:text="@string/str_go_on"
+                                android:visibility="gone"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/practice_duty_type_style"
+                                android:text="@string/str_core_vocabulary"/>
+
+                            <TextView
+                                android:text="Core vocabulary"
+                                style="@style/practice_duty_type_des_style"
+                               />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
+
         </LinearLayout>
+
     </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+    <RelativeLayout
+        android:id="@+id/container_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+       >
+
+        <io.dcloud.H58E83894.weiget.RingView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:ring_color="@color/color_dark_gray"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:ring_width="3dip"/>
+
+        <TextView
+            android:id="@+id/record_answer"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/speak_circle_bg"
+            android:gravity="center"
+            android:text="@string/str_practice_listen"
+            android:visibility="gone"
+            android:textColor="@color/color_white"/>
+
+    </RelativeLayout>
 </RelativeLayout>

@@ -112,10 +112,10 @@ public class CoreTestActivity extends BaseCoreActivity {
     @OnClick({R.id.core_audio_img, R.id.question_feed_back})
     public void onClick(final View view) {
         switch (view.getId()) {
-            case R.id.question_feed_back:
+            case R.id.question_feed_back://解析
                 showFeedBackDialog(id);
                 break;
-            case R.id.core_audio_img:
+            case R.id.core_audio_img://声音
                 if (TextUtils.isEmpty(url)) return;
                 if (mAnimationDrawable == null) {
                     ((ImageView) view).setImageResource(R.drawable.audio_animlist);
@@ -239,7 +239,7 @@ public class CoreTestActivity extends BaseCoreActivity {
             finishWithAnim();
             return;
         }
-        titleTxt.setText(getString(R.string.str_grammar_test_title, index + 1));
+        titleTxt.setText(getString(R.string.str_core_vocabulary_test_title, index + 1));
         GrammarRecordData recordData = mGrammarDatas.get(index);
         CoreQuestionData data = JsonUtil.fromJson(recordData.getJson(), new TypeToken<CoreQuestionData>() {
         }.getType());

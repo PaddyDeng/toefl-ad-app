@@ -23,14 +23,17 @@
         android:id="@+id/commit_answer_goon_next_btn"
         style="@style/com_btn_style"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/border_space_sec_max"
+        android:layout_marginTop="@dimen/border_space_sec_max"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginBottom="@dimen/border_space_thr_max"
         android:text="@string/str_grammar_next_question"/>
 
 
     <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
         android:id="@+id/listen_sec_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/commit_answer_goon_next_btn"
         android:layout_below="@id/listen_sec_title_container"
         android:fillViewport="true"

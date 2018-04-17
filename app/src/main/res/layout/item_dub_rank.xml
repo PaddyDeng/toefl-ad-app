@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/know_free_linear"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/rank_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/border_space_sec_m"
+            />
+
+        <io.dcloud.H58E83894.weiget.CircleImageView
+            android:id="@+id/rank_head"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@drawable/ic_mine_head"
+            android:layout_gravity="center_vertical"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/border_space_sec_m"
+            android:layout_marginLeft="@dimen/border_space_m"
+            android:layout_marginRight="@dimen/border_space_m"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/border_space_sec_m"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/rank_name"
+                    android:layout_width="300dip"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="知识帝撒啊啊啊"
+                    android:textColor="@color/color_txt_dark_black" />
+
+                <TextView
+                    android:id="@+id/rank_time"
+                    android:layout_width="300dip"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="知识帝撒啊啊啊"
+                    android:textColor="@color/color_hint" />
+
+
+
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/zan"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_sure_zan"
+                />
+
+            <TextView
+                android:layout_below="@+id/zan"
+                android:layout_alignParentRight="true"
+                android:id="@+id/rank_zan_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.2k"
+                android:textColor="@color/color_hint" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_marginLeft="@dimen/border_space_sec_m"
+        style="@style/line"/>
+
+</LinearLayout>

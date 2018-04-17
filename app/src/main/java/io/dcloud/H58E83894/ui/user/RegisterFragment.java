@@ -3,6 +3,9 @@ package io.dcloud.H58E83894.ui.user;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +17,17 @@ import com.google.gson.JsonObject;
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.dcloud.H58E83894.R;
+import io.dcloud.H58E83894.data.InforData;
 import io.dcloud.H58E83894.data.ResultBean;
 import io.dcloud.H58E83894.http.HttpUtil;
 import io.dcloud.H58E83894.http.ResultObserver;
+import io.dcloud.H58E83894.ui.information.GradeActivity;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.Utils;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
+
+import static io.dcloud.H58E83894.ui.information.GradeActivity.startGradeActivity;
 
 /**
  * Created by fire on 2017/7/13.
@@ -109,6 +116,7 @@ public class RegisterFragment extends BaseUserFragment {
     @Override
     public void requestSuccess(ResultBean bean) {
         super.requestSuccess(bean);
+
         if (getHttpResSuc(bean.getCode())) {//注册成功，去登录
             login(mOnUserInfoListener, getEditText(inputAccount), getEditText(inputPwd));
         }

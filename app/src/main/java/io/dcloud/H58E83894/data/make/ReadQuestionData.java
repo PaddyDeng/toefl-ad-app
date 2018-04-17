@@ -12,7 +12,48 @@ public class ReadQuestionData implements Parcelable {
     private String contentId;
     private ReadQuestion question;
     private String nextId;
+    private String lastId;
     private ReadArticle article;
+    private String userAanswer;
+
+    @Override
+    public String toString() {
+        return "ReadQuestionData{" +
+                "count='" + count + '\'' +
+                ", contentId='" + contentId + '\'' +
+                ", question=" + question +
+                ", nextId='" + nextId + '\'' +
+                ", lastId='" + lastId + '\'' +
+                ", article=" + article +
+                ", userAanswer='" + userAanswer + '\'' +
+                ", upId='" + upId + '\'' +
+                '}';
+    }
+
+    private String upId;
+
+    public String getUserAanswer() {
+        return userAanswer;
+    }
+
+    public void setUserAanswer(String userAanswer) {
+        this.userAanswer = userAanswer;
+    }
+
+    public String getUpId() {
+        return upId;
+    }
+    public void setUpId(String upId) {
+        this.upId = upId;
+    }
+
+    public String getLastId() {
+        return lastId;
+    }
+
+    public void setLastId(String lastId) {
+        this.lastId = lastId;
+    }
 
     public String getCount() {
         return count;
@@ -65,6 +106,7 @@ public class ReadQuestionData implements Parcelable {
         dest.writeString(this.contentId);
         dest.writeParcelable(this.question, flags);
         dest.writeString(this.nextId);
+        dest.writeString(this.lastId);
         dest.writeParcelable(this.article, flags);
     }
 
@@ -76,6 +118,7 @@ public class ReadQuestionData implements Parcelable {
         this.contentId = in.readString();
         this.question = in.readParcelable(ReadQuestion.class.getClassLoader());
         this.nextId = in.readString();
+        this.lastId = in.readString();
         this.article = in.readParcelable(ReadArticle.class.getClassLoader());
     }
 

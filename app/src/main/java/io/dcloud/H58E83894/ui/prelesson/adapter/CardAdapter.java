@@ -21,7 +21,7 @@ import io.dcloud.H58E83894.utils.GlideUtil;
 public class CardAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> {
 
     private List<LessonData> mList;
-    private CardAdapterHelper mCardAdapterHelper = new CardAdapterHelper();
+    private CardsAdapterHelper mCardAdapterHelper = new CardsAdapterHelper();
     private OnItemClickListener mListener;
 
     public CardAdapter(List<LessonData> mList) {
@@ -44,8 +44,9 @@ public class CardAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> {
         mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
 
         final LessonData data = mList.get(position);
-        String headUrl = RetrofitProvider.SMARTAPPLYURL + data.getImage();
-        GlideUtil.load(headUrl, (ImageView) holder.getView(R.id.public_lesson_head));
+//        String headUrl = RetrofitProvider.SMARTAPPLYURL + data.getImage();
+        String headUrl = "http://open.viplgw.cn/" + data.getImage();
+//        GlideUtil.load(headUrl, (ImageView) holder.getView(R.id.public_lesson_head));
         GlideUtil.load(headUrl, (ImageView) holder.getView(R.id.gmat_public_lesson_img));
         holder.getTextView(R.id.public_lesson_title).setText(data.getName());
         holder.getTextView(R.id.public_lesson_name).setText(data.getListeningFile());

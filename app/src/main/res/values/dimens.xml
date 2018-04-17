@@ -4,6 +4,8 @@
     <dimen name="pullrefresh_fresh_height">60dp</dimen> <!-- 下拉多长距离放开可刷新-->
     <dimen name="pullrefresh_head_content_height">50dp</dimen><!-- 刷新中viewHead显示的高度-->
 
+    <dimen name="text_size_micros">10sp</dimen>
+    <dimen name="text_size_micross">11sp</dimen>
     <dimen name="text_size_micro">12sp</dimen>
     <dimen name="text_size_micro_plus">13sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
@@ -12,34 +14,53 @@
     <dimen name="text_size_ml_plus">17sp</dimen>
     <dimen name="text_size_medium">18sp</dimen>
     <dimen name="text_size_bl">20sp</dimen>
+    <dimen name="text_size_bl_l">23sp</dimen>
     <dimen name="text_size_b_bl">40sp</dimen>
 
     <dimen name="card_height">120dip</dimen>
+    <dimen name="card_heights">135dip</dimen>
+    <dimen name="card_height_s">100dip</dimen>
     <dimen name="new_card_height">150dip</dimen>
+    <dimen name="new_bbaner_height">156dip</dimen>
     <dimen name="header_height">256dip</dimen>
     <dimen name="title_height">180dip</dimen>
+    <dimen name="title_height_s">160dip</dimen>
 
     <dimen name="base_padding">4dip</dimen>
     <dimen name="base_half_padding">2dip</dimen>
+
+    <dimen name="line_space">1dip</dimen>
 
     <dimen name="radius">6dip</dimen>
     <dimen name="radius_half">3dip</dimen>
 
     <!-- 边距 -->
     <dimen name="border_space">8dip</dimen>
+    <dimen name="border_space_m">9dip</dimen>
     <dimen name="border_space_half">4dip</dimen>
     <dimen name="border_space_normal">6dip</dimen>
     <dimen name="border_space_sec">10dip</dimen>
+    <dimen name="border_space_sec_mm">11dip</dimen>
     <dimen name="border_space_sec_m">12dip</dimen>
+    <dimen name="border_space_sec_mas">13dip</dimen>
     <dimen name="border_space_sec_max">15dip</dimen>
+    <dimen name="border_space_sec_max_s">17dip</dimen>
     <dimen name="border_space_sec_max_m">20dip</dimen>
     <dimen name="border_space_sec_max_b">25dip</dimen>
+    <dimen name="border_space_th">28dip</dimen>
     <dimen name="border_space_thr">30dip</dimen>
+    <dimen name="border_space_thrs">35dip</dimen>
     <dimen name="border_space_thr_max">40dip</dimen>
     <dimen name="border_space_max_min">45dip</dimen>
     <dimen name="border_space_max_max">50dip</dimen>
 
     <dimen name="border_space_six_max">60dip</dimen>
+    <dimen name="border_space_six_max_s">70dip</dimen>
+    <dimen name="border_space_six_max_ss">75dip</dimen>
+    <dimen name="border_space_six_max_w">80dip</dimen>
+    <dimen name="border_space_six_max_ws">85dip</dimen>
+    <dimen name="border_space_six_max_wss">90dip</dimen>
+    <dimen name="border_space_six_max_wsss">110dip</dimen>
 
 
     <dimen name="label_distance">45dp</dimen>

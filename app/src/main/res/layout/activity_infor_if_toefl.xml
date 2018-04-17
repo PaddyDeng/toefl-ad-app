@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_infor_test_toefl"
+                android:layout_weight="1.2">
+
+                <RelativeLayout
+                    android:layout_width="140dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="90dip">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_infor_data"/>
+
+                    <io.dcloud.H58E83894.weiget.LeanTextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dip"
+                        android:text="ssssssss"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/color_white"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                </RelativeLayout>
+
+                <io.dcloud.H58E83894.weiget.LeanTextView
+                    android:id="@+id/taegetInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="33"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/color_white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/border_space_six_max_ws"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="40dip"
+                        android:layout_marginBottom="20dip"
+                        android:id="@+id/infor_test_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/infor_type_selector"
+                        android:text="@string/str_infor_test_yes"
+                        android:textSize="@dimen/text_size_small"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <TextView
+                        android:id="@+id/infor_test_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/infor_type_selector"
+                        android:text="@string/str_infor_test_no"
+                        android:textSize="@dimen/text_size_small"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+
+
+
+
+</LinearLayout>

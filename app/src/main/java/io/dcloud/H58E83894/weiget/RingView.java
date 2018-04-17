@@ -13,7 +13,7 @@ import android.view.View;
 import io.dcloud.H58E83894.R;
 
 /**
- * Created by fire on 2017/7/12.
+ * Created by fire on 2017/7/12.应用于口语练习模块中
  */
 
 public class RingView extends View {
@@ -34,6 +34,10 @@ public class RingView extends View {
 
     public RingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        /**
+         * context通过调用obtainStyledAttributes方法来获取一个TypeArray，然后由该TypeArray来对属性进行设置
+         obtainStyledAttributes方法有三个，我们最常用的是有一个参数的obtainStyledAttributes(int[] attrs)，其参数直接styleable中获得
+         * */
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RingView, defStyleAttr, 0);
         mBorderWidth = a.getDimensionPixelSize(R.styleable.RingView_ring_width, 0);
         mBorderColor = a.getColor(R.styleable.RingView_ring_color, Color.BLACK);
@@ -47,8 +51,8 @@ public class RingView extends View {
     }
 
     private void init() {
-        mBorderPaint.setStyle(Paint.Style.STROKE);
-        mBorderPaint.setAntiAlias(true);
+        mBorderPaint.setStyle(Paint.Style.STROKE);//绘制空心圆
+        mBorderPaint.setAntiAlias(true);//消除锯齿
         mBorderPaint.setColor(mBorderColor);
         mBorderPaint.setStrokeWidth(mBorderWidth);
         mBorderRect.set(0, 0, getWidth(), getHeight());

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            android:id="@+id/deal_back_img"
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/deal_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/deal_more_content_title"
+            style="@style/title_tv_style"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_toRightOf="@id/deal_back_img"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/border_space_sec_m"
+                android:orientation="horizontal">
+
+                <io.dcloud.H58E83894.weiget.CircleImageView
+                    android:id="@+id/practice_head_iv"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_make_tou_03"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/border_space_sec_m"
+                    >
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_marginTop="@dimen/border_space_sec_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="小托君"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/leidouNum"
+                            android:layout_marginTop="@dimen/border_space_sec_max_m"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="雷豆总数"/>
+
+
+                        <TextView
+                            android:id="@+id/pay"
+                            android:layout_marginTop="@dimen/border_space_sec_max_m"
+                            android:layout_width="80dip"
+                            android:layout_height="30dip"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/about_lesson_orange_bg"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="充值"
+                            android:textColor="@color/color_white"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_lei_back"
+                android:padding="@dimen/border_space_sec_max"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_marginBottom="@dimen/border_space"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_lei_text"
+                    android:text="显示明细"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/leidouRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/relative"
+                        android:layout_marginTop="@dimen/base_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/little"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="收起"
+                            android:visibility="gone"
+                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:id="@+id/more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="显示更多"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/zhishi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="暂时没有记录"
+                        android:visibility="gone"
+                        android:padding="@dimen/border_space"
+                        android:gravity="center"
+                        />
+
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_marginTop="@dimen/border_space_sec_max_b"
+                    android:id="@+id/leidou_explain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/border_space_sec_m"
+                    android:paddingBottom="@dimen/border_space_sec_m"
+                    android:textColor="@color/color_text_green"
+                    android:text="1、雷豆规则"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="       每位雷哥托福会员用户都会有属于自己的雷豆，注册成为www.toeflonline.cn会员获得10个雷豆，每练习一道题目获取2个雷豆，做题数量越多，正确率越高，得到的雷豆越多~"
+                    />
+
+                <TextView
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/border_space_sec_m"
+                    android:paddingBottom="@dimen/border_space_sec_m"
+                    android:textColor="@color/color_text_green"
+                    android:text="2、如何获得雷豆" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="      会员注册成功获得100雷豆，每练习一道题将获得2雷豆"
+                    />
+
+                <TextView
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/border_space_sec_m"
+                    android:paddingBottom="@dimen/border_space_sec_m"
+                    android:textColor="@color/color_text_green"
+                    android:text="3、雷豆怎么用（每100雷豆=1元）" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="      雷豆可用于购买课程，邀请名师点评口语"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
@@ -392,6 +393,7 @@ public class SpeakQuestionActivity extends BaseActivity {
                 .flatMap(new Function<ResultBean, ObservableSource<ResultBean>>() {
                     @Override
                     public ObservableSource<ResultBean> apply(@NonNull ResultBean bean) throws Exception {
+                        Log.i("getData00", bean.getToken()+"url ="+mp);
                         return HttpUtil.spokenUpToken(bean.getToken(), mp);
                     }
                 })
@@ -399,6 +401,8 @@ public class SpeakQuestionActivity extends BaseActivity {
                     @Override
                     public ObservableSource<ResultBean> apply(@NonNull ResultBean bean) throws Exception {
                         if (getHttpResSuc(bean.getCode())) {
+                            Log.i("getData01", id+"url ="+bean.getFile());
+
                             return HttpUtil.spokenSave(id, bean.getFile());
                         }
                         throw new CustomException(bean.getMessage());

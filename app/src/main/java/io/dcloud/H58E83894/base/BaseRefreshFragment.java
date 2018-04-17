@@ -1,5 +1,6 @@
 package io.dcloud.H58E83894.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -169,4 +170,6 @@ public abstract class BaseRefreshFragment<T> extends BaseFragment implements Pul
             updateRecycleView(null, errorTip(throwable), InitDataType.TYPE_LOAD_MORE_FAIL);
         }
     }
+
+
 }

@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.util.Util;
+
 import java.util.List;
 
 import io.dcloud.H58E83894.R;
@@ -21,7 +23,7 @@ import io.dcloud.H58E83894.utils.HtmlUtil;
 
 public class TeacherAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> {
 
-    private CardAdapterHelper mCardAdapterHelper = new CardAdapterHelper();
+//    private CardAdapterHelper mCardAdapterHelper = new CardAdapterHelper();
 
     private List<TeacherItemBean> data;
 
@@ -39,39 +41,54 @@ public class TeacherAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder>
     @Override
     public BaseRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.teacher_item_layout, parent, false);
-        mCardAdapterHelper.onTeacherCreateViewHolder(parent, itemView);
+//        mCardAdapterHelper.onTeacherCreateViewHolder(parent, itemView);
         return new BaseRecyclerViewHolder(parent.getContext(), itemView);
     }
 
     @Override
     public void onBindViewHolder(final BaseRecyclerViewHolder holder, final int position) {
-        mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
+//        mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
+//        String data = mData.get(position%mData.size());
+//        if ()
         final Context context = holder.itemView.getContext();
-        final TeacherItemBean teacherData = data.get(position);
-        GlideUtil.load(RetrofitProvider.TOEFLURL + teacherData.getImage(), holder.getCircleImageView(R.id.teacher_item_img));
-        holder.getTextView(R.id.teacher_title_tv).setText(teacherData.getName());
-        holder.getTextView(R.id.teacher_item_number).setText(context.getString(R.string.str_teacher_lesson_number, teacherData.getViewCount()));
-        holder.getTextView(R.id.teacher_des_tv).setText(HtmlUtil.fromHtml(teacherData.getDescription()).toString());
-        holder.getTextView(R.id.teacher_item_course).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (teacherData != null && !TextUtils.isEmpty(teacherData.getId())) {
-                    PreProGramLessonActivity.startPre(context, teacherData.getId(), teacherData.getTitle());
+//        if(position >= 2){
+//            holder.itemView.setVisibility(View.GONE);
+//        }else
+            {
+            final TeacherItemBean teacherData = data.get(position%data.size());
+//                if(Util.isOnMainThread()){
+                    GlideUtil.load(RetrofitProvider.TOEFLURL + teacherData.getImage(), holder.getCircleImageView(R.id.teacher_item_img));
+//                }
+            holder.getTextView(R.id.teacher_title_tv).setText(teacherData.getName());
+            holder.getTextView(R.id.teacher_item_number).setText(context.getString(R.string.str_teacher_lesson_number, teacherData.getViewCount()));
+            holder.getTextView(R.id.teacher_des_tv).setText(HtmlUtil.fromHtml(teacherData.getDescription()).toString());
+            holder.getTextView(R.id.teacher_item_course).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (teacherData != null && !TextUtils.isEmpty(teacherData.getId())) {
+                        PreProGramLessonActivity.startPre(context, teacherData.getId(), teacherData.getTitle());
+                    }
                 }
-            }
-        });
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    mListener.onClick(v, position);
+            });
+                if( position < 12){//判断suoyin
+
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (mListener != null || position < 12) {
+                                mListener.onClick(v, position);
+                            }
+                        }
+                    });
+
                 }
-            }
-        });
+
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return Integer.MAX_VALUE;
     }
 }

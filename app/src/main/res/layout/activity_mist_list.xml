@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/color_white"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/base_refresh_title_container"
+            style="@style/custome_title_bar_style">
+
+            <ImageView
+                style="@style/black_bg_title_back"/>
+
+            <TextView
+                android:id="@+id/title_centertxt"
+                style="@style/title_tv_style"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:expandedTitleMarginEnd="48dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
+
+
+                <ImageView
+                    android:id="@+id/ss_base_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dip"
+                    android:src="@drawable/ic_mery"
+                    android:scaleType="fitXY" />
+
+
+            </RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dip"
+            android:background="@color/color_grammar_test_bg"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></FrameLayout>
+    </LinearLayout>
+
+
+
+    <!--</LinearLayout>-->
+</android.support.design.widget.CoordinatorLayout>
+
+<!--<LinearLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/fastScroll"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:background="@color/color_white">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+           <!---->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/border_space_sec_m"-->
+                <!--android:padding="@dimen/base_half_padding"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:paddingLeft="@dimen/base_half_padding"-->
+                    <!--android:paddingRight="@dimen/radius"-->
+                    <!--&gt;-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_01"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s3_07"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--/>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_02"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s1_07"-->
+                        <!--/>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_03"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s5_07"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:paddingLeft="@dimen/base_half_padding"-->
+                    <!--android:paddingRight="@dimen/radius"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--&gt;-->
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_04"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s2_07"-->
+                        <!--/>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_05"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s4_07"-->
+                        <!--/>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/new_com_06"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                        <!--android:paddingTop="@dimen/border_space_sec_max"-->
+                        <!--android:src="@drawable/ic_s6_07"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recycler_new_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+            <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+
+
+
+<!--</LinearLayout>-->

@@ -16,6 +16,19 @@
             style="@style/new_title_tv_style"
             android:layout_centerInParent="true"
             android:text="@string/str_see_result_title"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/result_share_iv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:paddingBottom="@dimen/base_half_padding"-->
+            <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+            <!--android:paddingRight="@dimen/border_space_sec_max"-->
+            <!--android:paddingTop="@dimen/base_half_padding"-->
+            <!--android:src="@drawable/ic_result_share"/>-->
     </RelativeLayout>
 
     <LinearLayout

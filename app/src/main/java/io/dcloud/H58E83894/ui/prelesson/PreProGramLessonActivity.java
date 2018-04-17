@@ -1,9 +1,13 @@
 package io.dcloud.H58E83894.ui.prelesson;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -14,6 +18,7 @@ import io.dcloud.H58E83894.R;
 import io.dcloud.H58E83894.base.BaseActivity;
 import io.dcloud.H58E83894.data.ResultBean;
 import io.dcloud.H58E83894.http.HttpUtil;
+import io.dcloud.H58E83894.ui.user.UserProxyActivity;
 import io.dcloud.H58E83894.utils.RegexValidateUtil;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
@@ -70,7 +75,7 @@ public class PreProGramLessonActivity extends BaseActivity {
 
     private void commit() {
         String name = getEditText(proName);
-        String phone = getEditText(proPhone);
+        String phone = proPhone.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
             toastShort(R.string.str_enter_you_name_tip);
             return;
@@ -83,14 +88,46 @@ public class PreProGramLessonActivity extends BaseActivity {
             toastShort(R.string.str_enter_you_phone_tip);
             return;
         }
-        String[] arr = new String[]{teachId.trim(),phone.trim(),lessonName.trim(),"android toefl app"};
-        addToCompositeDis(HttpUtil.addContent(name, arr).subscribe(new Consumer<ResultBean>() {
+
+        String[] arr = new String[]{teachId.trim(), phone ,lessonName.trim(),"android toefl app"};
+        addToCompositeDis(HttpUtil.addContent(name, phone, lessonName.trim()).subscribe(new Consumer<ResultBean>() {
             @Override
             public void accept(@NonNull ResultBean bean) throws Exception {
                 if (getHttpResSuc(bean.getCode())) {
                     finishWithAnim();
                 } else {
-                    toastShort(bean.getMessage());
+//                    Log.i("ppp", bean.getMessage().toString());
+//                    toastShort(bean.getMessage());
+                    if (needLogin()) {
+                        return;
+                    }
+                    if(bean.getMessage().toString().equals("用户未登录")){
+                        if (needLogin()) {
+                            return;
+                        }
+                    }
+//                        Log.i("ppp", bean.getMessage().toString());
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(PreProGramLessonActivity.this);
+//                        builder.setTitle("用户未登录");
+//                        builder.setMessage("请问您是否跳转登录页面？");
+//                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                finish();
+//                            }
+//                        });
+//                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                forword(UserProxyActivity.class);
+//
+//                            }
+//                        });
+//                        AlertDialog dialog = builder.create();
+//                        dialog.show();
+//                    }
+
                 }
             }
         }, new Consumer<Throwable>() {

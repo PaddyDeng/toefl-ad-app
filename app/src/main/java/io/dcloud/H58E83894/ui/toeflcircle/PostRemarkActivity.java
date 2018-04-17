@@ -34,6 +34,7 @@ import io.dcloud.H58E83894.data.user.UserData;
 import io.dcloud.H58E83894.http.HttpUtil;
 import io.dcloud.H58E83894.http.SchedulerTransformer;
 import io.dcloud.H58E83894.ui.toeflcircle.adapter.PostRemarkAdapter;
+import io.dcloud.H58E83894.utils.ButtonUtils;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.ImageUtil;
 import io.dcloud.H58E83894.utils.RxBus;
@@ -193,7 +194,10 @@ public class PostRemarkActivity extends BaseActivity {
 //                choosePic();
             case R.id.post_btn:
 //                log(upImage.size() + "==");
-                postRemark();
+                if (!ButtonUtils.isFastDoubleClick(R.id.post_btn)) {
+                    //写你相关操作即可\
+                    postRemark();
+                }
                 break;
             case R.id.new_remark_post_btn:
                 postNewRemark();

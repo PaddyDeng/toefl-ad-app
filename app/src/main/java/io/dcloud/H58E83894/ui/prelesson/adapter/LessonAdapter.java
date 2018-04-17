@@ -20,7 +20,7 @@ import io.dcloud.H58E83894.utils.GlideUtil;
 public class LessonAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> {
 
     private List<LessonData> mList;
-    private CardAdapterHelper mCardAdapterHelper = new CardAdapterHelper();
+    private CardHotAdapterHelper mCardAdapterHelper = new CardHotAdapterHelper();
     private OnItemClickListener mListener;
 
     public LessonAdapter(List<LessonData> list) {
@@ -46,14 +46,14 @@ public class LessonAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> 
         LessonData data = mList.get(position);
         GlideUtil.load(RetrofitProvider.TOEFLURL + data.getImage(), holder.getImageView(R.id.lesson_item_img));
         holder.getTextView(R.id.lesson_item_title).setText(data.getName());
-        if (TextUtils.isEmpty(data.getNumbering())) {
-            holder.getTextView(R.id.lesson_item_start_time).setText(context.getString(R.string.str_lesson_every_open));
-        } else {
-            holder.getTextView(R.id.lesson_item_start_time).setText(context.getString(R.string.str_lesson_open_time, data.getNumbering()));
-        }
-        if (!TextUtils.isEmpty(data.getDuration())) {
-            holder.getTextView(R.id.lesson_item_lesson_time).setText(context.getString(R.string.str_lesson_course_time, data.getDuration()));
-        }
+//        if (TextUtils.isEmpty(data.getNumbering())) {
+//            holder.getTextView(R.id.lesson_item_start_time).setText(context.getString(R.string.str_lesson_every_open));
+//        } else {
+//            holder.getTextView(R.id.lesson_item_start_time).setText(context.getString(R.string.str_lesson_open_time, data.getNumbering()));
+//        }
+//        if (!TextUtils.isEmpty(data.getDuration())) {
+//            holder.getTextView(R.id.lesson_item_lesson_time).setText(context.getString(R.string.str_lesson_course_time, data.getDuration()));
+//        }
         holder.getTextView(R.id.lesson_item_price).setText(context.getString(R.string.str_lesson_price, data.getPrice()));
         holder.getTextView(R.id.lesson_item_search_num).setText(context.getString(R.string.str_lesson_search_num, data.getViewCount()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +68,6 @@ public class LessonAdapter extends RecyclerView.Adapter<BaseRecyclerViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mList == null ? 0 : mList.size();
+        return mList == null ? 0 : 4;
     }
 }

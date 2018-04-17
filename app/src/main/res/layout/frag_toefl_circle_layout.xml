@@ -14,17 +14,18 @@
         <RelativeLayout
             android:id="@+id/remark_new_title_bar"
             style="@style/custome_title_bar_style"
-            android:background="@color/color_black">
+            android:background="@color/color_min_gray">
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/new_reamrk_tablayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                app:tabIndicatorColor="@color/color_orange"
-                app:tabSelectedTextColor="@color/color_orange"
+                app:tabIndicatorColor="@color/color_text_green"
+                app:tabSelectedTextColor="@color/color_text_green"
                 app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
-                app:tabTextColor="@color/color_white"/>
+                android:paddingBottom="@dimen/radius"
+                app:tabTextColor="@color/color_text_black"/>
 
             <ImageView
                 android:id="@+id/toefl_circle_write"
@@ -37,7 +38,7 @@
                 android:paddingLeft="@dimen/base_padding"
                 android:paddingRight="@dimen/base_padding"
                 android:paddingTop="@dimen/base_padding"
-                android:src="@drawable/icon_toefl_write"/>
+                android:src="@drawable/ic_edit"/>
 
         </RelativeLayout>
 

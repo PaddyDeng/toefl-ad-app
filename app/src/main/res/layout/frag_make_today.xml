@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/border_space_sec_max"
+                >
+                <TextView
+                    android:id="@+id/today_setting_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="每天7点准时开枪，8653人已设置提醒"
+                    android:textSize="@dimen/text_size_micro"
+                    android:textColor="@color/color_red"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                />
+                <ImageView
+                    android:id="@+id/today_setting_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_sure_remind"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+               style="@style/line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/border_space_sec_max"
+                android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/today_free"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/str_corret_free_c"
+                   android:textColor="@color/color_black"
+                   android:drawablePadding="@dimen/border_space"
+                   android:drawableLeft="@drawable/ic_speak_correting"/>
+
+
+                <TextView
+                    android:id="@+id/today_speak_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sssss"
+                    android:layout_marginTop="@dimen/border_space"
+                    />
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="@dimen/border_space"
+                        android:id="@+id/today_speak_free_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/border_space"
+                        android:text="今日免费名额已抢完，请用雷豆批改"
+                        android:textSize="@dimen/text_size_micro"
+                        android:textColor="@color/color_red"
+                        android:layout_alignParentRight="true"/>
+                    
+                </RelativeLayout>
+
+                </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_height="40dip"
+                    android:text="网友作品"
+                    android:paddingLeft="@dimen/border_space_sec_max"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    style="@style/line"/>
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/all_answer_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/answer_idea_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/border_space_sec_max"
+                    android:textColor="@color/color_txt_gray"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/empty_tv_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/str_nothing_tip"
+                    android:textColor="@color/color_sec_orange"
+                    android:textSize="@dimen/text_size_ml"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+    <RelativeLayout
+        android:id="@+id/container_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_below="@id/bottom_type_container">
+
+        <io.dcloud.H58E83894.weiget.RingView
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_centerInParent="true"
+            app:ring_color="@color/color_result_circle"
+            app:ring_width="3dip"/>
+
+        <TextView
+            android:id="@+id/record_answer"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/icon_speak_correts"
+            android:gravity="center"
+            android:textColor="@color/color_white"/>
+
+    </RelativeLayout>
+</RelativeLayout>

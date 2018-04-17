@@ -38,6 +38,7 @@ import io.dcloud.H58E83894.http.HttpUtil;
 import io.dcloud.H58E83894.utils.MeasureUtil;
 import io.dcloud.H58E83894.utils.Utils;
 import io.dcloud.H58E83894.weiget.commentview.CommentListView;
+import io.dcloud.H58E83894.weiget.setIndicator;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -62,6 +63,8 @@ public class ToeflCircleFragment extends BaseFragment {
     //输入框发送
     @BindView(R.id.sendIv)
     ImageView sendPost;
+    @BindView(R.id.toefl_circle_write)
+    ImageView toeflWrite;
 
     //总容器
     @BindView(R.id.remark_new_container)
@@ -89,25 +92,26 @@ public class ToeflCircleFragment extends BaseFragment {
     }
 
     //获取输入框隐藏状态
-    public int getEtStatus() {
-        if (etContainer == null) {
-            return View.GONE;
-        }
-        return etContainer.getVisibility();
-    }
+//    public int getEtStatus() {
+//        if (etContainer == null) {
+//            return View.GONE;
+//        }
+//        return etContainer.getVisibility();
+//    }
 
     //发表帖子点击事件
     @OnClick({R.id.toefl_circle_write})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.toefl_circle_write:
-                if (currentPage == 0) {
+//                if (currentPage == 0) {
                     //发布八卦
                     forword(PostRemarkActivity.class);
-                } else if (currentPage == 1) {
-                    //社区发帖
-                    PostRemarkActivity.startNewPostRemark(getActivity(), true);
-                }
+//                }
+//                } else if (currentPage == 1) {
+//                    //社区发帖
+//                    PostRemarkActivity.startNewPostRemark(getActivity(), true);
+//                }
                 break;
         }
     }
@@ -126,10 +130,12 @@ public class ToeflCircleFragment extends BaseFragment {
                 height = newRemarkTitleBar.getHeight();//获取title的高度
             }
         });
+        toeflWrite.setVisibility(View.GONE);
         mViewPager.setAdapter(getPagerAdapter());
         setViewPagerListener();//设置viewpager监听
         mTableLayout.setupWithViewPager(mViewPager);//tablayout+viewpager
         mTableLayout.setTabMode(TabLayout.MODE_FIXED);
+        setIndicator.setIndicator(getActivity(), mTableLayout, 24, 24);
         mTableLayout.setTabGravity(TabLayout.GRAVITY_FILL);//不设置gravity没有效果
         setViewTreeObserver();//监测键盘等view的隐藏显示
         sendPost.setOnClickListener(new View.OnClickListener() {
@@ -205,7 +211,7 @@ public class ToeflCircleFragment extends BaseFragment {
                         showLoadDialog();
                     }
                 })
-                .doOnError(new Consumer<Throwable>() {
+                .doOnError( new Consumer<Throwable>() {
                     @Override
                     public void accept(@NonNull Throwable throwable) throws Exception {
                         throwable.printStackTrace();
@@ -215,7 +221,7 @@ public class ToeflCircleFragment extends BaseFragment {
                 .subscribe(new Consumer<ResultBean>() {//接收数据
                     @Override
                     public void accept(@NonNull ResultBean bean) throws Exception {
-                        RemarkFragment fragment = (RemarkFragment) list.get(0);
+                        RemarkFragment fragment = (RemarkFragment) list.get(1);
                         fragment.netRequest(1, true);
                         remarkEt.setText("");
                         dismissLoadDialog();
@@ -256,7 +262,7 @@ public class ToeflCircleFragment extends BaseFragment {
                     public void accept(@NonNull ResultBean bean) throws Exception {
                         dismissLoadDialog();
                         if (getHttpResSuc(bean.getCode())) {
-                            RemarkFragment fragment = (RemarkFragment) list.get(0);
+                            RemarkFragment fragment = (RemarkFragment) list.get(1);
                             fragment.netRequest(1, true);
                             remarkEt.setText("");
                         } else {
@@ -280,6 +286,11 @@ public class ToeflCircleFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                if(position == 0 ){
+                    toeflWrite.setVisibility(View.GONE);
+                }else if(position == 1){
+                    toeflWrite.setVisibility(View.VISIBLE);
+                }
                 currentPage = position;
             }
 
@@ -300,6 +311,7 @@ public class ToeflCircleFragment extends BaseFragment {
         final ViewTreeObserver swipeRefreshLayoutVTO = mContainer.getViewTreeObserver();//获取总容器视图观察器
         //获取总容器宽高
         swipeRefreshLayoutVTO.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
             @Override
             public void onGlobalLayout() {
 
@@ -327,7 +339,7 @@ public class ToeflCircleFragment extends BaseFragment {
                     return;
                 }
                 //偏移listview
-                RemarkFragment remarkFragment = (RemarkFragment) list.get(0);
+                RemarkFragment remarkFragment = (RemarkFragment) list.get(1);
                 LinearLayoutManager manager = remarkFragment.getManager();
                 if (manager != null && mRemarkData != null) {
                     manager.scrollToPositionWithOffset(mRemarkData.getRecyclePosition(),
@@ -344,7 +356,7 @@ public class ToeflCircleFragment extends BaseFragment {
     private void measureCircleItemHighAndCommentItemOffset(RemarkData commentConfig, int index) {
         if (commentConfig == null)
             return;
-        LinearLayoutManager manager = ((RemarkFragment) list.get(0)).getManager();
+        LinearLayoutManager manager = ((RemarkFragment) list.get(1)).getManager();
         int firstPosition = manager.findFirstVisibleItemPosition();
         //只能返回当前可见区域（列表可滚动）的子项
         View selectCircleItem = manager.getChildAt(commentConfig.getRecyclePosition() - firstPosition);
@@ -402,13 +414,15 @@ public class ToeflCircleFragment extends BaseFragment {
     //设置顶部tab值及fragment
     public PagerAdapter getPagerAdapter() {
         list = new ArrayList<>();
+        list.add(new CommunityNewFragment());
         list.add(new RemarkFragment());
-        list.add(new CommunityFragment());
         return new TabPagerAdapter(getChildFragmentManager(), getResources().getStringArray(R.array.toefl_circle_tab_arr)) {
             @Override
             public Fragment getItem(int position) {
+
                 return list.get(position);
             }
+
         };
     }
 }

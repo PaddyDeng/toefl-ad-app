@@ -1,11 +1,14 @@
 package io.dcloud.H58E83894.ui.prelesson;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,8 @@ import android.widget.TextView;
 import com.better.banner.BBanner;
 import com.better.banner.ItemAdapter;
 import com.better.banner.OnClickItemListener;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +48,7 @@ import io.dcloud.H58E83894.ui.prelesson.adapter.LessonAdapter;
 import io.dcloud.H58E83894.ui.prelesson.adapter.TeacherAdapter;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.Utils;
-import io.dcloud.H58E83894.weiget.label.LabelImageView;
-import io.dcloud.H58E83894.weiget.label.LabelLinearLayout;
+import io.dcloud.H58E83894.weiget.AutoPollRecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -54,50 +58,52 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
 /**
- * Created by fire on 2017/7/12.
+ * Created by fire on 2017/7/12.抢现课堂
  */
 
 public class PreLessonFragment extends BaseFragment {
 
     @BindView(R.id.toefl_banner)
-    BBanner bBanner;
+     BBanner bBanner;
     @BindView(R.id.card_recycler)
     RecyclerView cardRecycler;
     @BindView(R.id.teacher_recycler)
-    RecyclerView teacherRecycler;
+    AutoPollRecyclerView teacherRecycler;
     @BindView(R.id.hot_recycler)
     RecyclerView hotRecycler;
     @BindView(R.id.lesson_recycler)
     RecyclerView lessonRecycler;
-    @BindView(R.id.gmat_free_one_random)
-    LabelImageView freeLabelOneRandom;
-    @BindView(R.id.free_lesson_two_container)
-    LabelLinearLayout freeLabelTwoRandom;
-    @BindView(R.id.free_lesson_thr_container)
-    LabelLinearLayout freeLabelThrRandom;
-    @BindView(R.id.free_label_four_iv)
-    LabelImageView freeLabelfourRandom;
-    @BindView(R.id.free_one_cursor_time_tv)
-    TextView oneTimeTv;
-    @BindView(R.id.toefl_speak_free)
-    TextView twoTimeTv;
-    @BindView(R.id.toefl_read_free)
-    TextView thrTimeTv;
-    @BindView(R.id.four_write_cursor)
-    TextView fourTimeTv;
+//    @BindView(R.id.gmat_free_one_random)
+//    TextView freeLabelOneRandom;
+//    @BindView(R.id.gmat_free_two_random)
+//    TextView freeLabelTwoRandom;
+//    @BindView(R.id.gmat_free_thr_random)
+//    TextView freeLabelThrRandom;
+//    @BindView(R.id.gmat_free_four_random)
+//    TextView freeLabelFourRandom;
+//    @BindView(R.id.free_one_cursor_time_tv)
+//    TextView oneTimeTv;
+//    @BindView(R.id.toefl_speak_free)
+//    TextView twoTimeTv;
+//    @BindView(R.id.toefl_read_free)
+//    TextView thrTimeTv;
+//    @BindView(R.id.four_write_cursor)
+//    TextView fourTimeTv;
 
-    @BindView(R.id.toefl_free_one_title)
-    TextView oneTitleTv;
-    @BindView(R.id.toefl_free_two_title)
-    TextView twoTitleTv;
-    @BindView(R.id.toefl_free_thr_title)
-    TextView thrTitleTv;
-    @BindView(R.id.toefl_free_four_title)
-    TextView fourTitleTv;
+//    @BindView(R.id.toefl_free_one_title)
+//    TextView oneTitleTv;
+//    @BindView(R.id.toefl_free_two_title)
+//    TextView twoTitleTv;
+//    @BindView(R.id.toefl_free_thr_title)
+//    TextView thrTitleTv;
+//    @BindView(R.id.toefl_free_four_title)
+//    TextView fourTitleTv;
+
 
     private boolean asynData;
     private boolean asyncTeacher;
     private boolean asyncFreeData;
+    private Context context;
     private PreLessonData mPreLessonData;
     private List<BannerData> bannerDatas;
     private String TRIAL_SC;
@@ -138,21 +144,38 @@ public class PreLessonFragment extends BaseFragment {
         DealActivity.startDealActivity(getActivity(), titleName, url);
     }
 
-    @OnClick({R.id.free_lesson_one_container, R.id.free_lesson_two_container, R.id.free_lesson_thr_container, R.id.free_lesson_four_container})
+    @OnClick({ R.id.expert_lecturer_iv,  R.id.free_trial_tvs, R.id.free_trial_tvss,
+            R.id.lesson_toefl_iv })
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.free_lesson_one_container:
-                startDeal(getString(R.string.str_free_one_type), TRIAL_SC);
+//            R.id.free_lesson_one_container, R.id.free_lesson_two_container, R.id.free_lesson_thr_container,
+//                    R.id.free_lesson_four_container,
+//            case R.id.free_lesson_one_container://免费试听课程模块点击事件是与webView交互
+//                startDeal(getString(R.string.str_free_one_type), TRIAL_SC);
+//                break;
+//            case R.id.free_lesson_two_container:
+//                startDeal(getString(R.string.str_free_two_type), TRIAL_RC);
+//                break;
+//            case R.id.free_lesson_thr_container:
+//                startDeal(getString(R.string.str_free_thr_type), TRIAL_CR);
+//                break;
+//            case R.id.free_lesson_four_container:
+//                startDeal(getString(R.string.str_free_four_type), TRIAL_MATH);
+//                break;
+            case R.id.expert_lecturer_iv://专家讲师页面
+                forword(ExpertLecuterActivity.class);
                 break;
-            case R.id.free_lesson_two_container:
-                startDeal(getString(R.string.str_free_two_type), TRIAL_RC);
+            case R.id.lesson_toefl_iv://toefl页面
+//                DealActivity.startDealActivity(getActivity(), "sss", "http://m.toeflonline.cn/course.html");
+                forword(ToeflLessonActivity.class);
+//                GradeActivity.startGradeActivity(getContext(),  "deil.x@thinkwithu.cn", "xsz2368663");
+//                forword(GradeActivity.class);
+            break;
+            case R.id.free_trial_tvs://资料
+                HighScoreStoryActivity.startMary(getActivity(),  getResources().getString(R.string.str_data_download), "9", "2");
                 break;
-            case R.id.free_lesson_thr_container:
-                startDeal(getString(R.string.str_free_thr_type), TRIAL_CR);
-                break;
-            case R.id.free_lesson_four_container:
-                startDeal(getString(R.string.str_free_four_type), TRIAL_MATH);
-                break;
+            case R.id.free_trial_tvss://机经
+                MaryListActivity.startMary(getActivity(), getResources().getString(R.string.str_for_zone), "372", "3");
             default:
                 break;
         }
@@ -238,7 +261,8 @@ public class PreLessonFragment extends BaseFragment {
                         new Consumer<List<FreeCursorData>>() {
                             @Override
                             public void accept(@NonNull List<FreeCursorData> datas) throws Exception {
-                                initFreeData(datas);
+//                                initFreeData(datas);
+                                Log.i("fff", datas.toString());
                                 asyncFreeData = true;
                             }
                         }
@@ -250,41 +274,45 @@ public class PreLessonFragment extends BaseFragment {
                         }));
     }
 
-    private void initFreeData(List<FreeCursorData> datas) {
-        if (datas == null || datas.isEmpty()) return;
-        for (int i = 0, size = datas.size(); i < size; i++) {
-            FreeCursorData data = datas.get(i);
-            if (i == 0) {
-                setLabel(freeLabelOneRandom, data, oneTimeTv, oneTitleTv);
-                TRIAL_SC = data.getUrl();
-            } else if (i == 1) {
-                setLabel(freeLabelTwoRandom, data, twoTimeTv, twoTitleTv);
-                TRIAL_RC = data.getUrl();
-            } else if (i == 2) {
-                setLabel(freeLabelThrRandom, data, thrTimeTv, thrTitleTv);
-                TRIAL_CR = data.getUrl();
-            } else if (i == 3) {
-                setLabel(freeLabelfourRandom, data, fourTimeTv, fourTitleTv);
-                TRIAL_MATH = data.getUrl();
-            }
-        }
-    }
-
-    private void setLabel(View view, FreeCursorData data, TextView timeTv, TextView titleTv) {
-        timeTv.setText(data.getDuration());
-        titleTv.setText(data.getName());
-        int count = 0;
-        if (!TextUtils.isEmpty(data.getCount()))
-            count = Integer.parseInt(data.getCount());
-        view.setTag(count);
-        if (view instanceof LabelImageView) {
-            LabelImageView labelImageView = (LabelImageView) view;
-            labelImageView.setTextContent(getString(R.string.str_play_times, count));
-        } else if (view instanceof LabelLinearLayout) {
-            LabelLinearLayout labelLinearLayout = (LabelLinearLayout) view;
-            labelLinearLayout.setTextContent(getString(R.string.str_play_times, count));
-        }
-    }
+//    private void initFreeData(List<FreeCursorData> datas) {
+//        if (datas == null || datas.isEmpty()) return;
+//        for (int i = 0, size = datas.size(); i < size; i++) {
+//            FreeCursorData data = datas.get(i);
+//            Log.i("fff1", data.toString());
+//            if (i == 0) {
+//                setLabel(freeLabelOneRandom, data,  oneTitleTv);
+//                TRIAL_SC = data.getUrl();
+//            }
+//            else if (i == 1) {
+//                setLabel(freeLabelTwoRandom, data,  twoTitleTv);
+//                TRIAL_RC = data.getUrl();
+//            } else if (i == 2) {
+//                setLabel(freeLabelThrRandom, data,  thrTitleTv);
+//                TRIAL_CR = data.getUrl();
+//            } else if (i == 3) {
+//                setLabel(freeLabelFourRandom, data,  fourTitleTv);
+//                TRIAL_MATH = data.getUrl();
+//            }
+//        }
+//    }
+//
+//    private void setLabel(TextView countView, FreeCursorData data,  TextView titleTv) {
+////        timeTv.setText(data.getDuration());//课时
+//        titleTv.setText(data.getName());//标题
+//        int count = 0;
+//        if (!TextUtils.isEmpty(data.getName())){
+//            count = Integer.parseInt(data.getCount());
+//            // view.setTag(count);
+//            countView.setText(getResources().getString(R.string.str_pub_lesson_nums, new Object[]{count}));//播放次数
+//        }
+//
+////            LabelImageView labelImageView = (LabelImageView) view;
+////            labelImageView.setTextContent(getString(R.string.str_play_times,count));
+////        } else if (view instanceof LabelLinearLayout) {
+////            LabelLinearLayout labelLinearLayout = (LabelLinearLayout) view;
+////            labelLinearLayout.setTextContent(getString(R.string.str_play_times, count));
+////        }
+//    }
 
     private void asynTeacher() {
         addToCompositeDis(HttpUtil.teacher()
@@ -302,11 +330,11 @@ public class PreLessonFragment extends BaseFragment {
                 }));
     }
 
-    private void initTeacherData(TeacherData data) {
+    private void initTeacherData(TeacherData data) {//专家讲师模块
         if (data == null) return;
         final List<TeacherItemBean> been = data.getData();
         if (been == null || been.isEmpty()) return;
-        teacherRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        teacherRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         TeacherAdapter teacherAdapter = new TeacherAdapter(been);
         teacherAdapter.setItemListener(new OnItemClickListener() {
             @Override
@@ -314,7 +342,11 @@ public class PreLessonFragment extends BaseFragment {
                 TeacherDetailActivity.startTeacherDetail(getActivity(), been.get(position));
             }
         });
+//        teacherRecycler.setItemAnimator(RecyclerViewIte);
         teacherRecycler.setAdapter(teacherAdapter);
+        if (true) {//保证itemCount的总个数宽度超过屏幕宽度->自己处理
+            teacherRecycler.start();
+    }
     }
 
     @Override
@@ -366,8 +398,8 @@ public class PreLessonFragment extends BaseFragment {
         initOnlineData(mPreLessonData.getData());
     }
 
-    private void initOnlineData(ChineseData data) {
-        lessonRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+    private void initOnlineData(ChineseData data) {//托福模块
+        lessonRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         final List<LessonData> allData = new ArrayList<>();
         allData.addAll(data.get托福名师私人订制课程());
         allData.addAll(data.get全科强化精品视频课程());
@@ -387,10 +419,9 @@ public class PreLessonFragment extends BaseFragment {
         lessonRecycler.setAdapter(lessonAdapter);
     }
 
-    private void initHotData(final List<LessonData> data) {
-        hotRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+    private void initHotData(final List<LessonData> data) {//热门模块
+        hotRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         HotAdapter hotAdapter = new HotAdapter(data);
-
         hotAdapter.setItemListener(new OnItemClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -398,11 +429,10 @@ public class PreLessonFragment extends BaseFragment {
                 ToeflDetailActivity.startToeflDetail(getActivity(), hotData, C.TYPE_HOT_LESSON);
             }
         });
-
         hotRecycler.setAdapter(hotAdapter);
     }
 
-    private void initCardData(final List<LessonData> aClass) {
+    private void initCardData(final List<LessonData> aClass) {//卡片模块
         cardRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         CardAdapter cardAdapter = new CardAdapter(aClass);
         cardRecycler.setAdapter(cardAdapter);
@@ -418,5 +448,14 @@ public class PreLessonFragment extends BaseFragment {
     @Override
     protected View onCreateViewInit(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.frag_pre_lesson_layout, container, false);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(Util.isOnMainThread()&&!getActivity().isFinishing())
+        {
+            Glide.with(this).pauseRequests();
+        }
     }
 }

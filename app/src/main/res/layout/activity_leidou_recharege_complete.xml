@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/remark_post_container"
+        style="@style/custome_title_bar_style">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_leidou_recharge_complete"/>
+
+        <TextView
+            android:id="@+id/complete_bt"
+            style="@style/title_tv_style"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/border_space_sec_m"
+            android:text="@string/str_leidou_complete"/>
+
+    </RelativeLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <ImageView
+           android:layout_marginTop="@dimen/border_space_six_max_wsss"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/leidou_re_complete"
+           android:layout_gravity="center_horizontal"/>
+
+       <TextView
+           android:layout_marginTop="@dimen/border_space_sec"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="充值完成"
+           android:layout_gravity="center_horizontal"
+           />
+
+       <TextView
+           android:id="@+id/complete_time"
+           android:layout_marginTop="@dimen/border_space_sec"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="充值完成"
+           android:layout_gravity="center_horizontal"
+           />
+
+   </LinearLayout>
+</RelativeLayout>

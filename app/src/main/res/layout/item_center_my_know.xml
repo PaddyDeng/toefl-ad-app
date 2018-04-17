@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_know"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_know_article"
+                android:padding="@dimen/border_space_sec_max"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/konw_title"
+                android:layout_width="300dip"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="知识帝撒啊啊啊"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/color_txt_dark_black" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            style="@style/next_style"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/know_detail_iv"
+        android:layout_width="match_parent"
+        android:layout_height="108dip"
+        android:scaleType="fitXY"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/radius"
+        android:id="@+id/konw_titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss啊"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/color_txt_dark_gray"
+        android:textSize="@dimen/text_size_micro"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/border_space_sec_m">
+
+        <TextView
+            android:id="@+id/konw_time"
+            android:layout_width="300dip"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="发布时间"
+            android:textSize="@dimen/text_size_micro"
+            android:textColor="@color/color_txt_dark_black" />
+
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_marginLeft="@dimen/border_space_sec_m"
+        style="@style/line"/>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.dcloud.H58E83894.ui.knowledge.KnowDetailActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/know_type_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/community_detail_reply_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/color_sec_gray"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingBottom="@dimen/border_space"-->
+        <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+        <!--android:paddingRight="@dimen/border_space_sec_max"-->
+        <!--android:paddingTop="@dimen/border_space">-->
+
+        <!--<io.dcloud.H58E83894.weiget.CircleImageView-->
+            <!--android:id="@+id/remark_new_detail_me_head"-->
+            <!--android:layout_width="30dip"-->
+            <!--android:layout_height="30dip"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginRight="@dimen/border_space"-->
+            <!--android:src="@drawable/icon_default"/>-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/remark_new_me_content_et"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:background="@drawable/remark_et_bg"-->
+            <!--android:hint="@string/str_remark_detail_et_hint"-->
+            <!--android:imeOptions="actionSend"-->
+            <!--android:padding="@dimen/border_space"-->
+            <!--android:singleLine="true"/>-->
+    <!--</LinearLayout>-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/community_detail_reply_container"
+        android:layout_below="@id/community_detail_title_rl"
+        android:background="@color/color_white">
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/conn_detail_title"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/border_space"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                <!--android:paddingRight="@dimen/border_space_sec_max"-->
+                <!--android:textColor="@color/color_black"-->
+                <!--android:textSize="@dimen/text_size_ml"/>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="@dimen/border_space_half"-->
+                <!--android:layout_marginTop="@dimen/border_space_half"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingLeft="@dimen/border_space_sec_max"-->
+                <!--android:paddingRight="@dimen/border_space_sec_max">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/comm_detail_view_count"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginRight="@dimen/border_space_sec_max"-->
+                    <!--android:drawableLeft="@drawable/icon_community_eye"-->
+                    <!--android:drawablePadding="@dimen/border_space_half"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textSize="@dimen/text_size_small"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/comm_reply_count"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginRight="@dimen/border_space_sec_max"-->
+                    <!--android:drawableLeft="@drawable/icon_community_replay"-->
+                    <!--android:drawablePadding="@dimen/border_space_half"-->
+                    <!--android:gravity="center"-->
+                    <!--android:textSize="@dimen/text_size_small"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/comm_detail_post_time"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"/>-->
+            <!--</LinearLayout>-->
+
+            <!--<View style="@style/line"/>-->
+
+
+
+        <io.dcloud.H58E83894.weiget.GeneralKnowView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/comm_detail_recycler"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv"-->
+                <!--android:padding="@dimen/border_space_sec_m"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+        <!--</LinearLayout>-->
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

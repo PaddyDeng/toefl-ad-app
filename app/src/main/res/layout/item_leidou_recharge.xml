@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/know_free_linear"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--android:background="@drawable/selector_item_selected"-->
+
+    <RelativeLayout
+        android:id="@+id/leidou_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/tv_bg"
+        android:layout_marginLeft="@dimen/border_space_sec_m"
+        android:layout_marginTop="@dimen/border_space_sec_m"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="12dp"
+        >
+
+        android:background="@drawable/selector_item_selected"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/leidou_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1元"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/color_text_green"
+                />
+
+            <TextView
+                android:id="@+id/leidou_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="100雷豆"
+                android:textColor="@color/color_text_green"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="color_black">#000000</color>
+    <color name="color_black">#252525</color>
     <color name="color_white">#ffffff</color>
+    <color name="color_text_black">#252525</color>
+
+
+    <color name="color_lei_back">#f3f4f6</color>
+    <color name="color_lei_text">#323232</color>
+    <color name="color_lei_date">#808080</color>
+    <color name="color_lei_view">#e0e0e0</color>
 
     <color name="color_blue">#197fed</color>
 
@@ -15,26 +22,29 @@
     <color name="color_sec_white">#EFEFF4</color>
 
     <color name="color_default_gray">#EEEEEE</color>
+    <color name="color_min_gray">#f6f5f5</color>
     <color name="color_gray">#99ffffff</color>
 
     <color name="color_green">#33CC66</color>
     <color name="color_dark_green">#009688</color>
+    <color name="color_text_green">#2fa5d3</color>
+    <color name="color_text_greend">#2fa5d303</color>
 
     <color name="color_trans_white">#33ffffff</color>
     <color name="color_press_white">#99ffffff</color>
 
     <color name="color_practice_line">#847B7C</color>
 
-    <color name="color_read_practice">#FFCC00</color>
+    <color name="color_read_practice">#2fa5d3</color>
 
     <color name="color_dot">#D2D2D2</color>
     <color name="color_sec_gray">#F2F2F2</color>
     <color name="color_dark_gray">#CCCCCC</color>
-    <color name="color_orange">#FF6600</color>
-    <color name="color_press_orange">#FF8636</color>
+    <color name="color_orange">#2fa5d3</color>
+    <color name="color_press_orange">#2fa5d3</color>
     <color name="color_red">#ff0000</color>
 
-    <color name="color_sec_orange">#FE9400</color>
+    <color name="color_sec_orange">#2fa5d3</color>
 
     <color name="color_blur">#97000000</color>
 

@@ -11,6 +11,16 @@ public class FreeCursorData {
     private String count;
     private String duration;
 
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
+    private String teacher;
+
     public String getName() {
         return name;
     }

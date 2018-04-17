@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            android:id="@+id/deal_back_img"
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/deal_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:maxLines="1"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mery"
+        android:scaleType="fitXY"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

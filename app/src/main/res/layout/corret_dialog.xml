@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:id="@+id/frames"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_corret_back"
+       >
+
+
+            <TextView
+                android:id="@+id/update_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="口语免费名额开抢啦"
+                android:textColor="@color/color_black"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/ic_corret_kai"
+                android:drawablePadding="@dimen/detail_img_size"
+                android:gravity="center_horizontal"
+
+        />
+
+
+
+
+    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:src="@drawable/ic_uptate_03" />-->
+
+
+
+
+</FrameLayout>

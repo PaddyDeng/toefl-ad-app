@@ -18,6 +18,12 @@
             android:layout_centerInParent="true"
             android:maxLines="1"/>
 
+        <!--<TextView-->
+            <!--android:id="@+id/deal_diss"-->
+            <!--style="@style/title_tv_style"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:paddingRight="@dimen/border_space_sec_m"-->
+            <!--android:text="关闭" />-->
         <TextView
             android:id="@+id/deal_more_content_title"
             style="@style/title_tv_style"
@@ -43,6 +49,7 @@
 
     <WebView
         android:id="@+id/deal_webview"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

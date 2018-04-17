@@ -1,6 +1,8 @@
 package io.dcloud.H58E83894.utils.media;
 
 import android.media.MediaPlayer;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -47,6 +49,10 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener {
     private enum PlayMode {
         LOOP, RANDOM, REPEAT
     }
+
+
+
+
 
     public MusicPlayer() {
 
@@ -206,6 +212,11 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void getMPSpeed(float speed){
+
+        mMediaPlayer.setPlaybackParams(mMediaPlayer.getPlaybackParams().setSpeed(speed));
+    }
 
     public void stop() {
         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {

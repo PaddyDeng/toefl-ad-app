@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -27,7 +28,9 @@ import io.dcloud.H58E83894.weiget.GeneralView;
 import io.dcloud.H58E83894.weiget.ObservableScrollView;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
-
+/**
+ * 卡片模块点击的activity
+*/
 public class ToeflDetailActivity extends BaseActivity {
 
     public static void startToeflDetail(Context c, LessonData data, int type) {
@@ -127,8 +130,8 @@ public class ToeflDetailActivity extends BaseActivity {
         contentTitleTv.setText(mLessonData.getName());
         detailNumTv.setText(getString(R.string.str_gmat_detail_number, mLessonData.getViewCount()));
         if (type == C.TYPE_PUBLIC_LESSON) {
-            GlideUtil.load(RetrofitProvider.SMARTAPPLYURL + mLessonData.getImage(), headImg);
-            mGeneralView.setHtmlText(mLessonData.getSentenceNumber(), RetrofitProvider.SMARTAPPLYURL);
+            GlideUtil.load(RetrofitProvider.VIPLGW + mLessonData.getImage(), headImg);
+            mGeneralView.setHtmlText(mLessonData.getSentenceNumber(), RetrofitProvider.VIPLGW);
         } else {
             GlideUtil.load(RetrofitProvider.TOEFLURL + mLessonData.getImage(), headImg);
             async();
@@ -141,6 +144,7 @@ public class ToeflDetailActivity extends BaseActivity {
                 .subscribe(new Consumer<ResultBean<LessonDetailBean>>() {
                     @Override
                     public void accept(@NonNull ResultBean<LessonDetailBean> bean) throws Exception {
+                        Log.i("toefl", bean.getData().getAnswer()+"3333");
                         LessonDetailBean data = bean.getData();
                         if (data == null) return;
                         mGeneralView.setHtmlText(data.getAnswer(), RetrofitProvider.TOEFLURL);

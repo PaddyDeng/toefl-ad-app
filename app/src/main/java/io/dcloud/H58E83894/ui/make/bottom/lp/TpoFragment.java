@@ -54,7 +54,7 @@ public class TpoFragment extends BaseFragment {
 
     private List<ListenTpoData> initTpoData() {
         mDatas = new ArrayList<>();
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             ListenTpoData tpoData = new ListenTpoData();
             int cacl = cacl(i);
             if (cacl == i) {
@@ -82,6 +82,8 @@ public class TpoFragment extends BaseFragment {
             tpoNumber += 229;
         } else if (tpoNumber < 50) {
             tpoNumber += 262;
+        }else if (tpoNumber < 51) {
+            tpoNumber += 326;
         }
         return tpoNumber;
     }

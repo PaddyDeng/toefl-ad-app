@@ -1,5 +1,6 @@
 package io.dcloud.H58E83894.ui.user;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -58,6 +59,11 @@ public class UserProxyActivity extends BaseActivity implements OnUserInfoListene
                 .replace(CONTAINER, fragment)
                 .addToBackStack(tag)
                 .commitAllowingStateLoss();
+    }
+
+    @Override
+    public void replaceActivity(Activity activity, String tag) {
+
     }
 
     @Override

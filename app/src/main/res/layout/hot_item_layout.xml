@@ -4,57 +4,67 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/new_card_height"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/hot_item_bg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/hot_item_des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#99545252"
+            android:background="@color/color_white"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"
             android:padding="@dimen/border_space"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/text_size_ms"/>
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_size_small"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/border_space_sec_max"
-            android:background="@drawable/icon_hot_des"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/border_space_half"
-            android:paddingRight="@dimen/border_space_half"
-            android:paddingTop="@dimen/border_space">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/hot_item_number"
+            <ImageView
+                android:id="@+id/hot_item_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:layout_alignParentBottom="true"
+                />
+
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/color_white"
-                android:textSize="@dimen/text_size_micro"/>
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/color_white"
+                android:padding="@dimen/base_padding"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/str_hot_go_lesson"
-                android:textColor="@color/color_white"
-                android:textSize="@dimen/text_size_micro"/>
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_add_03"
+                    android:layout_marginRight="@dimen/border_space"/>
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/hot_item_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/color_text_green"
+                    android:textSize="@dimen/text_size_micro"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </android.support.v7.widget.CardView>

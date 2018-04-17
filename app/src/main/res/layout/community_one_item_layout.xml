@@ -6,13 +6,6 @@
                 android:background="@color/color_white"
                 android:paddingTop="@dimen/border_space">
 
-    <ImageView
-        android:id="@+id/community_big_pic"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/community_one_item_pic_height"
-        android:layout_marginTop="@dimen/border_space_thr"
-        android:scaleType="fitXY"
-        android:src="@drawable/icon_know_community"/>
 
     <io.dcloud.H58E83894.weiget.CircleImageView
         android:id="@+id/community_head_iv"
@@ -32,7 +25,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/community_big_pic"
         android:orientation="vertical"
         android:paddingBottom="@dimen/border_space"
         android:paddingLeft="@dimen/border_space_sec_max">

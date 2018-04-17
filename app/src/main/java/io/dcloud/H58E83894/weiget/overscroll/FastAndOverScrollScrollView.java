@@ -87,10 +87,11 @@ public class FastAndOverScrollScrollView extends ScrollView implements FastScrol
 	@Override
 	public void draw(Canvas canvas) {
 //		super.draw(canvas);
+//		super.draw(canvas);
 		mOverScrollDelegate.draw(canvas);
 	}
 
-	@Override
+	@Override//回弹动画
 	protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX,
 			int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
 		return mOverScrollDelegate.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY,
@@ -126,7 +127,7 @@ public class FastAndOverScrollScrollView extends ScrollView implements FastScrol
 		super.draw(canvas);
 	}
 
-	@Override
+	@Override//回弹动画
 	public boolean superOverScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX,
 			int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
 		return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX,

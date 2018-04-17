@@ -224,6 +224,8 @@ public class WriteTpoListFragment extends BaseRefreshFragment<TypeTpo> {
             tpoNumber += 214;
         } else if (tpoNumber < 50) {
             tpoNumber += 264;
+        }else if (tpoNumber <  51) {
+            tpoNumber += 331;
         }
         return tpoNumber;
     }

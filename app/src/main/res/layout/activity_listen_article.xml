@@ -7,10 +7,11 @@
               android:orientation="vertical">
 
     <RelativeLayout
-        style="@style/custome_title_bar_style"
-        android:background="@android:color/transparent">
+        style="@style/custome_title_bar_styles"
+        android:alpha="0.5"
+        >
 
-        <ImageView style="@style/black_bg_title_back"/>
+        <ImageView style="@style/black_bg_title_backs"/>
 
         <TextView
             style="@style/title_tv_style"

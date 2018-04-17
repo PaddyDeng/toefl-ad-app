@@ -2,18 +2,27 @@ package io.dcloud.H58E83894.ui.make.bottom.lp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -36,6 +45,9 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 import zlc.season.rxdownload2.RxDownload;
 import zlc.season.rxdownload2.entity.DownloadStatus;
+
+import static io.dcloud.H58E83894.weiget.LyricView.LEFT;
+import static io.dcloud.H58E83894.weiget.LyricView.RIGHT;
 
 public class FineListenQuestionActivity extends BaseActivity {
 
@@ -72,6 +84,8 @@ public class FineListenQuestionActivity extends BaseActivity {
     TextView showTypeTv;
     @BindView(R.id.single_container)
     LinearLayout singleContainer;
+    @BindView(R.id.show_type_tvs)
+    TextView showTSpeed;
 
     private String id;
     private PracticeQuestionData mPracticeQuestionData;
@@ -82,6 +96,7 @@ public class FineListenQuestionActivity extends BaseActivity {
     private List<SentenceData> mSentence;
     private boolean hasAdd;
     private int recordIndex;
+    private PopupWindow mPopWindow;
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -123,6 +138,7 @@ public class FineListenQuestionActivity extends BaseActivity {
         for (SentenceData sd : mSentence) {
             String start_time = sd.getStart_time();
             String audio_time = sd.getAudio_time();
+            Log.i("ppp1", audio_time.toString());
             if (start_time.contains("。")) {
                 start_time = start_time.replace("。", ".");
             }
@@ -156,10 +172,14 @@ public class FineListenQuestionActivity extends BaseActivity {
         mPlayer = new MusicPlayer();
         mRxDownload = RxDownload.getInstance(mContext);
         setContentView(R.layout.activity_fine_listen_question);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            showTSpeed.setVisibility(View.VISIBLE);}
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @OnClick({R.id.listen_fine_write_tv, R.id.click_screen_show_original, R.id.fine_listen_contr_btn,
-            R.id.chinese_switch, R.id.left_go_iv, R.id.right_go_iv, R.id.swithc_show_content})
+            R.id.chinese_switch, R.id.left_go_iv, R.id.right_go_iv, R.id.swithc_show_content, R.id.show_type_tvs})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.left_go_iv:
@@ -201,10 +221,106 @@ public class FineListenQuestionActivity extends BaseActivity {
                     showTypeTv.setText(fullText);
                 }
                 break;
+            case R.id.show_type_tvs:
+                if (mPlayer != null && mPlayer.isPlaying()) {
+                    showPopWindow();
+                }
+                break;
             default:
                 break;
         }
     }
+
+    private void showPopWindow() {
+        //设置contentView
+        View contentView = LayoutInflater.from(FineListenQuestionActivity.this).inflate(R.layout.acvitity_popwindow, null);
+        mPopWindow = new PopupWindow(contentView,
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        mPopWindow.setContentView(contentView);
+        //设置各个控件的点击响应
+        final TextView tv1 = (TextView)contentView.findViewById(R.id.tv_pop_x5);
+        final TextView tv2 = (TextView)contentView.findViewById(R.id.tv_pop_x8);
+        final TextView tv3 = (TextView)contentView.findViewById(R.id.tv_pop_x10);
+        final TextView tv4 = (TextView)contentView.findViewById(R.id.tv_pop_x12);
+        final TextView tv5 = (TextView)contentView.findViewById(R.id.tv_pop_x15);
+        final TextView tv6 = (TextView)contentView.findViewById(R.id.tv_pop_x20);
+//        tv1.setOnClickListener((View.OnClickListener) this);
+//        tv2.setOnClickListener((View.OnClickListener) this);
+//        tv3.setOnClickListener((View.OnClickListener) this);
+//        tv4.setOnClickListener((View.OnClickListener) this);
+//        tv5.setOnClickListener((View.OnClickListener) this);
+//        tv6.setOnClickListener((View.OnClickListener) this);
+
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                showTSpeed.setText(tv1.getText().toString().trim());
+                mPlayer.getMPSpeed(0.5f);
+//                Toast.makeText(this, "clicked computer", Toast.LENGTH_SHORT).show();
+                mPopWindow.dismiss();
+            }
+        });
+
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                showTSpeed.setText(tv2.getText().toString().trim());
+                mPlayer.getMPSpeed(0.8f);
+                mPopWindow.dismiss();
+            }
+        });
+
+        tv3.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+               showTSpeed.setText(tv3.getText().toString().trim());
+                mPlayer.getMPSpeed(1.0f);
+                mPopWindow.dismiss();
+            }
+        });
+
+        tv4.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                showTSpeed.setText(tv4.getText().toString().trim());
+                mPlayer.getMPSpeed(1.2f);
+                mPopWindow.dismiss();
+            }
+        });
+
+        tv5.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                showTSpeed.setText(tv5.getText().toString().trim());
+                mPlayer.getMPSpeed(1.5f);
+                mPopWindow.dismiss();
+            }
+        });
+
+        tv6.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                showTSpeed.setText(tv6.getText().toString().trim());
+                mPlayer.getMPSpeed(2.0f);
+                mPopWindow.dismiss();
+            }
+        });
+
+        //显示PopupWindow
+        View rootview = LayoutInflater.from(FineListenQuestionActivity.this).inflate(R.layout.activity_fine_listen_question, null);
+        mPopWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
+        mPopWindow.setTouchable(true);
+        int xOff = mPopWindow.getWidth()/2 - showTSpeed.getWidth()/2;
+
+        mPopWindow.showAsDropDown(showTSpeed,xOff, -40);
+    }
+
 
     private void leftOrRightGo(boolean toLeft) {
         if (mSentence == null || mSentence.isEmpty()) return;

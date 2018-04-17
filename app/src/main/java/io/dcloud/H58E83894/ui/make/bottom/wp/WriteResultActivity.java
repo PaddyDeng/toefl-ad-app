@@ -108,6 +108,11 @@ public class WriteResultActivity extends BaseActivity {
         }
     }
 
+    /**
+     *分享    R.id.result_share_iv   case R.id.result_share_iv:
+     new ShareDialog().showDialog(getSupportFragmentManager());
+     break;
+     */
     @OnClick({R.id.result_detail_tv, R.id.simulation_again_start, R.id.reservation_write_correction})
     public void onClick(View v) {
         switch (v.getId()) {
@@ -132,6 +137,7 @@ public class WriteResultActivity extends BaseActivity {
                     }
                 }).showDialog(getSupportFragmentManager());
                 break;
+
             default:
                 break;
         }

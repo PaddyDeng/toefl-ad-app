@@ -55,6 +55,8 @@ public class CommunityDetailActivity extends BaseActivity {
     GeneralView mGeneralView;
     @BindView(R.id.comm_detail_recycler)
     RecyclerView mRecyclerView;
+    @BindView(R.id.tv)
+    TextView tv;
     @BindView(R.id.remark_new_detail_me_head)
     CircleImageView mHeadView;
     @BindView(R.id.remark_new_me_content_et)
@@ -176,5 +178,8 @@ public class CommunityDetailActivity extends BaseActivity {
         postTime.setText(getString(R.string.str_community_post, data.getDateTime()));
         mGeneralView.setText(RetrofitProvider.GOSSIPURL, data.getContent());
         mRecyclerView.setAdapter(new CommDetailAdapter(data.getReply()));
+        mRecyclerView.setVisibility(View.GONE);
+        tv.setVisibility(View.VISIBLE);
+        tv.setText(data.getDescription());
     }
 }

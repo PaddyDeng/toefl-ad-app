@@ -3,6 +3,7 @@ package io.dcloud.H58E83894.ui.common;
 import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -21,6 +22,8 @@ import io.dcloud.H58E83894.weiget.VoiceLineView;
 
 public class RecordProxy {
     public static String filePathandName;
+    private static String strsTime;
+//    public String  strsTime;
 
     public static void showRecordDialog(final Context context, final VoiceManager voiceManager, final ICallBack<String> callBack) {
         filePathandName = "";
@@ -78,6 +81,8 @@ public class RecordProxy {
                 }
             }
         });
+
+
         //完成
 //        mIvComplete.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -92,7 +97,12 @@ public class RecordProxy {
         voiceManager.setVoiceRecordListener(new VoiceManager.VoiceRecordCallBack() {
             @Override
             public void recDoing(long time, String strTime) {
+//                int timess = Integer.parseInt(strTime.substring(5,8));
+//
+//                Log.i("strTime =", time +"2 =" + strTime+" = "+timess);
+                strsTime = strTime;
                 mRecordHintTv.setText(strTime);
+
             }
 
             @Override
@@ -124,6 +134,10 @@ public class RecordProxy {
 
             }
         });
+
+
+
+
         final ImageView auditionView = (ImageView) recordDialog.findViewById(R.id.play_audio_iv);
         auditionView.setOnClickListener(new View.OnClickListener() {
             @Override

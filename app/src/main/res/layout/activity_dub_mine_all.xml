@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            android:id="@+id/deal_back_img"
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/deal_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/deal_more_content_title"
+            style="@style/title_tv_style"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_toRightOf="@id/deal_back_img"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mine_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

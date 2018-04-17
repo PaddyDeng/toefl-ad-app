@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style">
+
+        <ImageView
+            style="@style/black_bg_title_back"/>
+
+        <TextView
+            android:id="@+id/know_type_title"
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/border_space_six_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/know_type_01"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/str_know_for_re"
+                android:drawableTop="@drawable/ic_konw_for_reference"
+                android:padding="@dimen/base_padding"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/know_type_02"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/str_know_baic"
+                android:drawableTop="@drawable/ic_know_basics"
+                android:padding="@dimen/base_padding"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/border_space_sec_max_m"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/know_type_03"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/str_know_techin"
+                android:drawableTop="@drawable/ic_konw_for_techin"
+                android:padding="@dimen/base_padding"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/know_type_04"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/str_know_improve"
+                android:drawableTop="@drawable/ic_konw_improve"
+                android:padding="@dimen/base_padding"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -34,6 +34,12 @@
             android:text="@string/str_make_practice"/>
 
         <TextView
+            android:id="@+id/main_nav_knowledge"
+            style="@style/main_nav_style"
+            android:drawableTop="@drawable/toefl_main_nav_know_sele"
+            android:text="@string/str_make_knowledge"/>
+
+        <TextView
             android:id="@+id/main_nav_circle"
             style="@style/main_nav_style"
             android:drawableTop="@drawable/toefl_main_nav_toefl_circle_sele"

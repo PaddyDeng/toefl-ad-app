@@ -13,6 +13,8 @@ public class MakeTable {
     public static String GRAMMAR_JSON = "grammar_json";
     public static String GRAMMAR_ID = "grammar_id";
 
+    public static String tixing_ID = "1";
+
 
     //语法练习
     public static String TABLE_NAME = "grammar_table_name";

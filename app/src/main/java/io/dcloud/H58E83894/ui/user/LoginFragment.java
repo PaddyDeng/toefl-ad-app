@@ -2,6 +2,8 @@ package io.dcloud.H58E83894.ui.user;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +12,12 @@ import android.widget.EditText;
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.dcloud.H58E83894.R;
+import io.dcloud.H58E83894.data.InforData;
+import io.dcloud.H58E83894.http.HttpUtil;
+import io.dcloud.H58E83894.ui.information.GradeActivity;
 import io.dcloud.H58E83894.utils.SharedPref;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by fire on 2017/7/13.
@@ -58,7 +65,10 @@ public class LoginFragment extends BaseUserFragment {
                 mOnUserInfoListener.replaceFragment(new RetrievePswFragment(), RetrievePswFragment.class.getSimpleName());
                 break;
             case R.id.login:
+
                 login(mOnUserInfoListener, getEditText(inputAccount), getEditText(inputPwd));
+
+//                if(needLogin())  return;
                 break;
             case R.id.exit_no_login:
                 mOnUserInfoListener.finishActivity();

@@ -2,6 +2,7 @@ package io.dcloud.H58E83894.ui.common;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.ViewGroup;
@@ -89,7 +90,13 @@ public class DealActivity extends BaseActivity {
 //                http://static.gensee.com/webcast/static/zh_CN/ipad-error.html?msg=%E5%BE%88%E9%81%97%E6%86%BE%EF%BC%8C%E4%BA%BA%E6%95%B0%E5%B7%B2%E6%BB%A1%EF%BC%8C%E6%82%A8%E6%97%A0%E6%B3%95%E5%8A%A0%E5%85%A5%E3%80%82%E8%AF%B7%E8%81%94%E7%B3%BB%E6%B4%BB%E5%8A%A8%E4%B8%BB%E5%8A%9E%E6%96%B9%E3%80%82
                 if (type == C.DEAL_ADD_HEADER) {
                     view.loadUrl(url, map);
-                } else {
+                } else if(url.startsWith("weixin://") || url.startsWith("alipays://") ||
+                        url.startsWith("mailto://") || url.startsWith("tel://")){
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+
+                }else{
                     view.loadUrl(url);
                 }
                 return super.shouldOverrideUrlLoading(view, url);

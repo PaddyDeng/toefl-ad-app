@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="246dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/tv_pop_x5"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="x0.5"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_x8"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_pop_x5"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="x0.8"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_x10"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_pop_x5"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="x1.0"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_x12"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_pop_x10"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="x1.2"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_x15"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_pop_x12"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="x1.5"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_x20"
+        android:layout_width="wrap_content"
+        android:paddingLeft="@dimen/border_space_sec_max"
+        android:paddingRight="@dimen/border_space_sec_max"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_pop_x15"
+        android:background="@drawable/toefl_speed_sele"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:text="x2.0"
+        android:textColor="@color/color_text_black"
+        android:textSize="16dp"
+        />
+
+</RelativeLayout>

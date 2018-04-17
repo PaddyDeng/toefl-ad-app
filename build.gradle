@@ -3,9 +3,10 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+            classpath 'com.android.tools.build:gradle:3.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,7 +16,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io"
+        }
+        google()
     }
 }
 
@@ -23,18 +26,19 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+
 ext{
     //    1开发  2 发布
     appDev = 1;
     appProduct = 2;
 
-    //线上版本号 48 2.0 下一版本应更新 49
+    //线上版本号 56 2.21 下一版本应更新 57  2.22
     setup = [compileSdk: 25,
              buildTools: "25.0.3",
              minSdk    : 14,
              targetSdk : 25,
-             vcode     : 48,
-             vname     : "2.0"]
+             vcode     : 57,
+             vname     : "2.30"]
     versions = [libSupport    : "25.3.1",
                 libButterKnife: "8.5.1",
                 libRxJava     : "2.0.7",

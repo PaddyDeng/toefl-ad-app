@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/color_sec_gray"
               android:orientation="vertical">
 
     <io.dcloud.H58E83894.weiget.pullrefresh.PullRefreshLayout
@@ -11,6 +12,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
+            android:background="@color/color_white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </io.dcloud.H58E83894.weiget.pullrefresh.PullRefreshLayout>

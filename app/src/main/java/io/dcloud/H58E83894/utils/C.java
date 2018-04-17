@@ -7,6 +7,7 @@ public interface C {
 
     int CONT_GUIDE_IMG = 1;
 
+    String REPLY = "1";
     //随机数类型
     int TRIAL_COURSE = 1;
 
@@ -18,6 +19,9 @@ public interface C {
 
     String BELONG_INDENPDENT = "writingIndependent";
     String BELONG_TPO = "writingTpo";
+
+    String REMARK_REFRESH_ACTION = "remark_refresh_action";
+    String REFRESH_MAKE_RECORD = "refresh_make_record";
 
     //随机存储数标识  免费试听
     String FREE_SC = "free_sc";
@@ -75,6 +79,7 @@ public interface C {
     String MAKE_GRAMMAR = "make_grammar";//刷新语法练习后的ui
     String TOEFL_CIRCLE_POST_REMARK = "toefl_circle_post_remark";
     String TOEFL_CIRCLE_POST_COMMUNITY = "toefl_circle_post_community";
+    String POST_COMMUNITY_REMARK = "post_community_remark";
 
     int MAKEING = 1;
     int MAKE_END = 2;

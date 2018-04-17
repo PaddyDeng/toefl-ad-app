@@ -4,242 +4,354 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:padding="@dimen/border_space_sec">
+              android:padding="@dimen/border_space_sec_max">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/free_lesson_one_container"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/base_half_padding"
-            android:layout_weight="3"
-            android:background="@drawable/icon_free_one"
-            android:orientation="horizontal">
-
             <LinearLayout
+                android:id="@+id/free_lesson_one_container"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.3"
-                android:orientation="vertical"
-                android:padding="@dimen/border_space_half">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/toefl_free_one_title"
-                    style="@style/free_title_style"/>
+                    <TextView
+                        android:id="@+id/toefl_free_one_title"
+                        style="@style/free_title_style"/>
 
-                <TextView
-                    style="@style/sm_txt_style"
-                    android:text="@string/str_free_one_teacher"
-                    android:visibility="invisible"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/free_one_cursor_time_tv"-->
+                        <!--style="@style/sm_txt_styles"-->
+                        <!--android:layout_marginTop="@dimen/border_space_half"-->
+                        <!--android:text="@string/str_free_times"/>-->
 
-                <TextView
-                    android:id="@+id/free_one_cursor_time_tv"
-                    style="@style/sm_txt_style"
-                    android:layout_marginBottom="@dimen/border_space_sec_m"
-                    android:text="@string/str_free_times"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/toefl_free_one_Teacher"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_marginTop="@dimen/border_space_half"-->
+                        <!--android:textSize="@dimen/text_size_micros"-->
+                        <!--android:textColor="@color/color_black"-->
+                        <!--android:text="@string/str_free_one_teacher"-->
+                        <!--/>-->
 
-                <TextView
-                    style="@style/go_try_style"
-                    android:layout_marginBottom="@dimen/border_space"
-                    android:textColor="#a3d540"/>
+
+                    <TextView
+                        android:id="@+id/gmat_free_one_random"
+                        android:textColor="@color/color_text_green"
+                        style="@style/sm_txt_style" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/border_space_sec_max"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingRight="@dimen/border_space_normal"
+                    android:scaleType="centerCrop"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_free_01"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <!--<TextView-->
+                        <!--style="@style/go_try_style"-->
+                        <!--android:layout_marginTop="@dimen/border_space"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:textColor="@color/color_white"/>-->
+
+                </LinearLayout>
+
             </LinearLayout>
 
-            <io.dcloud.H58E83894.weiget.label.LabelImageView
-                android:id="@+id/gmat_free_one_random"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                app:backgroundColor="@color/color_red"
-                app:direction="rightTop"
-                app:labelBottomPadding="@dimen/label_bottom_padding"
-                app:labelTopDistance="@dimen/label_distance"
-                app:labelTopPadding="@dimen/label_top_padding"
-                app:textContentSize="@dimen/text_size_micro"/>
-
-        </LinearLayout>
-
-        <io.dcloud.H58E83894.weiget.label.LabelLinearLayout
-            android:id="@+id/free_lesson_two_container"
-            android:layout_width="0dip"
+        <View
+            android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/base_half_padding"
-            android:layout_weight="2"
-            android:background="@drawable/icon_free_two"
-            android:orientation="vertical"
-            app:backgroundColor="@color/color_red"
-            app:direction="leftTop"
-            app:labelBottomPadding="@dimen/label_bottom_padding"
-            app:labelTopDistance="@dimen/label_distance"
-            app:labelTopPadding="@dimen/label_top_padding"
-            app:textContentSize="@dimen/text_size_micro">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+            android:background="@color/color_sec_gray"
+            android:layout_marginTop="@dimen/border_space_sec_max"
+            />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:id="@+id/free_lesson_two_container"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/border_space"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                >
 
-                <TextView
-                    android:id="@+id/toefl_free_two_title"
-                    style="@style/free_title_style"
-                    android:layout_marginTop="@dimen/border_space_normal"
-                    android:maxLines="1"/>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dip"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/border_space_half"
-                    android:orientation="vertical"
-                    android:paddingRight="@dimen/base_half_padding">
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/border_space_normal"
+                    android:scaleType="centerCrop"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/toefl_speak_free"
-                        style="@style/sm_txt_style"
+                    <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/border_space_sec_m"
-                        android:text="@string/str_free_times"/>
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_free_02"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                    <!--<TextView-->
+                        <!--style="@style/go_try_style"-->
+                        <!--android:layout_marginTop="@dimen/border_space"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textColor="@color/color_white"/>-->
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/border_space_sec_max"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
 
                     <TextView
-                        style="@style/go_try_style"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:textColor="#ff92b7"/>
+                        android:id="@+id/toefl_free_two_title"
+                        style="@style/free_title_style"/>
 
-                </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/toefl_speak_free"-->
+                        <!--style="@style/sm_txt_styles"-->
+                        <!--android:layout_marginTop="@dimen/border_space_half"-->
+                        <!--android:text="@string/str_free_times"/>-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/toefl_free_two_Teacher"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_marginTop="@dimen/border_space_half"-->
+                        <!--android:textSize="@dimen/text_size_micros"-->
+                        <!--android:textColor="@color/color_black"-->
+                        <!--android:text="@string/str_free_one_teacher" />-->
+
+
+                    <TextView
+                        android:id="@+id/gmat_free_two_random"
+                        android:textColor="@color/color_text_green"
+                        style="@style/sm_txt_style" />
+
+                </LinearLayout>
 
             </LinearLayout>
-        </io.dcloud.H58E83894.weiget.label.LabelLinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_sec_gray"
+        android:layout_marginLeft="@dimen/border_space_sec_max"
+        android:layout_marginRight="@dimen/border_space_sec_max"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/border_space"
         android:orientation="horizontal">
 
-        <io.dcloud.H58E83894.weiget.label.LabelLinearLayout
-            android:id="@+id/free_lesson_thr_container"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/base_half_padding"
-            android:layout_weight="2"
-            android:background="@drawable/icon_free_thr"
-            android:orientation="vertical"
-            app:backgroundColor="@color/color_red"
-            app:direction="leftTop"
-            app:labelBottomPadding="@dimen/label_bottom_padding"
-            app:labelTopDistance="@dimen/label_distance"
-            app:labelTopPadding="@dimen/label_top_padding"
-            app:textContentSize="@dimen/text_size_micro">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/toefl_free_thr_title"
-                    style="@style/free_title_style"
-                    android:layout_marginTop="@dimen/border_space_normal"
-                    android:maxLines="1"/>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/border_space_half"
-                    android:orientation="vertical"
-                    android:paddingRight="@dimen/base_half_padding">
-
-                    <TextView
-                        android:id="@+id/toefl_read_free"
-                        style="@style/sm_txt_style"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/border_space_sec_m"
-                        android:text="@string/str_free_times"/>
-
-                    <TextView
-                        style="@style/go_try_style"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:textColor="#ffb76f"/>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </io.dcloud.H58E83894.weiget.label.LabelLinearLayout>
-
-        <LinearLayout
-            android:id="@+id/free_lesson_four_container"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/base_half_padding"
-            android:layout_weight="3"
-            android:background="@drawable/icon_free_four"
-            android:orientation="horizontal">
-
-            <io.dcloud.H58E83894.weiget.label.LabelImageView
-                android:id="@+id/free_label_four_iv"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:backgroundColor="@color/color_red"
-                app:direction="leftTop"
-                app:labelBottomPadding="@dimen/label_bottom_padding"
-                app:labelTopDistance="@dimen/label_distance"
-                app:labelTopPadding="@dimen/label_top_padding"
-                app:textContentSize="@dimen/text_size_micro"/>
-
-            <LinearLayout
+                android:id="@+id/free_lesson_thr_container"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.3"
-                android:orientation="vertical"
-                android:padding="@dimen/border_space_half">
+                android:layout_marginRight="@dimen/base_half_padding"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
 
-                <TextView
-                    android:id="@+id/toefl_free_four_title"
-                    style="@style/free_title_style"/>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
 
-                <TextView
-                    style="@style/sm_txt_style"
-                    android:text="@string/str_free_four_teacher"
-                    android:visibility="invisible"/>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/four_write_cursor"
-                    style="@style/sm_txt_style"
-                    android:layout_marginBottom="@dimen/border_space_sec_m"
-                    android:text="@string/str_free_times"/>
+                        <TextView
+                            android:id="@+id/toefl_free_thr_title"
+                            style="@style/free_title_style"/>
 
-                <TextView
-                    style="@style/go_try_style"
-                    android:layout_marginBottom="@dimen/border_space"
-                    android:textColor="#7f91ff"/>
+                        <!--<TextView-->
+                            <!--android:id="@+id/toefl_read_free"-->
+                            <!--style="@style/sm_txt_styles"-->
+                            <!--android:layout_marginTop="@dimen/base_half_padding"-->
+                            <!--android:text="@string/str_free_times"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/toefl_free_thr_Teacher"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_marginTop="@dimen/border_space_half"-->
+                            <!--android:textSize="@dimen/text_size_micros"-->
+                            <!--android:textColor="@color/color_black"-->
+                            <!--android:text="@string/str_free_one_teacher"/>-->
+
+
+                        <TextView
+                            android:id="@+id/gmat_free_thr_random"
+                            android:textColor="@color/color_text_green"
+                            style="@style/sm_txt_style" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/border_space_sec_max"
+                        android:layout_height="match_parent"/>
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/border_space_normal"
+                        android:scaleType="centerCrop">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_free_03"
+                                android:scaleType="fitXY"
+                                android:layout_gravity="center_horizontal"
+                                />
+
+                            <!--<TextView-->
+                                <!--style="@style/go_try_style"-->
+                                <!--android:layout_marginTop="@dimen/border_space"-->
+                                <!--android:layout_gravity="center_horizontal"-->
+                                <!--android:textColor="@color/color_white"/>-->
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_sec_gray"
+            android:layout_marginBottom="@dimen/border_space_sec_max"
+            />
+
+            <LinearLayout
+                android:id="@+id/free_lesson_four_container"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/base_half_padding"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/border_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/radius"
+                            android:src="@drawable/ic_free_04"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <!--<TextView-->
+                            <!--style="@style/go_try_style"-->
+                            <!--android:layout_marginTop="@dimen/border_space"-->
+                            <!--android:layout_gravity="center_horizontal"-->
+                            <!--android:gravity="center_vertical"-->
+                            <!--android:textColor="@color/color_white"/>-->
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/border_space_sec_max"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/toefl_free_four_title"
+                            style="@style/free_title_style"/>
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/four_write_cursor"-->
+                            <!--style="@style/sm_txt_styles"-->
+                            <!--android:layout_marginTop="@dimen/border_space_half"-->
+                            <!--android:text="@string/str_free_times"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/toefl_free_four_Teacher"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_marginTop="@dimen/border_space_half"-->
+                            <!--android:textSize="@dimen/text_size_micros"-->
+                            <!--android:textColor="@color/color_black"-->
+                            <!--android:text="Shirley Xu" />-->
+
+
+                        <TextView
+                            android:id="@+id/gmat_free_four_random"
+                            android:textColor="@color/color_text_green"
+                            style="@style/sm_txt_style" />
+
+                    </LinearLayout>
+
+                    </LinearLayout>
+
+            </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>

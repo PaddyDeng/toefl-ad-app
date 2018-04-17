@@ -157,7 +157,9 @@
         android:background="?attr/colorPrimary"
         app:layout_behavior="com.jzsy.gmat.weiget.behavior.AlphaBehavior">
 
-        <ImageView style="@style/black_bg_title_back"/>
+        <ImageView
+            android:id="@+id/imageView"
+            style="@style/black_bg_title_back" />
 
         <TextView
             style="@style/title_tv_style"

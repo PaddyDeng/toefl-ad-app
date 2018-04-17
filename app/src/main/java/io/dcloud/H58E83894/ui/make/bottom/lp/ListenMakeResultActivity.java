@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
@@ -101,6 +102,7 @@ public class ListenMakeResultActivity extends BaseActivity {
     protected void asyncUiInfo() {
 
         if (TextUtils.isEmpty(id)) return;
+        Log.i("catId4", id);
         addToCompositeDis(HttpUtil
                 .listenTopicRequest(id)
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -166,6 +168,7 @@ public class ListenMakeResultActivity extends BaseActivity {
     private void refreshUi(ListenQuestionData data) {
         if (data == null) return;
         ListenTpoContentData currentData = data.getCurrentData();
+        Log.i("catId", currentData.toString());
         analyzeTv.setText(currentData.getName());
         if (currentData == null) return;
         List<ListenChildData> child = currentData.getChild();
@@ -202,6 +205,7 @@ public class ListenMakeResultActivity extends BaseActivity {
                 oif.setSelected(true);
             }
             ListenChildData childData = child.get(index);
+
             childData.setUserChooseAnswer(rd.getAnswer());
             oif.setTopicNum(++index);
             boolean equals = TextUtils.equals(rd.getAnswer(), rd.getTrueAnswer());

@@ -2,15 +2,37 @@ package io.dcloud.H58E83894.data.prelesson;
 
 import java.util.List;
 
+import io.dcloud.H58E83894.data.circle.CommunityData;
+
 /**
  * Created by fire on 2017/7/21  11:35.
  */
 
 public class PreLessonData {
-    private List<BannerData> image;
-    private List<LessonData> pubClass;
+    private List<BannerData> image;//bander数据
+    private List<LessonData> pubClass;//
     private ChineseData data;
     private List<LessonData> hotData;
+
+    public ToeflLessonData getDataCourse() {
+        return dataCourse;
+    }
+
+    public void setDataCourse(ToeflLessonData dataCourse) {
+        this.dataCourse = dataCourse;
+    }
+
+    private ToeflLessonData dataCourse;
+
+    public List<CommunityData> getComData() {
+        return comData;
+    }
+
+    public void setComData(List<CommunityData> comData) {
+        this.comData = comData;
+    }
+
+    private List<CommunityData> comData;
 
     public List<BannerData> getImage() {
         return image;

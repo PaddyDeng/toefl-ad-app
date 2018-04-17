@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,7 @@ public class ListenResultFragment extends BaseFragment {
         ListenResultFragment fragment = new ListenResultFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable("CHILDDATA", childData);
+        Log.i("catId1", childData.toString());
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -71,6 +73,8 @@ public class ListenResultFragment extends BaseFragment {
     private RxDownload mRxDownload;
     private RxPermissions mRxPermissions;
     private MusicPlayer player;
+    private boolean isMultChoose;
+    private int answerNum;
 
     @Override
     protected void getArgs() {
@@ -225,12 +229,17 @@ public class ListenResultFragment extends BaseFragment {
             ans.setContent(split[i]);
             mDataList.add(ans);
         }
+        String answer = childData.getAnswer().trim();
+        answer = Utils.removerepeatedchar(answer);
+        answerNum = answer.length();
+        isMultChoose = answerNum != 1;
         if (mAdapter == null) {
             mAdapter = new ListenSecAnswerAdapter(mDataList);
             mRecyclerView.setAdapter(mAdapter);
         } else {
             mAdapter.upDate(mDataList);
         }
+//        mAdapter.setMultChooseAndSort(isMultChoose, Integer.parseInt(childData.getQuestType()) == 2);
         mAdapter.setMultChooseAndSort(childData.getAnswer().length() > 1, sort, childData.getAnswer(), childData.getUserChooseAnswer());
     }
 

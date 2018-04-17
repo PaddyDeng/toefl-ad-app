@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/custome_title_bar_style"
+        android:background="@color/color_white">
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_data_download"
+            android:textColor="@color/color_dark_green"/>
+
+    </RelativeLayout>
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.better.banner.BBanner
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </com.better.banner.BBanner>
+
+            <View
+                style="@style/line"
+                android:layout_height="@dimen/border_space_sec"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_data_download"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+</LinearLayout>

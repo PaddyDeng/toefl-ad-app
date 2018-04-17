@@ -1,13 +1,16 @@
 package io.dcloud.H58E83894.ui.user;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import io.dcloud.H58E83894.R;
 import io.dcloud.H58E83894.base.BaseFragment;
+import io.dcloud.H58E83894.data.InforData;
 import io.dcloud.H58E83894.data.ResultBean;
+import io.dcloud.H58E83894.data.make.TodayData;
 import io.dcloud.H58E83894.data.user.GlobalUser;
 import io.dcloud.H58E83894.data.user.UserData;
 import io.dcloud.H58E83894.data.user.UserInfo;
@@ -16,6 +19,7 @@ import io.dcloud.H58E83894.http.ResultObserver;
 import io.dcloud.H58E83894.http.SchedulerTransformer;
 import io.dcloud.H58E83894.http.callback.RequestCallback;
 import io.dcloud.H58E83894.http.callback.RequestImp;
+import io.dcloud.H58E83894.ui.information.GradeActivity;
 import io.dcloud.H58E83894.ui.user.modify.ModifyNickActivity;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.JsonUtil;
@@ -25,14 +29,19 @@ import io.dcloud.H58E83894.utils.SharedPref;
 import io.reactivex.ObservableSource;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import retrofit2.Response;
+
+import static android.R.attr.data;
 
 /**
  * Created by fire on 2017/7/13.
  */
 public abstract class BaseUserFragment extends BaseFragment implements RequestCallback<ResultBean> {
 
+    private String accounts;
+    private String passwords;
 
     @Override
     public void requestFail(String msg) {
@@ -65,6 +74,8 @@ public abstract class BaseUserFragment extends BaseFragment implements RequestCa
     private String nickName;
 
     protected void login(final OnUserInfoListener mOnUserInfoListener, String account, String password) {
+        accounts = account;
+        passwords = password;
         if (TextUtils.isEmpty(account)) {
             toastShort(R.string.str_login_account);
             return;
@@ -73,6 +84,7 @@ public abstract class BaseUserFragment extends BaseFragment implements RequestCa
             toastShort(R.string.str_enter_your_pwd);
             return;
         }
+
         SharedPref.saveAccount(getActivity(), account);
         SharedPref.savePassword(getActivity(), password);
         mOnUserInfoListener.login(account, password)
@@ -167,6 +179,22 @@ public abstract class BaseUserFragment extends BaseFragment implements RequestCa
                             forword(ModifyNickActivity.class);
                             getActivity().finish();
                         } else {
+                            if(!TextUtils.isEmpty(accounts.toString()) && !TextUtils.isEmpty(passwords)){
+                                addToCompositeDis(HttpUtil //判断是否信息采集过,只在登录的时候进行信息采集
+                                        .userInfor()
+                                        .subscribe(new Consumer<InforData>() {
+                                            @Override
+                                            public void accept(@NonNull InforData data) throws Exception {
+                                                if (data.getData()) return;
+                                                GradeActivity.startGradeActivity(getContext(),  accounts, passwords);
+                                            }
+                                        }, new Consumer<Throwable>() {
+                                            @Override
+                                            public void accept(@NonNull Throwable throwable) throws Exception {
+
+                                            }
+                                        }));
+                            }
                             //登录成功，关闭页面
                             RxBus.get().post(C.LOGIN_INFO, true);
                             mOnUserInfoListener.finishActivity();

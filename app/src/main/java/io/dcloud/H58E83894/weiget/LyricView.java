@@ -36,7 +36,7 @@ import io.dcloud.H58E83894.data.make.SentenceData;
 
 /**
  * Created by zhengken.me on 2016/11/27.
- * ClassName    : LyricView
+ * ClassName    : LyricView，类似于音乐的开关按钮
  * Description  :
  */
 public class LyricView extends View {

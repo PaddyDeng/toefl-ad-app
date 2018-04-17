@@ -6,17 +6,36 @@ import java.util.List;
 import java.util.Map;
 
 import io.dcloud.H58E83894.data.AdvertisingData;
+import io.dcloud.H58E83894.data.CorretData;
+import io.dcloud.H58E83894.data.DownloadData;
 import io.dcloud.H58E83894.data.GlossaryData;
 import io.dcloud.H58E83894.data.GlossaryWordData;
+import io.dcloud.H58E83894.data.InforData;
+import io.dcloud.H58E83894.data.JsonRootBean;
+import io.dcloud.H58E83894.data.KnowMaxListData;
+import io.dcloud.H58E83894.data.LeidouReData;
 import io.dcloud.H58E83894.data.ListenRecordData;
+import io.dcloud.H58E83894.data.ListsData;
 import io.dcloud.H58E83894.data.MsgData;
+import io.dcloud.H58E83894.data.MyLessonData;
+import io.dcloud.H58E83894.data.PayData;
+import io.dcloud.H58E83894.data.PayDatas;
 import io.dcloud.H58E83894.data.ResultBean;
 import io.dcloud.H58E83894.data.circle.CommunityData;
 import io.dcloud.H58E83894.data.circle.RemarkBean;
 import io.dcloud.H58E83894.data.circle.RemarkData;
+import io.dcloud.H58E83894.data.circle.ReplyData;
+import io.dcloud.H58E83894.data.commit.TodayListData;
+import io.dcloud.H58E83894.data.instestlisten.AllInstListenData;
+import io.dcloud.H58E83894.data.know.KnowTypeData;
+import io.dcloud.H58E83894.data.know.KnowZoneData;
+import io.dcloud.H58E83894.data.make.AllTaskData;
+import io.dcloud.H58E83894.data.make.GrammarData;
+import io.dcloud.H58E83894.data.make.ListenData;
 import io.dcloud.H58E83894.data.make.ListenPracticeData;
 import io.dcloud.H58E83894.data.make.ListenQuestionData;
 import io.dcloud.H58E83894.data.make.ListenSecTpoData;
+import io.dcloud.H58E83894.data.make.OnlyMineData;
 import io.dcloud.H58E83894.data.make.PracticeData;
 import io.dcloud.H58E83894.data.make.PracticeQuestionData;
 import io.dcloud.H58E83894.data.make.ReadData;
@@ -30,8 +49,6 @@ import io.dcloud.H58E83894.data.make.TodayData;
 import io.dcloud.H58E83894.data.make.WriteQuestionData;
 import io.dcloud.H58E83894.data.make.WriteTpoData;
 import io.dcloud.H58E83894.data.make.core.CoreData;
-import io.dcloud.H58E83894.data.make.GrammarData;
-import io.dcloud.H58E83894.data.make.ListenData;
 import io.dcloud.H58E83894.data.prelesson.FreeCursorData;
 import io.dcloud.H58E83894.data.prelesson.LessonDetailBean;
 import io.dcloud.H58E83894.data.prelesson.PreLessonData;
@@ -80,6 +97,12 @@ public interface RestApi {
                                     @Field("pass") String pass, @Field("code") String code,
                                     @Field("userName") String userName, @Field("source") String source, @Field("belong") String belong);
 
+
+    @FormUrlEncoded
+    @POST("cn/app-api/user-replenish")
+    Observable<ResultBean> register(@Field("testTime") String testTime, @Field("isTest") int isTest,
+                                    @Field("targetScore") int targetScore, @Field("status") String status,
+                                    @Field("maxScore") int maxScore);
     /**
      * 正常登录
      */
@@ -213,12 +236,19 @@ public interface RestApi {
     @GET("cn/api/intensive-listening")
     Observable<ListenData> listen();
 
+
+    @GET("cn/app-api/info-details")
+    Observable<CommunityData> getPostDownDeail(@Query("id") int id);
+
     @FormUrlEncoded
     @POST("cn/api/task-next")
     Observable<ResultBean> taskNext(@Field("type") String type);
 
     @POST("cn/api/today-task")
     Observable<TodayData> todayTask();
+
+    @POST("cn/app-api/is-user-replenish")
+    Observable<InforData> userInfor();
 
     @GET("cn/class/index?data-type=json")
     Observable<PreLessonData> preLesson();
@@ -233,6 +263,9 @@ public interface RestApi {
     @POST("cn/api/add-content")
     Observable<ResultBean> addContent(@Field("catId") int catId, @Field("name") String name, @Field("extend[]") String... extend);
 
+    @FormUrlEncoded
+    @POST("cn/app-api/suggestion")
+    Observable<ResultBean> addContent(@Field("name") String name, @Field("phone") String phone, @Field("source") String source, @Field("message") String message, @Field("type") int type);
     @GET("cn/api/app-ad")
     Observable<AdvertisingData> getAdvertisingInfo();
 
@@ -375,13 +408,112 @@ public interface RestApi {
     @POST("cn/api/sub-report")
     Observable<ResultBean> questionReport(@Field("contentId") String contentId, @Field("description") String description, @Field("reportCat") String reportCat,
                                           @Field("reportType") String reportType, @Field("type") String type);
+    @FormUrlEncoded
+    @POST("cn/api/reference-page")
+    Observable<ResultBean<List<DownloadData>>> MaryList(@Field("catId") int catId, @Field("page") int page);
 
-    @GET("cn/person/class?data-type=json")
-    Observable<ResultBean> lessonList(@Query("page") int page, @Query("pageSize") String pageSize);
+    @FormUrlEncoded
+    @POST("cn/app-api/post-list")
+    Observable<ResultBean<List<DownloadData>>> HighList(@Field("selectId") int selectId, @Field("page") int page, @Field("pageSize") int pageSize);
+
+
+    @GET("cn/app-api/reply-list")
+    Observable<List<ReplyData>> replyList(@Query("uid") int uid);
+
+    @GET("cn/app-api/class")
+    Observable<MyLessonData> lessonList(@Query("page") int page);
 
     @GET("cn/wap-api/version")
     Observable<VersionInfo> getUpdate();
 
-    @GET("cn/wap-api/audition-course")
+    @GET("cn/app-api/audition-course")
     Observable<List<FreeCursorData>> getFreeCursor();
+
+    @GET("cn/app-api/my-knowledge")
+    Observable<ListsData> getMyKnowLists(@Query("page") int page);
+
+    //知识库 http://www.toeflonline.cn/cn/app-api/knowledge-list
+    @POST("cn/app-api/knowledge")
+    Observable<KnowMaxListData> getKnowBase();
+
+    @FormUrlEncoded
+    @POST("cn/app-api/knowledge-cate")
+    Observable<KnowTypeData> getKnowType(@Field("id") int id);
+
+    //, @Field("pageSize") int pageSize
+    @FormUrlEncoded
+    @POST("cn/app-api/knowledge-list-new")
+    Observable<KnowZoneData> getKnowLists(@Field("id") int id, @Field("page") int page, @Field("pageSize") int pageSize);
+
+    @FormUrlEncoded
+    @POST("cn/app-api/knowledge-details")
+    Observable<JsonRootBean> getKnowInfo(@Field("id") int id);
+
+    @POST("cn/app-api/get-integral")//雷豆管理
+    Observable<LeidouReData> getLeidou();
+
+    @FormUrlEncoded
+    @POST("cn/app-api/buy-knowledge")//雷豆付款
+    Observable<PayData> getLeidouPay(@Field("id") int id, @Field("integral") int integral, @Field("type") int type);
+
+    @FormUrlEncoded
+    @POST("/pay/app-api/integral-pay")//下单方法
+    Observable<PayDatas> getZfbPay(@Field("uid") int uid, @Field("money") String money);
+
+    @FormUrlEncoded
+    @POST("/pay/app-api/pay")//下单方法
+    Observable<PayDatas> getOrderInfo(@Field("orderId") int orderId);
+
+    @GET("cn/app-api/spoken-today")//今日口语批改
+    Observable<TodayListData> getTodayList();
+
+    @GET("cn/app-api/spoken-check-details")//查看全部
+    Observable<AllTaskData> getPastAllList();
+
+    @GET("cn/app-api/my-spoken")//只看我的
+    Observable<OnlyMineData> getOnlyMineList();
+
+    @FormUrlEncoded
+    @POST("cn/app-api/sale-spoken-mark")//抢购kuyu名额
+    Observable<PayDatas>  getPlaces(@Field("integral") int integral);
+
+    @GET("cn/app-api/content-id")//上传获得id
+    Observable<CorretData>  getVoiceId(@Query("catId") int uid);
+
+    @GET("cn/app-api/writing-today")//今日作文批改
+    Observable<TodayListData> getEaTodayList();
+
+    @GET("/cn/app-api/writing-check")//查看全部 zuowen
+    Observable<AllTaskData> getEaPastAllList();
+
+    @GET("cn/app-api/my-writing")//只看我的
+    Observable<OnlyMineData> getEaOnlyMineList();
+
+    @GET("cn/app-api/daily-listening")//听丽丽
+    Observable<AllInstListenData> getInstAll(@Query("page") int page);
+
+    @Multipart
+    @POST("cn/app-api/spoken-upload")//口语上传
+    Observable<ResultBean> spokenUpTokens(@Part("token") int token, @Part MultipartBody.Part file);
+
+    @Multipart
+    @POST("cn/app-api/up-writing-pic")//作文上传
+    Observable<ResultBean> spokenUpTokenss(@Part MultipartBody.Part file);
+
+    @FormUrlEncoded
+    @POST("cn/app-api/writing-mark")//抢购作文名额
+    Observable<PayDatas>  getEaPlaces(@Field("integral") int integral);
+
+    @FormUrlEncoded
+    @POST("cn/app-api/data-updata")
+    Observable<ResultBean> spokenSaves(@Field("contentId") int contentId, @Field("url") String answer);
+
+
+    @GET("cn/app-api/listen-details")//趣味详情
+    Observable<AllInstListenData> getQuListen(@Query("id") int id);
+
+    @FormUrlEncoded
+    @POST("cn/app-api/add-collect")//shoucang
+    Observable<AllInstListenData>  getQuListenColl(@Field("collectType") int integral, @Field("num") int num, @Field("contentId") int contentId);
+
 }

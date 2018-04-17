@@ -39,9 +39,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/border_space_half"
-                        android:paddingBottom="@dimen/border_space_sec_max"
-                        android:paddingTop="@dimen/border_space_sec_max"
-                        android:text="TPO 01-49"
+                        android:paddingBottom="@dimen/border_space_sec_m"
+                        android:paddingTop="@dimen/border_space_sec_m"
+                        android:text="TPO 01-50"
                         android:textColor="@color/color_white"
                         android:textSize="@dimen/text_size_ml"/>
                 </LinearLayout>

@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 
 
 public class HostType {
-    @IntDef({LOGIN_REGIST_HOST, BASE_URL_HOST, TOEFL_URL_HOST, SMARTAPPLY_URL_HOST, GOSSIP_URL_HOST,VIPLGW_URL_HOST})
+    @IntDef({LOGIN_REGIST_HOST, BASE_URL_HOST, TOEFL_URL_HOST, SMARTAPPLY_URL_HOST, GOSSIP_URL_HOST,VIPLGW_URL_HOST, GOSSIPSS_URL_HOST, VIPLGWSS_URL_HOST, TL})
     @Retention(RetentionPolicy.SOURCE)
     public @interface HostTypeChecker {
     }
@@ -24,5 +24,11 @@ public class HostType {
     public static final int GOSSIP_URL_HOST = 5;
     @HostType.HostTypeChecker
     public static final int VIPLGW_URL_HOST = 6;
+    @HostType.HostTypeChecker
+    public static final int GOSSIPSS_URL_HOST = 7;
+    @HostType.HostTypeChecker
+    public static final int VIPLGWSS_URL_HOST = 8;
+    @HostType.HostTypeChecker
+    public static final int TL = 9;
 
 }

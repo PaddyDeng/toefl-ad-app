@@ -32,6 +32,7 @@ import io.dcloud.H58E83894.permission.RxPermissions;
 import io.dcloud.H58E83894.ui.common.SimpleLoginTipDialog;
 import io.dcloud.H58E83894.ui.helper.FeedBackHelper;
 import io.dcloud.H58E83894.ui.user.modify.ModifyNickActivity;
+import io.dcloud.H58E83894.utils.ActivityCollector;
 import io.dcloud.H58E83894.utils.C;
 import io.dcloud.H58E83894.utils.FileUtil;
 import io.dcloud.H58E83894.utils.RxBus;
@@ -55,7 +56,11 @@ public class BaseActivity extends FragmentActivity {
     protected String TAG = BaseActivity.this.getClass().getSimpleName();//获取该activity名称
     protected CompositeDisposable mCompositeDisposable = new CompositeDisposable();
     protected RxPermissions mRxPermissions;
+    private Map param = new HashMap();
+    private String msg = "";
+    private String nickName;
 
+    //将需要被 CompositeDisposable 管理的 observer 加入到管理集合中
     protected void addToCompositeDis(Disposable disposable) {
         mCompositeDisposable.add(disposable);
     }
@@ -74,12 +79,22 @@ public class BaseActivity extends FragmentActivity {
         });
     }
 
+
     //上到下，下到上动画
     protected void topDownInAnim(View topView, View bottomView) {
         Animation topIn = AnimationUtils.loadAnimation(mContext, R.anim.practice_up_in);
         topView.startAnimation(topIn);
         Animation downIn = AnimationUtils.loadAnimation(mContext, R.anim.practice_down_in);
         bottomView.startAnimation(downIn);
+    }
+
+    //检查app是否登录
+    protected void loginTip(Class<?> target) {
+        if (GlobalUser.getInstance().isAccountDataInvalid()) {
+            new SimpleLoginTipDialog().showDialog(getSupportFragmentManager());
+            return;
+        }
+        forword(target);
     }
 
     protected void setDownloadDefalutPath(final RxDownload mRxDownload) {
@@ -117,9 +132,9 @@ public class BaseActivity extends FragmentActivity {
      * 设置recycle完全显示
      */
     protected void initRecycler(RecyclerView recycle, RecyclerView.LayoutManager manager) {
-        manager.setAutoMeasureEnabled(true);
+        manager.setAutoMeasureEnabled(true);//recycle是否开始主动测量
         recycle.setLayoutManager(manager);
-        recycle.setHasFixedSize(true);
+        recycle.setHasFixedSize(true);//EtHasFixedSize 的作用就是确保尺寸是通过用户输入从而确保RecyclerView的尺寸是一个常数
         recycle.setNestedScrollingEnabled(false);
     }
 
@@ -273,13 +288,16 @@ public class BaseActivity extends FragmentActivity {
     }
 
     public void dismissLoadDialog() {
-        WaitDialog.getInstance(mContext).dismissWaitDialog();
+        if (WaitDialog.getInstance(mContext) != null && WaitDialog.getInstance(mContext).isShowing()){
+            WaitDialog.getInstance(mContext).dismissWaitDialog();
+        }
     }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
         ButterKnife.bind(this);
+        ActivityCollector.addActivity(this);//集合activity，退出app操作
         getArgs();
         initData();
         initView();
@@ -474,5 +492,7 @@ public class BaseActivity extends FragmentActivity {
         }
         return false;
     }
+
+
 
 }

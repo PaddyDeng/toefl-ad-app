@@ -2,13 +2,18 @@
 <resources>
 
     <string-array name="toefl_circle_tab_arr">
-        <item>吐槽</item>
         <item>推荐</item>
+        <item>吐槽</item>
     </string-array>
 
     <string-array name="toefl_listen_parctice">
         <item>TPO练习</item>
         <item>分类练习</item>
+    </string-array>
+
+    <string-array name="toefl_speak_corret">
+        <item>今日点评</item>
+        <item>往期点评</item>
     </string-array>
 
     <string-array name="toefl_write_independent_topic_arr">
@@ -32,7 +37,7 @@
         <item>TPO 25-30</item>
         <item>TPO 31-34</item>
         <item>TPO 40-44</item>
-        <item>TPO 45-49</item>
+        <item>TPO 45-50</item>
     </string-array>
 
     <string-array name="center_listen_record_aar">
@@ -66,5 +71,66 @@
         <item>全部</item>
         <item>TPO</item>
         <item>OG</item>
+    </string-array>
+
+    <string-array name="center_collection_record">
+        <item>全部</item>
+        <item>收藏</item>
+    </string-array>
+
+    <string-array name="test_type_drawable_name">
+        <item>ic_s3_07</item>
+        <item>ic_s1_07</item>
+        <item>ic_s5_07</item>
+        <item>ic_s2_07</item>
+        <item>ic_s4_07</item>
+        <item>ic_s6_07</item>
+    </string-array>
+
+    <string-array name="tab_name">
+        <item>直播课</item>
+        <item>面授课</item>
+        <item>视频课</item>
+        <item>试听课</item>
+    </string-array>
+
+
+    <string-array name="knowledge_zone">
+        <item>免费专区</item>
+        <item>雷豆专区</item>
+    </string-array>
+
+    <string-array name="speeds">
+        <item>speed1.00</item>
+        <item>speed1.25</item>
+        <item>speed1.50</item>
+        <item>speed1.75</item>
+        <item>speed2.00</item>
+        <item>speed2.50</item>
+        <item>speed3.00</item>
+        <item>speed3.50</item>
+        <item>speed4.00</item>
+    </string-array>
+
+    <string-array name="leidou_money_name">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="leidou_sum_name">
+        <item>100个</item>
+        <item>200个</item>
+        <item>500个</item>
+        <item>1000个</item>
+        <item>2000个</item>
+        <item>3000个</item>
+        <item>5000个</item>
+        <item>10000个</item>
     </string-array>
 </resources>

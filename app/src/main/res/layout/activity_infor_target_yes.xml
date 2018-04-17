@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_infor_test_toefl"
+                android:layout_weight="1.2">
+
+                <RelativeLayout
+                    android:layout_width="140dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="90dip">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:src="@drawable/icon_infor_data">
+                    </ImageView>
+
+                    <io.dcloud.H58E83894.weiget.LeanTextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ssssssss"
+                        android:layout_marginTop="2dip"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/color_white"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                </RelativeLayout>
+
+                <io.dcloud.H58E83894.weiget.LeanTextView
+                    android:id="@+id/taegetInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="123"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/color_white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/border_space_six_max_ws"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/target_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_infor_target_et"
+                    android:hint="@string/str_infor_otherss"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="40dip"
+                    android:layout_marginBottom="20dip"
+                    android:numeric="integer"
+                    />
+
+
+                <TextView
+                    android:id="@+id/target_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_infor_target_02"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="@string/str_infor_next"
+                    android:textColor="@color/color_white"
+                    />
+
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+
+
+
+
+</LinearLayout>

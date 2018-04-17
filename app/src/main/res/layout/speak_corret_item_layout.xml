@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <io.dcloud.H58E83894.weiget.CircleImageView
+            android:id="@+id/speak_answer_item_head_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/border_space_sec_max"
+            android:src="@drawable/icon_default"
+            app:border_color="@color/color_white"
+            app:border_width="2dip"/>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/speak_answer_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="小托君"
+                android:layout_marginLeft="@dimen/border_space"
+                android:textColor="@color/color_txt_dark_black"
+                android:textSize="@dimen/text_size_ms"/>
+
+            <RelativeLayout
+                android:id="@+id/play_audio_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/border_space"
+                android:background="@drawable/icon_speak_corret_bg">
+
+                <TextView
+                    android:id="@+id/speak_audio_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/border_space"
+                    android:padding="@dimen/base_half_padding"
+                    android:text="0''"
+                    android:textColor="@color/color_txt_gray"
+                    android:textSize="@dimen/text_size_micro_plus"/>
+
+                <ImageView
+                    android:id="@+id/sp_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/border_space_sec_max"
+                    android:src="@drawable/icon_audio_thr"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/speak_item_praise_tv"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/border_space_sec_max"
+            android:drawablePadding="@dimen/border_space_half"
+            android:gravity="center"
+            android:text="批改中"
+            android:textSize="@dimen/text_size_ml"
+            android:textColor="@color/color_txt_dark_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/liaere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="@dimen/radius"
+        android:layout_marginBottom="@dimen/border_space_sec_m"
+        android:background="@color/color_sec_gray"
+        android:padding="@dimen/border_space_m"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <!--android:visibility="gone"-->
+        <TextView
+            android:id="@+id/corret_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="老师评语"
+            android:layout_marginBottom="@dimen/border_space"
+            />
+
+        <io.dcloud.H58E83894.weiget.ExpandTextView
+            android:id="@+id/txt_content"
+            android:textSize="12sp"
+            android:text="dadadasdasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssdsdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
+            android:layout_marginBottom="@dimen/border_space_sec_m"
+            />
+        <!--app:arrowPosition="below"-->
+        <!--app:maxCollapsedLines="3"-->
+    </LinearLayout>
+
+
+
+</LinearLayout>

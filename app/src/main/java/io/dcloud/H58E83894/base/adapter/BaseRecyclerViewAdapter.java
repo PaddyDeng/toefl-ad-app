@@ -74,7 +74,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
             });
         } else if (viewType == TYPE_INIT) {
             holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.layout.init_recycler_data_layout, parent, false));
-//            holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.layout.include_empty_layout, parent, false));
+//            holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.popup_window_ranking_classify.include_empty_layout, parent, false));
         } else if (viewType == TYPE_EMPTY) {
             holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.layout.include_empty_layout, parent, false));
         } else if (viewType == TYPE_LOAD_MORE_SUCCESS) {
@@ -155,6 +155,10 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
                 });
             }
         }
+    }
+
+    public static int getTypeDefault() {
+        return TYPE_DEFAULT;
     }
 
     /**

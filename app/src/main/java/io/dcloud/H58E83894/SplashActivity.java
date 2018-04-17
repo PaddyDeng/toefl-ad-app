@@ -132,17 +132,18 @@ public class SplashActivity extends BaseActivity {
         addToCompositeDis(HttpUtil
                 .getAdvertisingInfo()
                 .subscribe(new Consumer<AdvertisingData>() {
-                    @Override
-                    public void accept(@NonNull AdvertisingData data) throws Exception {
-                        advertisingData = data;
-                        judge();
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(@NonNull Throwable throwable) throws Exception {
+                               @Override
+                               public void accept(@NonNull AdvertisingData data) throws Exception {
+                                   advertisingData = data;
+                                   judge();
+                               }
+                           }, new Consumer<Throwable>() {
+                               @Override
+                               public void accept(@NonNull Throwable throwable) throws Exception {
 
-                    }
-                }));
+                               }
+                           }
+                ));
     }
 
     private void judge() {

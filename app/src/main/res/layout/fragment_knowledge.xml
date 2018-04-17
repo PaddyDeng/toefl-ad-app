@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frag_know_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/know_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                    android:id="@+id/know_login_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/border_space_m"
+                    android:layout_marginRight="@dimen/border_space_m"
+                    android:layout_marginBottom="@dimen/base_half_padding"
+                    android:layout_marginTop="@dimen/base_half_padding"
+                    android:background="@drawable/ic_listen_01_back"
+                    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/diff_item_know_bg"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        >
+
+                        <ImageView
+                            android:id="@+id/logic_cr_control_tv"
+                            style="@style/know_txt_style"
+                            android:src="@drawable/ic_listen_01" />
+
+                        <TextView
+                            android:id="@+id/logic_des"
+                            style="@style/know_des_style"
+                            android:layout_below="@+id/logic_cr_control_tv"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/know_grammer_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/border_space_m"
+                android:layout_marginRight="@dimen/border_space_m"
+                android:layout_marginBottom="@dimen/base_half_padding"
+                android:layout_marginTop="@dimen/base_half_padding"
+                android:background="@drawable/ic_speak_01_back"
+                >
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/diff_item_know_bg"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/grammar_sc_control_tv"
+                            style="@style/know_txt_style"
+                            android:src="@drawable/ic_speak_01"
+                            android:text="@string/str_practice_voice"/>
+
+                        <TextView
+                            android:id="@+id/grammar_des"
+                            style="@style/know_des_style"
+                            android:layout_below="@+id/grammar_sc_control_tv"/>
+
+                </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/know_read_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/border_space_m"
+                android:layout_marginRight="@dimen/border_space_m"
+                android:layout_marginBottom="@dimen/base_half_padding"
+                android:layout_marginTop="@dimen/base_half_padding"
+                android:background="@drawable/ic_read_01_back">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/diff_item_know_bg"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/read_rc_control_tv"
+                            style="@style/know_txt_style"
+                            android:src="@drawable/ic_write_01" />
+
+                        <TextView
+                            android:id="@+id/read_des"
+                            style="@style/know_des_style"
+                            android:layout_below="@+id/read_rc_control_tv"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/know_math_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/border_space_m"
+                android:layout_marginRight="@dimen/border_space_m"
+                android:layout_marginBottom="@dimen/base_half_padding"
+                android:layout_marginTop="@dimen/base_half_padding"
+                android:background="@drawable/ic_write_01_back">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/diff_item_know_bg"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/math_q_control_tv"
+                            style="@style/know_txt_style"
+                            android:src="@drawable/ic_read_01" />
+
+                        <TextView
+                            android:id="@+id/math_des"
+                            style="@style/know_des_style"
+                            android:layout_below="@+id/math_q_control_tv"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </io.dcloud.H58E83894.weiget.overscroll.FastAndOverScrollScrollView>
+
+</RelativeLayout>

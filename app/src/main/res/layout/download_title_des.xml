@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/download_title_tip"
+    android:background="@color/color_sec_gray"
+    android:paddingBottom="@dimen/border_space_normal"
+    android:paddingLeft="@dimen/border_space_sec_max"
+    android:paddingTop="@dimen/border_space_sec"/>

@@ -20,11 +20,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitProvider {
     public static String BASEURL = "http://www.gmatonline.cn/";
     private static String LOGINURL = "http://login.gmatonline.cn/";
-    public static String TOEFLURL = "http://www.toeflonline.cn/";
+    public static String TOEFLURL = "http://www.toeflonline.cn/";//http://www.toeflonline.cn/
     public static String SMARTAPPLYURL = "http://smartapply.gmatonline.cn/";
-    //    public static String GOSSIPURL = "http://gossip.gmatonline.cn/";
+    public static String GOSSIPURLSS = "http://gossip.gmatonline.cn/";
     public static String GOSSIPURL = "http://bbs.viplgw.cn/";
-    private static String VIPLGW = "http://open.viplgw.cn/";
+    public static String VIPLGW = "http://open.viplgw.cn/";
+    public static String VIPLGWss = "http://order.viplgw.cn";
+    public static String TL = "http://tf.cn";
 
     private static SparseArray<Retrofit> sparseArray = new SparseArray<>();
     private static SparseArray<CookieManager> cookieArray = new SparseArray<>();
@@ -75,6 +77,15 @@ public class RetrofitProvider {
                     break;
                 case HostType.VIPLGW_URL_HOST:
                     url = VIPLGW;
+                    break;
+                case HostType.GOSSIPSS_URL_HOST:
+                    url = GOSSIPURLSS;
+                    break;
+                case HostType.VIPLGWSS_URL_HOST:
+                        url = VIPLGWss;
+                        break;
+                case HostType.TL:
+                    url = TL;
                     break;
             }
             CookieManager cookieManager = cookieArray.get(type);

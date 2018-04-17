@@ -102,14 +102,18 @@ public class SpeakTpoListActivity extends BaseListActivity<WriteTpoData> {
 
     private String cate() {
         StringBuffer sb = new StringBuffer();
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             if (i >= 35 && i <= 39) {
                 continue;
             }
             sb.append(cacl(i));
-            if (i < 49) {
+            if (i < 50) {
                 sb.append(",");
             }
+
+//            if (i < 49) {
+//                sb.append(",");
+//            }
         }
         return sb.toString();
     }
@@ -123,6 +127,8 @@ public class SpeakTpoListActivity extends BaseListActivity<WriteTpoData> {
             tpoNumber += 238;
         } else if (tpoNumber < 50) {
             tpoNumber += 263;
+        }else if (tpoNumber  < 51) {
+            tpoNumber += 329;
         }
         return String.valueOf(tpoNumber);
     }

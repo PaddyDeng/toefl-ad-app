@@ -21,6 +21,10 @@ import io.dcloud.H58E83894.utils.C;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 
+/**
+ * 由ToeflDetailActivity进来的试听按钮点的
+ * */
+
 public class TrialCourseTypeActivity extends BaseActivity {
 
     private String TRIAL_SC;

@@ -12,6 +12,10 @@ import io.dcloud.H58E83894.R;
 import io.dcloud.H58E83894.base.BaseTabActivity;
 import io.dcloud.H58E83894.base.adapter.TabPagerAdapter;
 
+
+/**
+ * @Deil 写作练习
+ * */
 public class WriteTpoActivity extends BaseTabActivity {
 
     @Override
@@ -32,6 +36,7 @@ public class WriteTpoActivity extends BaseTabActivity {
     }
 
 
+
     @Override
     protected PagerAdapter getPagerAdapter() {
         final List<Fragment> fragList = new ArrayList<>();
@@ -43,7 +48,7 @@ public class WriteTpoActivity extends BaseTabActivity {
         fragList.add(WriteTpoListFragment.getInstance(25, 6));
         fragList.add(WriteTpoListFragment.getInstance(31, 4));
         fragList.add(WriteTpoListFragment.getInstance(40, 5));
-        fragList.add(WriteTpoListFragment.getInstance(45, 5));
+        fragList.add(WriteTpoListFragment.getInstance(45, 6));
 
         return new TabPagerAdapter(getSupportFragmentManager(), array) {
             @Override

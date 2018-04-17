@@ -6,6 +6,14 @@ package io.dcloud.H58E83894.data.make;
 
 public class ListenQuestionData {
 
+
+    @Override
+    public String toString() {
+        return "ListenQuestionData{" +
+                "currentData=" + currentData +
+                '}';
+    }
+
     private ListenTpoContentData currentData;
 
     public ListenTpoContentData getCurrentData() {

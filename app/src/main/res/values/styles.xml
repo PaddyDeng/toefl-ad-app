@@ -42,6 +42,10 @@
         <item name="android:textSize">@dimen/text_size_ml</item>
     </style>
 
+    <style name="MyTabLayoutTextAppearance_01" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/text_size_micro</item>
+    </style>
+
     <!-- 计费选择选择 没有View的地方背景是半透明的 -->
     <style name="AlphaDialogAct" parent="android:style/Theme.Dialog">
         <item name="android:windowAnimationStyle">@anim/ac_slide_up_in</item>
@@ -64,13 +68,19 @@
     <style name="custome_title_bar_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/border_space_max_min</item>
-        <item name="android:background">@color/color_black</item>
+        <item name="android:background">@color/color_text_green</item>
+    </style>
+
+    <style name="custome_title_bar_styles">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/border_space_max_min</item>
+        <item name="android:background">@color/color_blur</item>
     </style>
 
     <style name="new_custome_title_bar_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/border_space_max_min</item>
-        <item name="android:background">@color/color_white</item>
+        <item name="android:background">@color/color_text_green</item>
     </style>
 
     <style name="next_style" parent="wrapWidthH">
@@ -88,7 +98,21 @@
         <item name="android:paddingLeft">@dimen/border_space_sec_max</item>
         <item name="android:paddingRight">@dimen/border_space_sec_max</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:src">@drawable/icon_back</item>
+        <item name="android:src">@drawable/ic_back</item>
+        <item name="android:background">@color/color_text_green</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="black_bg_title_backs" parent="title_back">
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:paddingLeft">@dimen/border_space_sec_max</item>
+        <item name="android:paddingRight">@dimen/border_space_sec_max</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@drawable/ic_back</item>
+        <item name="android:textColor">@color/color_white</item>
     </style>
 
     <style name="title_tv_style">
@@ -99,12 +123,13 @@
         <item name="android:textColor">@color/color_white</item>
     </style>
 
+
     <style name="new_title_tv_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
-        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textColor">@color/color_white</item>
     </style>
 
     <style name="class_ification_item_container_style">
@@ -149,6 +174,19 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dip</item>
         <item name="android:background">@color/color_sec_gray</item>
+    </style>
+
+    <style name="dot_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@drawable/dash_dot</item>
+        <item name="android:layerType">software</item>
+    </style>
+
+    <style name="lines">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:background">@color/color_dark_gray</item>
     </style>
 
     <!--<style name="dark_line" parent="@style/line">-->
@@ -221,7 +259,7 @@
     </style>
 
     <style name="card_txt_color_style">
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textColor">@color/color_text_black</item>
     </style>
 
     <style name="vertical_line">
@@ -241,7 +279,7 @@
         <item name="android:paddingLeft">@dimen/border_space_sec_max</item>
         <item name="android:paddingRight">@dimen/border_space_sec_max</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:src">@drawable/icon_back</item>
+        <item name="android:src">@drawable/ic_back</item>
     </style>
 
     <style name="register_back_style">
@@ -251,7 +289,7 @@
         <item name="android:paddingLeft">@dimen/border_space_sec_max</item>
         <item name="android:paddingRight">@dimen/border_space_sec_max</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:src">@drawable/icon_back</item>
+        <item name="android:src">@drawable/ic_back</item>
     </style>
 
     <style name="practice_line">
@@ -302,7 +340,7 @@
         <item name="android:layout_height">@dimen/border_space_sec_max_m</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginRight">@dimen/border_space</item>
-        <item name="android:src">@drawable/icon_feed_back</item>
+        <item name="android:src">@drawable/icon_white_feed_back</item>
     </style>
 
     <style name="feed_back_white_style" parent="@style/feed_back_style">
@@ -336,32 +374,35 @@
     <style name="toefl_item_tv_style" parent="wrapWidthH">
         <item name="android:paddingBottom">@dimen/border_space_half</item>
         <item name="android:paddingTop">@dimen/border_space_sec</item>
-        <item name="android:textSize">@dimen/text_size_ml</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textColor">@color/color_black</item>
         <item name="android:drawablePadding">@dimen/border_space_half</item>
     </style>
 
     <style name="free_title_style" parent="wrapHeight">
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">@dimen/border_space</item>
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_micro</item>
+
     </style>
 
     <style name="sm_txt_style" parent="wrapHeight">
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:paddingTop">@dimen/border_space_sec_mm</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_micros</item>
+    </style>
+
+    <style name="sm_txt_styles" parent="wrapHeight">
+        <item name="android:textColor">@color/color_black</item>
         <item name="android:textSize">@dimen/text_size_micro</item>
     </style>
 
     <style name="go_try_style" parent="wrapWidthH">
         <item name="android:layout_gravity">center</item>
-        <item name="android:paddingBottom">@dimen/base_half_padding</item>
-        <item name="android:paddingTop">@dimen/base_half_padding</item>
         <item name="android:paddingLeft">@dimen/border_space</item>
         <item name="android:paddingRight">@dimen/border_space</item>
         <item name="android:background">@drawable/free_go_listener_btn</item>
         <item name="android:text">@string/str_free_go_try</item>
-        <item name="android:textSize">@dimen/text_size_micro</item>
+        <item name="android:textSize">@dimen/text_size_micros</item>
     </style>
 
     <style name="practice_type_style">
@@ -370,7 +411,8 @@
         <item name="android:layout_weight">1</item>
         <item name="android:drawablePadding">@dimen/border_space_half</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
     <style name="practice_duty_item_style">
@@ -382,8 +424,8 @@
     </style>
 
     <style name="practice_duty_type_style" parent="@style/wrapWidthH">
-        <item name="android:textColor">@color/color_white</item>
-        <item name="android:textSize">@dimen/text_size_ml</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
     <style name="login_edit_style" parent="wrapHeight">
@@ -426,6 +468,18 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:textSize">@dimen/text_size_ml_plus</item>
     </style>
+
+    <style name="fine_bottom_txt_styles" parent="wrapWidthH">
+        <item name="android:background">@drawable/white_border_shape</item>
+        <item name="android:paddingBottom">@dimen/radius_half</item>
+        <item name="android:paddingTop">@dimen/radius_half</item>
+        <item name="android:paddingLeft">@dimen/border_space</item>
+        <item name="android:paddingRight">@dimen/border_space</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">@dimen/text_size_micros</item>
+    </style>
+
 
     <style name="fine_bottom_btn_container_style">
         <item name="android:layout_width">0dp</item>
@@ -492,11 +546,9 @@
     </style>
 
     <style name="practice_duty_item_right_tv_style" parent="@style/wrapWidthH">
-        <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_marginRight">@dimen/border_space_sec_max</item>
+        <item name="android:padding">@dimen/cardview_default_elevation</item>
         <item name="android:textSize">@dimen/text_size_ml</item>
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textColor">@color/color_text_green</item>
     </style>
 
     <style name="main_center_item_tv_style" parent="wrapWidthH">
@@ -509,6 +561,62 @@
     <style name="analyze_anim_style">
         <item name="android:windowEnterAnimation">@anim/down_in</item>
         <item name="android:windowExitAnimation">@anim/down_out</item>
+    </style>
+
+    <style name="know_txt_style" parent="wrapWidthH">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="know_des_style" parent="wrapWidthH">
+        <item name="android:textSize">@dimen/text_size_ms</item>
+        <item name="android:layout_marginTop">@dimen/border_space</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="share_container">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">@dimen/border_space_sec_max</item>
+        <item name="android:paddingBottom">@dimen/border_space_sec_max</item>
+    </style>
+
+    <style name="share_plat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/border_space_half</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="share_img">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="com_line" parent="line">
+        <item name="android:background">@color/color_sec_gray</item>
+    </style>
+
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 </resources>

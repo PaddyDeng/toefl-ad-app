@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+
+        <View
+            android:id="@+id/place_one_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"/>
+
+        <View
+            android:id="@+id/place_two_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/border_space_sec_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_pay_lesson_back"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/border_space_sec_max"
+            android:paddingLeft="@dimen/border_space_sec_m"
+            android:paddingRight="@dimen/border_space_sec_m"
+            android:layout_marginRight="@dimen/border_space_sec_max"
+            android:layout_marginLeft="@dimen/border_space_sec_max"
+            android:paddingTop="@dimen/border_space_sec_m">
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/border_space_sec"
+                android:layout_width="match_parent"
+                android:layout_height="60dip">
+
+                <TextView
+                    android:id="@+id/pay_lesosn_if"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认支付99雷豆么？"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/color_text_green"
+                    android:textSize="@dimen/text_size_ml"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+
+                android:layout_marginTop="@dimen/border_space_max_max"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pay_lesosn_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_pay_no"
+                        android:text="我再想想"
+                        android:textColor="@color/color_text_green"
+                        android:textSize="@dimen/text_size_ml"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pay_lesosn_sure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_pay_sure"
+                        android:text="确认支付"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_ml"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/pay_lesosn_diss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_update_diss"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/border_space_thr_max"
+            />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/place_thr_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>

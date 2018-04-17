@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class ReadAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerViewHold
     private final int MULT_CHOOSE_VIEW_TYPE = DEFALUT_VIEW_TYPE + 1;
 
     private List<AnswerData> mDataList;
+    List<Integer> useList;
 
     private OnItemClickListener mListener;
 
@@ -38,6 +40,7 @@ public class ReadAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerViewHold
     private int multTypeLen;//type为七，记录选项答案
     private String[] options = new String[]{"A", "B", "C", "D", "E"};
     private boolean showAnswer;
+//    private
 
     public ReadAnswerAdapter(List<AnswerData> list, boolean b, int length) {
         this(list, b);
@@ -143,6 +146,11 @@ public class ReadAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerViewHold
         this(dataList, true);
     }
 
+    public ReadAnswerAdapter(List<AnswerData> dataList, List<Integer> userList) {
+        this(dataList, true);
+        useList = userList;
+    }
+
     public void upMultData(List<AnswerData> mdatas, int length) {
         if (mdatas == null) return;
         setMultChooseViewType();
@@ -196,7 +204,7 @@ public class ReadAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerViewHold
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-2, -2);
             params.leftMargin = 50;
             tv.setLayoutParams(params);
-            String option = options[i];
+            final String option = options[i];
             String correctOption = data.getReadMultCorrectOption();
             if (TextUtils.equals(option, correctOption)) {
                 tv.setTextColor(ContextCompat.getColor(context, R.color.color_sup_green));
@@ -204,23 +212,24 @@ public class ReadAnswerAdapter extends RecyclerView.Adapter<BaseRecyclerViewHold
                 tv.setTextColor(ContextCompat.getColor(context, R.color.color_dark_gray));
             }
             tv.setText(option);
-            tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (showAnswer) return;
-                    String answer = data.getReadMultAnswer();
-                    String optionAnswer = ((TextView) v).getText().toString();
-                    if (TextUtils.isEmpty(answer)) {
-                        data.setReadMultAnswer(optionAnswer);
-                        ((TextView) v).setTextColor(ContextCompat.getColor(context, R.color.color_sec_orange));
-                    } else if (TextUtils.equals(answer, optionAnswer)) {
-                        data.setReadMultAnswer("");
-                        ((TextView) v).setTextColor(ContextCompat.getColor(context, R.color.color_dark_gray));
-                    } else {
-                        recordAnswer(v, data, context);
+                tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (showAnswer) return;
+                        String answer = data.getReadMultAnswer();
+                        String optionAnswer = ((TextView) v).getText().toString();
+                        Log.i("kkkkk", optionAnswer);
+                        if (TextUtils.isEmpty(answer)) {
+                            data.setReadMultAnswer(optionAnswer);
+                            ((TextView) v).setTextColor(ContextCompat.getColor(context, R.color.color_sec_orange));
+                        } else if (TextUtils.equals(answer, optionAnswer)) {
+                            data.setReadMultAnswer("");
+                            ((TextView) v).setTextColor(ContextCompat.getColor(context, R.color.color_dark_gray));
+                        } else {
+                            recordAnswer(v, data, context);
+                        }
                     }
-                }
-            });
+                });
             mContainer.addView(tv);
         }
     }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_white">
+
+    <RelativeLayout
+        android:id="@+id/remark_post_container"
+        style="@style/custome_title_bar_style">
+
+        <ImageView style="@style/black_bg_title_back"/>
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_centerInParent="true"
+            android:text="@string/str_leidou_recharge"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/remark_post_container">
+
+        <LinearLayout
+            android:id="@+id/sasdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_leudou_recharge"
+            android:layout_margin="@dimen/border_space_sec_m"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="雷哥托福提醒您"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/border_space_thr_max"
+                android:textColor="@color/color_white"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+                />
+
+            <TextView
+                android:id="@+id/tv_recharge_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="雷豆剩余8个"
+                android:textColor="@color/color_white"
+                android:layout_marginTop="@dimen/border_space_thr"
+                android:layout_marginLeft="@dimen/border_space_sec_max"
+
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/leidou_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            ></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/leidou_recharge"
+        android:layout_width="300dip"
+        android:layout_height="wrap_content"
+        android:background="@color/im_font_color_text_hint"
+        android:text="充值"
+        android:textColor="@color/color_white"
+        android:padding="@dimen/border_space_sec_max"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dip"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>

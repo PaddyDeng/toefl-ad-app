@@ -24,7 +24,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/border_space_sec_max"
             android:text="@string/str_write_answer_commit"
-            android:textColor="@color/color_sec_orange"
+            android:textColor="@color/color_white"
             android:textSize="@dimen/text_size_ml_plus"/>
     </RelativeLayout>
 
